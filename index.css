@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #F7F3F0;
+    color: #333333;
+    overflow-x: hidden;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #F7F3F0;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #D4AF37;
+  }
+}
+
+@layer components {
+  .glass-nav {
+    background: rgba(247, 243, 240, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(212, 175, 55, 0.1);
+  }
+
+  /* Base Reveal States */
+  .reveal {
+    opacity: 0;
+    transition: opacity 1.2s cubic-bezier(0.22, 1, 0.36, 1), transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
+  }
+
+  /* Specific Reveal Variants */
+  .reveal.slide-up {
+    transform: translateY(30px);
+  }
+
+  .reveal.slide-right {
+    transform: translateX(50px);
+  }
+
+  /* Active States */
+  .reveal.active {
+    opacity: 1;
+    transform: translate(0, 0) !important;
+  }
+
+  /* Weighted Expand Animation */
+  .expand-x {
+    transform: scaleX(0.7);
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .expand-x.active {
+    transform: scaleX(1);
+  }
+
+  .text-shadow-hero {
+    text-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+}
