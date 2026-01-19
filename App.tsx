@@ -113,7 +113,7 @@ const App: React.FC = () => {
             </div>
           </div>
           <div className="max-w-7xl mx-auto mt-16 pt-8 border-t border-gray-50 flex justify-between items-center text-[10px] text-gray-400 tracking-[0.3em] uppercase">
-            <span>© 2024 Refenti Group</span>
+            <span>© 2026 Refenti Group</span>
             <span>Made by <a href="https://briggsdavis.com" target="_blank" rel="noopener noreferrer" className="hover:text-refenti-gold transition-colors">BriggsDavis</a></span>
           </div>
         </footer>

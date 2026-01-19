@@ -186,7 +186,7 @@ const Home: React.FC = () => {
       <section className="py-20 px-8">
         <div className="max-w-7xl mx-auto">
           <div className="mb-16 flex flex-col md:flex-row justify-between items-end gap-12 reveal">
-            <h2 className="font-display text-8xl md:text-[8rem] font-light text-gray-200 tracking-tighter uppercase leading-none">
+            <h2 className="font-display text-8xl md:text-[8rem] font-light text-refenti-charcoal tracking-tighter uppercase leading-none">
               Portfolio
             </h2>
             <Link to="/projects" className="text-refenti-gold font-sans font-bold uppercase tracking-[0.2em] text-xs flex items-center gap-6 group mb-4">
