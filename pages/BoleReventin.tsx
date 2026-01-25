@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
-import { PROJECTS } from '../constants';
+// Use getProjects() instead of the missing PROJECTS export
+import { getProjects } from '../constants';
 
 // Explicitly define as React.FC to include standard props like 'key' in the type check
 const FeatureSection: React.FC<{ feature: string; index: number }> = ({ feature, index }) => {
@@ -76,7 +77,7 @@ const FeatureSection: React.FC<{ feature: string; index: number }> = ({ feature,
 };
 
 const BoleReventin: React.FC = () => {
-  const property = PROJECTS[0]; // Bole High-rise
+  const property = getProjects()[0]; // Bole High-rise
 
   return (
     <div className="bg-white min-h-screen">
@@ -122,7 +123,8 @@ const BoleReventin: React.FC = () => {
       {/* Features with Scroll Expansion */}
       <section className="bg-white">
         <div className="max-w-[100vw] overflow-x-hidden">
-          {property.features?.map((feature, idx) => (
+          {/* Fix: Using projectFeatures instead of features to match type definition */}
+          {property.projectFeatures?.map((feature, idx) => (
             <FeatureSection key={feature} feature={feature} index={idx} />
           ))}
         </div>

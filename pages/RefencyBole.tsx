@@ -1,9 +1,10 @@
 
 import React from 'react';
-import { PROJECTS } from '../constants';
+// Use getProjects() instead of the missing PROJECTS export
+import { getProjects } from '../constants';
 
 const RefencyBole: React.FC = () => {
-  const property = PROJECTS[0];
+  const property = getProjects()[0];
 
   return (
     <div className="bg-white">
@@ -41,7 +42,8 @@ const RefencyBole: React.FC = () => {
       {/* Features - Compact Spacing with Horizontal Expansion */}
       <section className="py-20 px-4">
         <div className="max-w-7xl mx-auto space-y-24">
-          {property.features?.map((feature, idx) => (
+          {/* Fix: Using projectFeatures instead of features to match type definition */}
+          {property.projectFeatures?.map((feature, idx) => (
             <div 
               key={feature}
               className={`flex flex-col md:flex-row items-center gap-16 reveal ${idx % 2 === 1 ? 'md:flex-row-reverse' : ''}`}

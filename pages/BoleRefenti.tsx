@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect, useRef } from 'react';
-import { PROJECTS } from '../constants';
+import { Link } from 'react-router-dom';
 
 const FeatureSection: React.FC<{ feature: string; index: number }> = ({ feature, index }) => {
   const [targetProgress, setTargetProgress] = useState(0);
@@ -87,8 +87,8 @@ const FeatureSection: React.FC<{ feature: string; index: number }> = ({ feature,
           </h3>
         </div>
         <div className="space-y-4 max-w-lg">
-          <p className="text-gray-500 font-light leading-relaxed text-lg">
-            At Bole High-Rise, {feature.toLowerCase()} is more than an amenity—it is a cornerstone of the resident experience.
+          <p className="text-gray-700 font-light leading-relaxed text-lg">
+            At Bole High-Rise, {feature.toLowerCase()} is more than an amenity: it is a cornerstone of the resident experience. Every detail reflects our commitment to structural integrity and aesthetic purity.
           </p>
           <div className="flex items-center gap-6">
             <div className="w-12 h-[1px] bg-refenti-gold" />
@@ -101,7 +101,6 @@ const FeatureSection: React.FC<{ feature: string; index: number }> = ({ feature,
 };
 
 const BoleRefenti: React.FC = () => {
-  const property = PROJECTS[0];
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
@@ -110,32 +109,33 @@ const BoleRefenti: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const amenities = [
-    "24/7 Valet & Concierge",
-    "Rooftop Helipad",
-    "Wellness Center & Spa",
-    "Private Cinema",
-    "Wine Cellar",
-    "Infinity Sky Pool"
+  const projectFeatures = [
+    "Commercial Space",
+    "Premium Hotel",
+    "Luxury Apartments",
+    "Infinity Pool",
+    "32 Stories",
+    "Bole Central District",
+    "Two-Floor Amenity Deck"
   ];
 
   return (
     <div className="bg-refenti-offwhite min-h-screen">
-      {/* Standard Hero Banner */}
+      {/* Hero Banner */}
       <section className="relative h-screen w-full flex items-end justify-center bg-refenti-offwhite overflow-hidden pb-32">
         <div 
-          className="absolute inset-0 transition-transform duration-1000 ease-out"
+          className="absolute inset-[-5%]"
           style={{ 
-            backgroundImage: `url('${property.image}')`,
+            backgroundImage: `url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80&w=1200')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            transform: `scale(${1 + scrollY * 0.0001}) translateY(${scrollY * 0.1}px)`,
+            transform: `translateY(${-scrollY * 0.1}px)`,
+            willChange: 'transform'
           }}
         />
-        {/* Deeper gradient for legibility */}
-        <div className="absolute inset-0 bg-gradient-to-t from-refenti-offwhite via-refenti-offwhite/80 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-refenti-offwhite via-refenti-offwhite/80 to-transparent pointer-events-none" />
         
-        <div className="relative z-10 text-center space-y-12 px-4 max-w-6xl mx-auto reveal">
+        <div className="relative z-10 text-center space-y-12 px-4 max-w-6xl mx-auto reveal active">
           <div className="space-y-6">
             <p className="text-refenti-gold font-sans font-bold uppercase tracking-[0.7em] text-[10px] md:text-xs">The Signature Collection</p>
             <h1 className="font-display text-7xl md:text-[10rem] font-light text-refenti-charcoal tracking-tighter leading-none uppercase">Bole High-Rise</h1>
@@ -143,75 +143,92 @@ const BoleRefenti: React.FC = () => {
         </div>
       </section>
 
-      {/* Discreet Top Action Bar */}
-      <section className="sticky top-[80px] z-40 bg-refenti-offwhite/80 backdrop-blur-md border-b border-gray-100 reveal">
-        <div className="max-w-7xl mx-auto px-8 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-refenti-charcoal font-sans font-bold uppercase tracking-[0.2em] text-[10px]">Project Inquiry Portal</p>
-          <div className="flex items-center gap-6">
-            <button className="text-refenti-charcoal hover:text-refenti-gold transition-colors font-sans font-bold uppercase tracking-widest text-[10px] border-b border-transparent hover:border-refenti-gold pb-1">
+      {/* Action Bar */}
+      <section className="relative bg-refenti-offwhite border-b border-gray-200 reveal active">
+        <div className="max-w-7xl mx-auto px-8 py-8 flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="flex flex-col items-center md:items-start reveal">
+             <p className="text-refenti-charcoal font-sans font-bold uppercase tracking-[0.2em] text-[10px] opacity-60">Project Inquiry Portal</p>
+          </div>
+          
+          <div className="flex flex-col items-center md:items-end gap-2 reveal">
+            <button className="bg-refenti-charcoal text-white px-12 py-4 rounded-full font-sans font-bold uppercase tracking-widest text-[10px] hover:bg-refenti-gold transition-all shadow-xl active:scale-95">
               Download Brochure
             </button>
-            <button className="bg-refenti-charcoal text-white px-8 py-3 rounded-full font-sans font-bold uppercase tracking-widest text-[9px] hover:bg-refenti-gold transition-all">
-              Acquire Investment Dossier
-            </button>
+            <div className="flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-refenti-gold animate-pulse" />
+              <p className="text-[9px] font-bold uppercase tracking-[0.15em] text-refenti-gold">Under Construction</p>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="py-20 px-12 bg-refenti-offwhite reveal">
-        <div className="max-w-5xl mx-auto text-center space-y-10">
-          <p className="text-2xl md:text-4xl font-display font-light leading-tight text-refenti-charcoal">
-            A high-rise sanctuary that redefines the skyline. Experience the pinnacle of Refenti's architectural vision.
-          </p>
+      {/* Introductory Section */}
+      <section className="pt-24 md:pt-40 pb-16 px-8 md:px-12 bg-refenti-offwhite reveal">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+          <div className="space-y-12 reveal">
+            <div className="space-y-8">
+              <h2 className="font-display text-4xl md:text-6xl font-light text-refenti-charcoal leading-tight uppercase">
+                A Vision of <br/><span className="text-refenti-gold italic">Vertical Luxury</span>
+              </h2>
+              <p className="text-xl text-gray-800 font-light leading-relaxed max-w-xl">
+                Bole High-Rise is a visionary development that seamlessly integrates ultra-luxury residential living with premium commercial facilities. Situated at the apex of the financial district in Addis Ababa, this architectural landmark offers a bespoke lifestyle defined by structural elegance and unparalleled convenience.
+              </p>
+            </div>
+          </div>
+
+          <div className="relative aspect-[4/5] md:aspect-[16/10] overflow-hidden rounded-[4rem] shadow-2xl reveal">
+             <img 
+               src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200" 
+               className="w-full h-full object-cover" 
+               alt="Bole High-Rise Architecture" 
+             />
+             <div className="absolute inset-0 bg-gradient-to-t from-refenti-charcoal/20 to-transparent" />
+          </div>
+        </div>
+      </section>
+
+      {/* Project Features Section */}
+      <section className="py-20 px-8 md:px-12 bg-refenti-offwhite reveal">
+        <div className="max-w-7xl mx-auto space-y-12">
+          <div className="flex items-center gap-6">
+            <h2 className="font-display text-4xl md:text-5xl font-light text-refenti-charcoal uppercase">
+              Project <span className="text-refenti-gold italic">Features</span>
+            </h2>
+            <div className="flex-1 h-px bg-gray-200" />
+          </div>
           
-          <div className="flex flex-wrap justify-center gap-16 pt-8">
-            {[
-              { val: '32', label: 'Storeys' },
-              { val: '24/7', label: 'Concierge' },
-              { val: '180°', label: 'Vistas' }
-            ].map(stat => (
-              <div key={stat.label} className="text-center group">
-                <p className="text-refenti-gold text-5xl md:text-6xl font-display group-hover:scale-110 transition-transform duration-700">{stat.val}</p>
-                <p className="text-[10px] uppercase tracking-[0.5em] text-gray-400 font-bold mt-2">{stat.label}</p>
+          <div className="flex flex-wrap gap-4">
+            {projectFeatures.map((feature, idx) => (
+              <div 
+                key={idx} 
+                className="bg-white px-10 py-5 rounded-full shadow-sm border border-gray-200 flex items-center justify-center group hover:shadow-md hover:-translate-y-1 transition-all duration-500 cursor-default reveal"
+                style={{ transitionDelay: `${idx * 100}ms` }}
+              >
+                <span className="text-[11px] font-bold uppercase tracking-widest text-refenti-charcoal group-hover:text-refenti-gold transition-colors">
+                  {feature}
+                </span>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Amenities Section */}
-      <section className="py-16 px-8 bg-refenti-offwhite reveal">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12 space-y-4">
-            <h2 className="font-display text-5xl font-light text-refenti-charcoal uppercase italic">The Amenities</h2>
-            <div className="w-16 h-[1px] bg-refenti-gold mx-auto" />
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
-            {amenities.map((amenity, idx) => (
-              <div key={idx} className="bg-white p-10 rounded-[2.5rem] border border-gray-50 shadow-2xl text-center group hover:bg-refenti-offwhite transition-colors">
-                <p className="text-refenti-gold font-sans font-bold uppercase tracking-widest text-[10px] mb-4">Exclusivity {idx + 1}</p>
-                <p className="font-display text-2xl text-refenti-charcoal">{amenity}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
+      {/* Detailed Features Scroll Section */}
       <section className="bg-refenti-offwhite pb-32">
         <div className="w-full">
-          {property.features?.map((feature, idx) => (
+          {projectFeatures.map((feature, idx) => (
             <FeatureSection key={feature} feature={feature} index={idx} />
           ))}
         </div>
       </section>
 
       {/* Discreet Closing Section */}
-      <footer className="py-24 px-8 bg-white text-center reveal border-t border-gray-100">
+      <footer className="py-24 px-8 bg-white text-center reveal border-t border-gray-200">
         <div className="max-w-3xl mx-auto space-y-8">
           <h2 className="font-display text-4xl font-light text-refenti-charcoal uppercase leading-none">
             Define Your <span className="text-refenti-gold italic">Legacy</span>
           </h2>
-          <p className="text-gray-400 text-base font-light tracking-wide leading-relaxed">
+          <p className="text-gray-700 text-base font-light tracking-wide leading-relaxed">
             Limited residential units remaining. Discover a level of exclusivity reserved for the most discerning investors.
           </p>
         </div>

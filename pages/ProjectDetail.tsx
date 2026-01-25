@@ -1,7 +1,10 @@
 
 import React, { useState, useEffect, useRef } from 'react';
+import { useParams, Navigate } from 'react-router-dom';
+import { getProjects } from '../constants';
+import { Project } from '../types';
 
-const FeatureSection: React.FC<{ feature: string; index: number; projectName: string }> = ({ feature, index, projectName }) => {
+const FeatureSection: React.FC<{ section: { title: string; text: string; image: string }; index: number; projectName: string }> = ({ section, index, projectName }) => {
   const [targetProgress, setTargetProgress] = useState(0);
   const [smoothedProgress, setSmoothedProgress] = useState(0);
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -68,9 +71,9 @@ const FeatureSection: React.FC<{ feature: string; index: number; projectName: st
             }}
           >
             <img 
-              src={`https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1200&sig=${index + 305}`} 
+              src={section.image} 
               className="w-full h-full object-cover"
-              alt={feature}
+              alt={section.title}
             />
           </div>
         </div>
@@ -82,12 +85,12 @@ const FeatureSection: React.FC<{ feature: string; index: number; projectName: st
             0{index + 1}
           </span>
           <h3 className="font-display text-4xl md:text-5xl font-light tracking-tight text-refenti-charcoal leading-[1.1]">
-            {feature}
+            {section.title}
           </h3>
         </div>
         <div className="space-y-4 max-w-lg">
-          <p className="text-gray-800 font-light leading-relaxed text-lg">
-            At {projectName}, {feature.toLowerCase()} is more than an amenity: it is a cornerstone of the resident experience, ensuring a sanctuary for modern families.
+          <p className="text-gray-700 font-light leading-relaxed text-lg">
+            {section.text}
           </p>
           <div className="flex items-center gap-6">
             <div className="w-12 h-[1px] bg-refenti-gold" />
@@ -99,24 +102,28 @@ const FeatureSection: React.FC<{ feature: string; index: number; projectName: st
   );
 };
 
-const BulbulaResidential: React.FC = () => {
+const ProjectDetail: React.FC = () => {
+  const { id } = useParams();
   const [scrollY, setScrollY] = useState(0);
+  const [project, setProject] = useState<Project | null>(null);
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    
+    // Fetch project data
+    const projects = getProjects();
+    const found = projects.find(p => p.id === id);
+    if (found) setProject(found);
 
-  const projectFeatures = [
-    "Luxury Living",
-    "Family Friendly",
-    "Secure Perimeter",
-    "Lush Gardens",
-    "Fitness Center",
-    "Modern Interiors",
-    "Quiet Neighborhood"
-  ];
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [id]);
+
+  if (!project && id) {
+    return <Navigate to="/projects" replace />;
+  }
+
+  if (!project) return null;
 
   return (
     <div className="bg-refenti-offwhite min-h-screen">
@@ -125,7 +132,7 @@ const BulbulaResidential: React.FC = () => {
         <div 
           className="absolute inset-[-5%]"
           style={{ 
-            backgroundImage: `url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1200')`,
+            backgroundImage: `url('${project.image}')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             transform: `translateY(${-scrollY * 0.1}px)`,
@@ -136,23 +143,30 @@ const BulbulaResidential: React.FC = () => {
         
         <div className="relative z-10 text-center space-y-12 px-4 max-w-6xl mx-auto reveal active">
           <div className="space-y-6">
-            <p className="text-refenti-gold font-sans font-bold uppercase tracking-[0.7em] text-[10px] md:text-xs">The Modern Homestead</p>
-            <h1 className="font-display text-7xl md:text-[10rem] font-light text-refenti-charcoal tracking-tighter leading-none uppercase">Bulbula Residential</h1>
+            <p className="text-refenti-gold font-sans font-bold uppercase tracking-[0.7em] text-[10px] md:text-xs">The Refenti Collection</p>
+            <h1 className="font-display text-7xl md:text-[10rem] font-light text-refenti-charcoal tracking-tighter leading-none uppercase">{project.name}</h1>
           </div>
         </div>
       </section>
 
       {/* Action Bar */}
-      <section className="relative bg-refenti-offwhite border-b border-gray-200 reveal active">
+      <section className="relative bg-refenti-offwhite border-b border-gray-100 reveal active">
         <div className="max-w-7xl mx-auto px-8 py-8 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex flex-col items-center md:items-start reveal">
-             <p className="text-refenti-charcoal font-sans font-bold uppercase tracking-[0.2em] text-[10px] opacity-60">Project Inquiry Portal</p>
+             <p className="text-refenti-charcoal font-sans font-bold uppercase tracking-[0.2em] text-[10px] opacity-40">Project Inquiry Portal</p>
           </div>
           
           <div className="flex flex-col items-center md:items-end gap-2 reveal">
-            <button className="bg-refenti-charcoal text-white px-12 py-4 rounded-full font-sans font-bold uppercase tracking-widest text-[10px] hover:bg-refenti-gold transition-all shadow-xl active:scale-95">
-              Download Brochure
-            </button>
+            {project.brochureUrl && (
+              <a 
+                href={project.brochureUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-refenti-charcoal text-white px-12 py-4 rounded-full font-sans font-bold uppercase tracking-widest text-[10px] hover:bg-refenti-gold transition-all shadow-xl active:scale-95 text-center"
+              >
+                Download Brochure
+              </a>
+            )}
             <div className="flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-refenti-gold animate-pulse" />
               <p className="text-[9px] font-bold uppercase tracking-[0.15em] text-refenti-gold">Under Construction</p>
@@ -167,68 +181,70 @@ const BulbulaResidential: React.FC = () => {
           <div className="space-y-12 reveal">
             <div className="space-y-8">
               <h2 className="font-display text-4xl md:text-6xl font-light text-refenti-charcoal leading-tight uppercase">
-                Where Modernity <br/><span className="text-refenti-gold italic">Breathes</span>
+                {project.introTitle?.split(' ')[0]} <br/>
+                <span className="text-refenti-gold italic">{project.introTitle?.split(' ').slice(1).join(' ')}</span>
               </h2>
-              <p className="text-xl text-gray-800 font-light leading-relaxed max-w-xl">
-                At Bulbula Residential, we focus on the harmony between urban living and environmental serenity. Each unit is a testament to light, space, and family well-being in the heart of Addis Ababa.
+              <p className="text-xl text-gray-700 font-light leading-relaxed max-w-xl">
+                {project.introText}
               </p>
             </div>
           </div>
 
           <div className="relative aspect-[4/5] md:aspect-[16/10] overflow-hidden rounded-[4rem] shadow-2xl reveal">
              <img 
-               src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1200" 
+               src={project.introImage || project.image} 
                className="w-full h-full object-cover" 
-               alt="Bulbula Residential Architecture" 
+               alt={`${project.name} Perspective`} 
              />
              <div className="absolute inset-0 bg-gradient-to-t from-refenti-charcoal/20 to-transparent" />
           </div>
         </div>
       </section>
 
-      {/* Project Features Section */}
-      <section className="py-20 px-8 md:px-12 bg-refenti-offwhite reveal">
-        <div className="max-w-7xl mx-auto space-y-12">
-          <div className="flex items-center gap-6">
-            <h2 className="font-display text-4xl md:text-5xl font-light text-refenti-charcoal uppercase">
-              Project <span className="text-refenti-gold italic">Features</span>
-            </h2>
-            <div className="flex-1 h-px bg-gray-200" />
+      {/* Project Features (Pills) */}
+      {project.projectFeatures && project.projectFeatures.length > 0 && (
+        <section className="py-20 px-8 md:px-12 bg-refenti-offwhite reveal">
+          <div className="max-w-7xl mx-auto space-y-12">
+            <div className="flex items-center gap-6">
+              <h2 className="font-display text-4xl md:text-5xl font-light text-refenti-charcoal uppercase">
+                Project <span className="text-refenti-gold italic">Features</span>
+              </h2>
+              <div className="flex-1 h-px bg-gray-100" />
+            </div>
+            
+            <div className="flex flex-wrap gap-4">
+              {project.projectFeatures.map((feature, idx) => (
+                <div 
+                  key={idx} 
+                  className="bg-white px-10 py-5 rounded-full shadow-sm border border-gray-100 flex items-center justify-center group hover:shadow-md hover:-translate-y-1 transition-all duration-500 cursor-default reveal"
+                  style={{ transitionDelay: `${idx * 100}ms` }}
+                >
+                  <span className="text-[11px] font-bold uppercase tracking-widest text-refenti-charcoal group-hover:text-refenti-gold transition-colors">
+                    {feature}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
-          
-          <div className="flex flex-wrap gap-4">
-            {projectFeatures.map((feature, idx) => (
-              <div 
-                key={idx} 
-                className="bg-white px-10 py-5 rounded-full shadow-sm border border-gray-200 flex items-center justify-center group hover:shadow-md hover:-translate-y-1 transition-all duration-500 cursor-default reveal"
-                style={{ transitionDelay: `${idx * 100}ms` }}
-              >
-                <span className="text-[11px] font-bold uppercase tracking-widest text-refenti-charcoal group-hover:text-refenti-gold transition-colors">
-                  {feature}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Detailed Features Scroll Section */}
       <section className="bg-refenti-offwhite pb-32">
         <div className="w-full">
-          {projectFeatures.map((feature, idx) => (
-            <FeatureSection key={feature} feature={feature} index={idx} projectName="Bulbula Residential" />
+          {project.detailSections?.map((section, idx) => (
+            <FeatureSection key={idx} section={section} index={idx} projectName={project.name} />
           ))}
         </div>
       </section>
 
-      {/* Discreet Closing Section */}
-      <footer className="py-24 px-8 bg-white text-center reveal border-t border-gray-200">
+      <footer className="py-24 px-8 bg-white text-center reveal border-t border-gray-100">
         <div className="max-w-3xl mx-auto space-y-8">
           <h2 className="font-display text-4xl font-light text-refenti-charcoal uppercase leading-none">
-            Secure Your <span className="text-refenti-gold italic">Family Space</span>
+            Define Your <span className="text-refenti-gold italic">Legacy</span>
           </h2>
-          <p className="text-gray-700 text-base font-light tracking-wide leading-relaxed">
-            Limited residential units remaining. Discover a level of serenity reserved for the modern urban family.
+          <p className="text-gray-600 text-base font-light tracking-wide leading-relaxed">
+            Discover a level of exclusivity reserved for the most discerning global citizens.
           </p>
         </div>
       </footer>
@@ -236,4 +252,4 @@ const BulbulaResidential: React.FC = () => {
   );
 };
 
-export default BulbulaResidential;
+export default ProjectDetail;

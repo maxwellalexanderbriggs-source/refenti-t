@@ -1,12 +1,23 @@
 
+export interface ProjectDetailSection {
+  title: string;
+  text: string;
+  image: string;
+}
+
 export interface Project {
   id: string;
   name: string;
   type: 'Sales' | 'Leasing';
   location: string;
-  image: string;
+  image: string; // This acts as the hero banner
   description: string;
-  features?: string[];
+  brochureUrl?: string;
+  introTitle?: string;
+  introText?: string;
+  introImage?: string;
+  projectFeatures?: string[];
+  detailSections?: ProjectDetailSection[];
 }
 
 export interface EventItem {
@@ -16,4 +27,24 @@ export interface EventItem {
   location: string;
   image: string;
   details?: string;
+  isFeatured?: boolean;
+}
+
+export interface NewsItem {
+  id: string;
+  category: string;
+  title: string;
+  date: string;
+  excerpt: string;
+  image: string;
+  content?: string;
+}
+
+export interface Inquiry {
+  id: string;
+  name: string;
+  email: string;
+  type: string;
+  message: string;
+  date: string;
 }
