@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -59,22 +60,11 @@
         will-change: opacity, transform;
       }
 
-      .reveal.slide-up {
-        transform: translateY(20px);
-      }
-
       .reveal.active {
         opacity: 1;
         transform: translate(0, 0) !important;
       }
 
-      .expand-x {
-        transform: scaleX(0.8);
-        transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
-      }
-      .expand-x.active {
-        transform: scaleX(1);
-      }
       .subtle-shadow {
         box-shadow: 0 20px 60px -15px rgba(0, 0, 0, 0.05);
       }
@@ -83,14 +73,17 @@
 {
   "imports": {
     "react": "https://esm.sh/react@^19.2.3",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react-dom": "https://esm.sh/react-dom@^19.2.3",
+    "react-dom/client": "https://esm.sh/react-dom@^19.2.3/client",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.12.0",
     "react/": "https://esm.sh/react@^19.2.3/",
-    "react-router-dom": "https://esm.sh/react-router-dom@^7.12.0"
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/"
   }
 }
 </script>
 </head>
   <body>
     <div id="root"></div>
+    <script type="module" src="./index.tsx"></script>
   </body>
 </html>
