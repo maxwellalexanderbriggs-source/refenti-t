@@ -1,0 +1,100 @@
+@import "@fontsource-variable/nunito-sans";
+@import "tailwindcss";
+
+/* Custom theme configuration using @theme directive */
+@theme {
+  --color-refenti-offwhite: #f7f3f0;
+  --color-refenti-gold: #b7a371;
+  --color-refenti-charcoal: #414141;
+  --font-sans: "Nunito Sans", sans-serif;
+  --font-display: "Nunito Sans", sans-serif;
+  --tracking-extrawide: 0.4em;
+  --tracking-ultra: 0.6em;
+
+  /* Animation definitions */
+  --animate-fade-in: fade-in 1s ease-out;
+  --animate-slide-in-from-top: slide-in-from-top 0.3s ease-out;
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-in-from-top {
+    from {
+      opacity: 0;
+      transform: translateY(-8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* Global styles */
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f7f3f0;
+  color: #414141;
+  overflow-x: hidden;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f7f3f0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b7a371;
+}
+
+/* Glass nav effect */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Reveal animation */
+.reveal {
+  opacity: 0;
+  transition:
+    opacity 1.5s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translate(0, 0) !important;
+}
+
+/* Subtle shadow */
+.subtle-shadow {
+  box-shadow: 0 20px 60px -15px rgba(0, 0, 0, 0.05);
+}
+
+/* Expand animation */
+.expand-x {
+  transition: transform 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
