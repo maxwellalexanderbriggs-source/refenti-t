@@ -64,10 +64,10 @@ function Navbar() {
           className={`rounded-full border border-white/40 bg-white/70 px-8 py-3 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] backdrop-blur-xl transition-all duration-700 ease-out md:px-12 md:py-4 ${scrolled ? "-translate-y-2 scale-90" : "scale-100"} `}
         >
           <ul className="flex items-center gap-8 md:gap-10">
-            <li>
+            <li className="flex items-center">
               <Link
                 to="/"
-                className="font-display text-xl leading-none font-medium tracking-tight text-refenti-gold md:text-2xl"
+                className="font-display text-xl font-medium tracking-tight text-refenti-gold md:text-2xl"
               >
                 REFENTI
               </Link>
@@ -81,11 +81,11 @@ function Navbar() {
                     key={link.path}
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}
-                    className="relative hidden lg:block"
+                    className="relative hidden lg:flex lg:items-center"
                   >
                     <Link
                       to={link.path}
-                      className={`relative flex items-center gap-2 py-1 text-[9px] font-bold tracking-ultra text-refenti-charcoal/80 uppercase transition-all hover:text-refenti-gold ${isActive || isMenuOpen ? "text-refenti-gold" : ""} `}
+                      className={`relative inline-flex items-center gap-2 text-[9px] font-bold tracking-ultra text-refenti-charcoal/80 uppercase transition-all hover:text-refenti-gold ${isActive || isMenuOpen ? "text-refenti-gold after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:bg-refenti-gold" : ""} `}
                     >
                       {link.name}
                       <svg
@@ -102,10 +102,10 @@ function Navbar() {
                 )
               }
               return (
-                <li key={link.path} className="hidden lg:block">
+                <li key={link.path} className="hidden lg:flex lg:items-center">
                   <Link
                     to={link.path}
-                    className={`relative py-1 text-[9px] font-bold tracking-ultra text-refenti-charcoal/80 uppercase transition-all hover:text-refenti-gold ${isActive ? "text-refenti-gold after:absolute after:bottom-0 after:left-0 after:h-px after:w-full after:bg-refenti-gold" : ""} `}
+                    className={`relative text-[9px] font-bold tracking-ultra text-refenti-charcoal/80 uppercase transition-all hover:text-refenti-gold ${isActive ? "text-refenti-gold after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:bg-refenti-gold" : ""} `}
                   >
                     {link.name}
                   </Link>
@@ -116,7 +116,7 @@ function Navbar() {
             <li className="ml-2 flex items-center border-l border-gray-100/30 pl-6 lg:hidden">
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="flex items-center gap-3 py-2 text-[9px] font-bold tracking-ultra text-refenti-charcoal/80 uppercase transition-colors hover:text-refenti-gold"
+                className="flex items-center gap-3 text-[9px] font-bold tracking-ultra text-refenti-charcoal/80 uppercase transition-colors hover:text-refenti-gold"
               >
                 <span>{isMobileMenuOpen ? "Close" : "Menu"}</span>
                 <div className="flex w-4 flex-col gap-1">
