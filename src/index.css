@@ -35,6 +35,12 @@
   }
 }
 
+@layer base {
+  button {
+    @apply cursor-pointer disabled:cursor-not-allowed;
+  }
+}
+
 /* Global styles */
 html,
 body,

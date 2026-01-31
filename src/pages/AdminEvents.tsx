@@ -1,10 +1,16 @@
 import React, { useEffect, useState } from "react"
+import FileUpload from "../components/FileUpload"
 import {
   createEvent,
   deleteEvent,
   getEvents,
   updateEvent,
 } from "../lib/api"
+import {
+  deleteEventImage,
+  uploadEventImage,
+  validateImageFile,
+} from "../lib/storage"
 import type { EventItem } from "../types"
 
 function AdminEvents() {
@@ -70,6 +76,7 @@ function AdminEvents() {
 
   const handleDelete = async (id: string) => {
     if (confirm("Delete engagement?")) {
+      await deleteEventImage(id)
       const { error } = await deleteEvent(id)
       if (error) {
         console.error("Failed to delete event:", error.message)
@@ -115,8 +122,8 @@ function AdminEvents() {
   }
 
   return (
-    <div className="mx-auto max-w-7xl space-y-16 p-8 pb-40 md:p-16">
-      <header className="flex items-end justify-between border-b border-gray-100 pb-8">
+    <div className="mx-auto max-w-7xl space-y-6 p-6 pb-12 md:p-8">
+      <header className="flex items-end justify-between border-b border-gray-100 pb-4">
         <div className="space-y-2">
           <p className="font-sans text-[10px] font-bold tracking-ultra text-refenti-gold uppercase">
             Engagement Management
@@ -127,20 +134,18 @@ function AdminEvents() {
         </div>
         <button
           onClick={resetForm}
-          className="rounded-xl bg-refenti-charcoal px-10 py-4 text-[10px] font-bold text-white uppercase shadow-lg transition-all hover:bg-refenti-gold"
+          className="rounded-xl bg-refenti-charcoal px-6 py-2.5 text-[10px] font-bold text-white uppercase shadow-lg transition-all hover:bg-refenti-gold"
         >
           New Event
         </button>
       </header>
 
-      <div className="grid gap-16 lg:grid-cols-12">
-        {/* Editor Form */}
-        <div className="lg:col-span-5">
-          <div className="sticky top-28 space-y-10 rounded-[4rem] border border-gray-100 bg-white p-12 shadow-xl">
-            <h2 className="border-b border-gray-50 pb-6 font-display text-3xl text-refenti-charcoal uppercase italic">
+      {/* Editor Form */}
+      <div className="space-y-4 rounded-xl border border-gray-100 bg-white p-6 shadow-xl">
+            <h2 className="border-b border-gray-50 pb-3 font-display text-2xl text-refenti-charcoal uppercase italic">
               {editingId ? "Modify Event" : "Create Event"}
             </h2>
-            <form onSubmit={handleSave} className="space-y-10">
+            <form onSubmit={handleSave} className="space-y-4">
               {[
                 {
                   label: "Event Identity",
@@ -156,11 +161,6 @@ function AdminEvents() {
                   label: "Venue Location",
                   key: "location",
                   placeholder: "Refenti Showroom, Bole",
-                },
-                {
-                  label: "Media Source (URL)",
-                  key: "image",
-                  placeholder: "https://...",
                 },
               ].map((field) => (
                 <div key={field.key} className="group space-y-2">
@@ -178,6 +178,18 @@ function AdminEvents() {
                 </div>
               ))}
 
+              <FileUpload
+                label="Event Image"
+                value={formData.image || ""}
+                onChange={(url) => setFormData({ ...formData, image: url })}
+                accept="image/*"
+                uploadFn={(file) => {
+                  const eventId = editingId || Date.now().toString()
+                  return uploadEventImage(eventId, file)
+                }}
+                validator={validateImageFile}
+              />
+
               <div className="space-y-2">
                 <label className="text-[10px] font-bold tracking-widest text-refenti-gold uppercase">
                   Event Brief
@@ -188,8 +200,8 @@ function AdminEvents() {
                   onChange={(e) =>
                     setFormData({ ...formData, details: e.target.value })
                   }
-                  rows={4}
-                  className="w-full rounded-[2rem] border-2 border-transparent bg-refenti-offwhite/50 p-6 text-base leading-relaxed font-medium text-refenti-charcoal transition-all placeholder:text-gray-200 focus:border-refenti-gold focus:outline-none"
+                  rows={3}
+                  className="w-full rounded-xl border-2 border-transparent bg-refenti-offwhite/50 p-3 text-sm leading-relaxed font-medium text-refenti-charcoal transition-all placeholder:text-gray-200 focus:border-refenti-gold focus:outline-none"
                 />
               </div>
 
@@ -209,19 +221,18 @@ function AdminEvents() {
 
               <button
                 type="submit"
-                className="w-full rounded-[2rem] bg-refenti-charcoal py-6 text-[10px] font-bold tracking-ultra text-white uppercase shadow-2xl transition-all hover:bg-refenti-gold active:scale-[0.98]"
+                className="w-full rounded-xl bg-refenti-charcoal py-3 text-[10px] font-bold tracking-ultra text-white uppercase shadow-2xl transition-all hover:bg-refenti-gold active:scale-[0.98]"
               >
                 {editingId ? "Confirm Updates" : "Publish Engagement"}
               </button>
             </form>
-          </div>
-        </div>
+      </div>
 
-        {/* List view */}
-        <div className="grid gap-6 lg:col-span-7">
+      {/* List view */}
+      <div className="grid gap-3">
           {events.length === 0 ? (
-            <div className="rounded-[4rem] border-2 border-dashed border-gray-100 bg-white p-32 text-center">
-              <p className="font-display text-3xl text-gray-300 italic">
+            <div className="rounded-xl border-2 border-dashed border-gray-100 bg-white p-12 text-center">
+              <p className="font-display text-2xl text-gray-300 italic">
                 Engagements list empty.
               </p>
             </div>
@@ -229,9 +240,9 @@ function AdminEvents() {
             events.map((ev) => (
               <div
                 key={ev.id}
-                className="group flex items-center justify-between rounded-[3.5rem] border border-gray-50 bg-white p-10 transition-all duration-700 hover:shadow-2xl"
+                className="group flex items-center justify-between rounded-xl border border-gray-50 bg-white p-4 transition-all duration-700 hover:shadow-2xl"
               >
-                <div className="flex items-center gap-10">
+                <div className="flex items-center gap-4">
                   <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-3xl border border-gray-100 shadow-xl">
                     <img
                       src={ev.image}
@@ -251,14 +262,14 @@ function AdminEvents() {
                     </p>
                   </div>
                 </div>
-                <div className="flex items-center gap-6">
+                <div className="flex items-center gap-3">
                   <button
                     onClick={() => toggleFeatured(ev.id)}
-                    className={`rounded-full border-2 px-6 py-3 text-[9px] font-bold tracking-widest uppercase transition-all ${ev.isFeatured ? "scale-105 border-refenti-gold bg-refenti-gold text-white shadow-lg" : "border-gray-100 text-gray-300 hover:border-refenti-gold/40 hover:text-refenti-gold"}`}
+                    className={`rounded-full border-2 px-4 py-1.5 text-[9px] font-bold tracking-widest uppercase transition-all ${ev.isFeatured ? "scale-105 border-refenti-gold bg-refenti-gold text-white shadow-lg" : "border-gray-100 text-gray-300 hover:border-refenti-gold/40 hover:text-refenti-gold"}`}
                   >
                     {ev.isFeatured ? "Featured" : "Regular"}
                   </button>
-                  <div className="flex flex-col gap-2">
+                  <div className="flex flex-col gap-1">
                     <button
                       onClick={() => handleEdit(ev)}
                       className="text-[9px] font-bold tracking-widest text-refenti-gold uppercase hover:underline"
@@ -276,7 +287,6 @@ function AdminEvents() {
               </div>
             ))
           )}
-        </div>
       </div>
     </div>
   )

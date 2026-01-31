@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { Navigate, useParams } from "react-router-dom"
-import { getProjects } from "../lib/api"
+import { getProjectById } from "../lib/api"
 import type { Project } from "../types"
 
 function FeatureSection({
@@ -101,7 +101,7 @@ function FeatureSection({
             {section.text}
           </p>
           <div className="flex items-center gap-6">
-            <div className="h-[1px] w-12 bg-refenti-gold" />
+            <div className="h-px w-12 bg-refenti-gold" />
             <p className="font-sans text-[10px] font-bold tracking-[0.3em] text-refenti-gold uppercase">
               Standard of Excellence
             </p>
@@ -116,6 +116,7 @@ function ProjectDetail() {
   const { id } = useParams()
   const [scrollY, setScrollY] = useState(0)
   const [project, setProject] = useState<Project | null>(null)
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY)
@@ -123,24 +124,35 @@ function ProjectDetail() {
 
     // Fetch project data
     const fetchProject = async () => {
-      const { data, error } = await getProjects()
-      if (error) {
-        console.error("Failed to load projects:", error.message)
-      } else {
-        const found = data.find((p) => p.id === id)
-        if (found) setProject(found)
+      if (!id) {
+        setLoading(false)
+        return
       }
+
+      const { data, error } = await getProjectById(id)
+      if (error) {
+        console.error("Failed to load project:", error.message)
+      } else {
+        setProject(data)
+      }
+      setLoading(false)
     }
     fetchProject()
 
     return () => window.removeEventListener("scroll", handleScroll)
   }, [id])
 
-  if (!project && id) {
-    return <Navigate to="/projects" replace />
+  if (loading) {
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-refenti-offwhite">
+        <p className="text-sm text-gray-400">Loading...</p>
+      </div>
+    )
   }
 
-  if (!project) return null
+  if (!project) {
+    return <Navigate to="/projects" replace />
+  }
 
   return (
     <div className="min-h-screen bg-refenti-offwhite">
@@ -156,7 +168,7 @@ function ProjectDetail() {
             willChange: "transform",
           }}
         />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-refenti-offwhite via-refenti-offwhite/80 to-transparent" />
+        <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-refenti-offwhite via-refenti-offwhite/80 to-transparent" />
 
         <div className="relative z-10 mx-auto max-w-6xl space-y-12 px-4 text-center">
           <div className="space-y-6">
@@ -220,13 +232,13 @@ function ProjectDetail() {
             </p>
           </div>
 
-          <div className="relative aspect-[16/10] overflow-hidden rounded-[2.5rem] shadow-2xl">
+          <div className="relative aspect-16/10 overflow-hidden rounded-[2.5rem] shadow-2xl">
             <img
               src={project.introImage || project.image}
               className="h-full w-full object-cover"
               alt={`${project.name} Perspective`}
             />
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-refenti-charcoal/20 to-transparent" />
+            <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-refenti-charcoal/20 to-transparent" />
           </div>
         </div>
       </section>

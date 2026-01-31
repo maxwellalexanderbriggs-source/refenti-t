@@ -12,13 +12,10 @@ import ProtectedRoute from "./components/ProtectedRoute"
 import About from "./pages/About"
 import Admin from "./pages/Admin"
 import AdminLogin from "./pages/AdminLogin"
-import BoleRefenti from "./pages/BoleRefenti"
-import BulbulaResidential from "./pages/BulbulaResidential"
 import Contact from "./pages/Contact"
 import EventsNews from "./pages/EventsNews"
 import Home from "./pages/Home"
 import Investment from "./pages/Investment"
-import KazanchesExecutive from "./pages/KazanchesExecutive"
 import ProjectDetail from "./pages/ProjectDetail"
 import Projects from "./pages/Projects"
 
@@ -56,14 +53,6 @@ function AppContent() {
             <Route path="/about" element={<About />} />
             <Route path="/investment" element={<Investment />} />
             <Route path="/projects" element={<Projects />} />
-
-            <Route path="/projects/bole" element={<BoleRefenti />} />
-            <Route
-              path="/projects/kazanchis"
-              element={<KazanchesExecutive />}
-            />
-            <Route path="/projects/bulbula" element={<BulbulaResidential />} />
-
             <Route path="/projects/:id" element={<ProjectDetail />} />
 
             <Route path="/news" element={<EventsNews />} />

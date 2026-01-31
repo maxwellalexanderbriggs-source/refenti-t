@@ -35,8 +35,8 @@ function AdminProjects() {
   }
 
   return (
-    <div className="mx-auto max-w-7xl space-y-12 p-8 md:p-16">
-      <header className="flex items-end justify-between border-b border-gray-100 pb-8">
+    <div className="mx-auto max-w-7xl space-y-6 p-6 pb-12 md:p-8">
+      <header className="flex items-end justify-between border-b border-gray-100 pb-4">
         <div className="space-y-2">
           <p className="font-sans text-[10px] font-bold tracking-ultra text-refenti-gold uppercase">
             Portfolio Management
@@ -47,7 +47,7 @@ function AdminProjects() {
         </div>
         <button
           onClick={() => navigate("/admin/projects/new")}
-          className="rounded-xl bg-refenti-charcoal px-10 py-4 text-[10px] font-bold tracking-widest text-white uppercase transition-all hover:bg-refenti-gold"
+          className="rounded-xl bg-refenti-charcoal px-6 py-2.5 text-[10px] font-bold tracking-widest text-white uppercase transition-all hover:bg-refenti-gold"
         >
           New Project
         </button>
@@ -60,9 +60,9 @@ function AdminProjects() {
         {projects.map((p) => (
           <div
             key={p.id}
-            className="group flex items-center justify-between rounded-[2rem] border border-gray-50 bg-white p-8 shadow-sm transition-all duration-700 hover:shadow-xl"
+            className="group flex items-center justify-between rounded-xl border border-gray-50 bg-white p-4 shadow-sm transition-all duration-700 hover:shadow-xl"
           >
-            <div className="flex items-center gap-10">
+            <div className="flex items-center gap-4">
               <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-3xl shadow-inner">
                 <img
                   src={p.image}
@@ -80,16 +80,16 @@ function AdminProjects() {
                 </p>
               </div>
             </div>
-            <div className="flex gap-4">
+            <div className="flex gap-2">
               <button
                 onClick={() => navigate(`/admin/projects/edit/${p.id}`)}
-                className="rounded-xl bg-gray-50 px-6 py-3 text-[9px] font-bold tracking-widest uppercase transition-all hover:bg-refenti-gold hover:text-white"
+                className="rounded-lg bg-gray-50 px-4 py-2 text-[9px] font-bold tracking-widest uppercase transition-all hover:bg-refenti-gold hover:text-white"
               >
                 Edit
               </button>
               <button
                 onClick={() => handleDelete(p.id)}
-                className="rounded-xl bg-red-50 px-6 py-3 text-[9px] font-bold tracking-widest text-red-400 uppercase transition-all hover:bg-red-400 hover:text-white"
+                className="rounded-lg bg-red-50 px-4 py-2 text-[9px] font-bold tracking-widest text-red-400 uppercase transition-all hover:bg-red-400 hover:text-white"
               >
                 Delete
               </button>

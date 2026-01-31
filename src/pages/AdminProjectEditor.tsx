@@ -1,10 +1,19 @@
 import React, { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
+import FileUpload from "../components/FileUpload"
 import {
   createProject,
   getProjectById,
   updateProject,
 } from "../lib/api"
+import {
+  uploadProjectBrochure,
+  uploadProjectDetailImage,
+  uploadProjectHero,
+  uploadProjectIntro,
+  validateImageFile,
+  validatePdfFile,
+} from "../lib/storage"
 import type { Project, ProjectDetailSection } from "../types"
 
 function AdminInput({
@@ -139,8 +148,8 @@ function AdminProjectEditor() {
     }))
 
   return (
-    <div className="mx-auto max-w-5xl p-8 pb-40 md:p-16">
-      <header className="mb-16 flex items-center gap-8">
+    <div className="mx-auto max-w-5xl p-6 pb-12 md:p-8">
+      <header className="mb-6 flex items-center gap-4">
         <button
           onClick={() => navigate("/admin/projects")}
           className="flex items-center gap-2 text-[10px] font-bold tracking-widest text-gray-400 uppercase transition-colors hover:text-refenti-charcoal"
@@ -154,14 +163,14 @@ function AdminProjectEditor() {
 
       <form
         onSubmit={handleSave}
-        className="space-y-20 rounded-[4rem] border border-gray-100 bg-white p-10 shadow-xl md:p-20"
+        className="space-y-8 rounded-2xl border border-gray-100 bg-white p-6 shadow-xl md:p-8"
       >
         {/* Primary Identification */}
-        <div className="space-y-12">
+        <div className="space-y-4">
           <h2 className="border-b border-gray-50 pb-4 text-[11px] font-bold tracking-ultra text-gray-300 uppercase">
             Identification
           </h2>
-          <div className="grid gap-16 md:grid-cols-2">
+          <div className="grid gap-4 md:grid-cols-2">
             <AdminInput
               label="Project Name"
               value={formData.name || ""}
@@ -178,30 +187,42 @@ function AdminProjectEditor() {
         </div>
 
         {/* Media & Resources */}
-        <div className="space-y-12">
+        <div className="space-y-4">
           <h2 className="border-b border-gray-50 pb-4 text-[11px] font-bold tracking-ultra text-gray-300 uppercase">
             Media & Resources
           </h2>
-          <div className="grid gap-16 md:grid-cols-2">
-            <AdminInput
-              label="Hero Banner URL"
+          <div className="grid gap-4 md:grid-cols-2">
+            <FileUpload
+              label="Hero Banner"
               value={formData.image || ""}
-              onChange={(v) => setFormData({ ...formData, image: v })}
-              small
-              placeholder="https://images.unsplash.com/..."
+              onChange={(url) => setFormData({ ...formData, image: url })}
+              accept="image/*"
+              uploadFn={(file) => {
+                const projectId =
+                  id || formData.name.toLowerCase().replace(/\s+/g, "-")
+                return uploadProjectHero(projectId, file)
+              }}
+              validator={validateImageFile}
             />
-            <AdminInput
-              label="Brochure URL"
+            <FileUpload
+              label="Brochure (PDF)"
               value={formData.brochureUrl || ""}
-              onChange={(v) => setFormData({ ...formData, brochureUrl: v })}
-              small
-              placeholder="#"
+              onChange={(url) =>
+                setFormData({ ...formData, brochureUrl: url })
+              }
+              accept=".pdf"
+              uploadFn={(file) => {
+                const projectId =
+                  id || formData.name.toLowerCase().replace(/\s+/g, "-")
+                return uploadProjectBrochure(projectId, file)
+              }}
+              validator={validatePdfFile}
             />
           </div>
         </div>
 
         {/* Introductory Content */}
-        <div className="space-y-12">
+        <div className="space-y-4">
           <h2 className="border-b border-gray-50 pb-4 text-[11px] font-bold tracking-ultra text-gray-300 uppercase">
             Storytelling
           </h2>
@@ -221,13 +242,25 @@ function AdminProjectEditor() {
               }
               placeholder="Provide a compelling narrative for this project..."
               rows={6}
-              className="w-full rounded-[2.5rem] border-2 border-transparent bg-refenti-offwhite/50 p-8 text-lg leading-relaxed font-medium text-refenti-charcoal transition-all placeholder:text-gray-300 focus:border-refenti-gold focus:outline-none"
+              className="w-full rounded-xl border-2 border-transparent bg-refenti-offwhite/50 p-4 text-base leading-relaxed font-medium text-refenti-charcoal transition-all placeholder:text-gray-300 focus:border-refenti-gold focus:outline-none"
             />
           </div>
+          <FileUpload
+            label="Intro Image"
+            value={formData.introImage || ""}
+            onChange={(url) => setFormData({ ...formData, introImage: url })}
+            accept="image/*"
+            uploadFn={(file) => {
+              const projectId =
+                id || formData.name.toLowerCase().replace(/\s+/g, "-")
+              return uploadProjectIntro(projectId, file)
+            }}
+            validator={validateImageFile}
+          />
         </div>
 
         {/* Features Pills */}
-        <div className="space-y-8 border-t border-gray-50 pt-12">
+        <div className="space-y-4 border-t border-gray-50 pt-6">
           <div className="flex items-center justify-between">
             <h2 className="font-display text-3xl font-light text-refenti-charcoal uppercase">
               Feature{" "}
@@ -245,7 +278,7 @@ function AdminProjectEditor() {
             {formData.projectFeatures?.map((f, i) => (
               <div
                 key={i}
-                className="group flex items-center gap-3 rounded-full border-2 border-gray-100 bg-white px-6 py-4 transition-all focus-within:border-refenti-gold"
+                className="group flex items-center gap-2 rounded-full border-2 border-gray-100 bg-white px-4 py-2 transition-all focus-within:border-refenti-gold"
               >
                 <input
                   value={f}
@@ -266,9 +299,9 @@ function AdminProjectEditor() {
         </div>
 
         {/* Detail Sections */}
-        <div className="space-y-12 border-t border-gray-50 pt-12">
+        <div className="space-y-4 border-t border-gray-50 pt-6">
           <div className="flex items-center justify-between">
-            <h2 className="font-display text-3xl font-light text-refenti-charcoal uppercase">
+            <h2 className="font-display text-2xl font-light text-refenti-charcoal uppercase">
               Detailed{" "}
               <span className="text-refenti-gold italic">Showcases</span>
             </h2>
@@ -280,20 +313,20 @@ function AdminProjectEditor() {
               Add Section
             </button>
           </div>
-          <div className="space-y-16">
+          <div className="space-y-4">
             {formData.detailSections?.map((s, i) => (
               <div
                 key={i}
-                className="group relative space-y-10 rounded-[4rem] border-2 border-gray-100 bg-refenti-offwhite/30 p-10 transition-all hover:border-refenti-gold/20 md:p-16"
+                className="group relative space-y-4 rounded-xl border-2 border-gray-100 bg-refenti-offwhite/30 p-4 transition-all hover:border-refenti-gold/20 md:p-6"
               >
                 <button
                   type="button"
                   onClick={() => removeDetailSection(i)}
-                  className="absolute top-10 right-12 text-[10px] font-bold tracking-widest text-gray-300 uppercase transition-colors hover:text-red-600"
+                  className="absolute top-4 right-4 text-[10px] font-bold tracking-widest text-gray-300 uppercase transition-colors hover:text-red-600"
                 >
                   REMOVE SECTION
                 </button>
-                <div className="grid gap-12 pt-8 md:grid-cols-2">
+                <div className="space-y-4 pt-6">
                   <AdminInput
                     label="Section Title"
                     value={s.title}
@@ -301,12 +334,17 @@ function AdminProjectEditor() {
                     small
                     placeholder="e.g. Penthouse Interiors"
                   />
-                  <AdminInput
-                    label="Media Source (URL)"
+                  <FileUpload
+                    label="Section Image"
                     value={s.image}
-                    onChange={(v) => updateDetailSection(i, "image", v)}
-                    small
-                    placeholder="https://..."
+                    onChange={(url) => updateDetailSection(i, "image", url)}
+                    accept="image/*"
+                    uploadFn={(file) => {
+                      const projectId =
+                        id || formData.name.toLowerCase().replace(/\s+/g, "-")
+                      return uploadProjectDetailImage(projectId, i, file)
+                    }}
+                    validator={validateImageFile}
                   />
                 </div>
                 <div className="space-y-3">
@@ -320,7 +358,7 @@ function AdminProjectEditor() {
                       updateDetailSection(i, "text", e.target.value)
                     }
                     rows={4}
-                    className="w-full rounded-[2rem] border-2 border-transparent bg-white p-8 text-base leading-relaxed font-medium text-refenti-charcoal shadow-sm transition-all placeholder:text-gray-300 focus:border-refenti-gold focus:outline-none"
+                    className="w-full rounded-xl border-2 border-transparent bg-white p-4 text-sm leading-relaxed font-medium text-refenti-charcoal shadow-sm transition-all placeholder:text-gray-300 focus:border-refenti-gold focus:outline-none"
                   />
                 </div>
               </div>
@@ -330,7 +368,7 @@ function AdminProjectEditor() {
 
         <button
           type="submit"
-          className="w-full rounded-[2.5rem] bg-refenti-charcoal py-10 font-sans font-bold tracking-ultra text-white uppercase shadow-2xl transition-all hover:bg-refenti-gold active:scale-[0.99]"
+          className="w-full rounded-xl bg-refenti-charcoal py-3 font-sans font-bold tracking-ultra text-white uppercase shadow-2xl transition-all hover:bg-refenti-gold active:scale-[0.99]"
         >
           Publish Project Updates
         </button>

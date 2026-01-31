@@ -5,6 +5,11 @@ import type {
   Project,
   ProjectDetailSection,
 } from "../types"
+import {
+  deleteEventImage,
+  deleteNewsImage,
+  deleteProjectImages,
+} from "./storage"
 import { supabase } from "./supabase"
 
 // ============================================================================
@@ -237,6 +242,8 @@ export const updateProject = async (
 }
 
 export const deleteProject = async (id: string): Promise<DataResult<void>> => {
+  await deleteProjectImages(id)
+
   const { error } = await supabase.from("projects").delete().eq("id", id)
 
   if (error)
@@ -317,6 +324,8 @@ export const updateEvent = async (
 }
 
 export const deleteEvent = async (id: string): Promise<DataResult<void>> => {
+  await deleteEventImage(id)
+
   const { error } = await supabase.from("events").delete().eq("id", id)
 
   if (error)
@@ -398,6 +407,8 @@ export const updateNews = async (
 }
 
 export const deleteNews = async (id: string): Promise<DataResult<void>> => {
+  await deleteNewsImage(id)
+
   const { error } = await supabase.from("news").delete().eq("id", id)
 
   if (error)
