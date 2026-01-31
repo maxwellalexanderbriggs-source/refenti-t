@@ -47,7 +47,7 @@ function Investment() {
         <div
           className="absolute inset-[-5%]"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000')`,
+            backgroundImage: `url('/images/investment-hero.jpg')`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             transform: `translateY(${-scrollY * 0.12}px)`,
