@@ -85,12 +85,6 @@ function AppContent() {
                   A specialized real estate group defining new standards in
                   urban living through precision and architectural intent.
                 </p>
-                <Link
-                  to="/admin"
-                  className="inline-block pt-4 text-[8px] font-bold tracking-ultra text-gray-600 uppercase transition-colors hover:text-refenti-gold"
-                >
-                  Admin Access
-                </Link>
               </div>
               <div className="grid w-full grid-cols-2 gap-10 md:w-auto md:grid-cols-3">
                 <div className="space-y-4">
@@ -170,7 +164,7 @@ function AppContent() {
               </div>
             </div>
             <div className="mx-auto mt-16 flex max-w-7xl items-center justify-between border-t border-gray-100 pt-8 text-[8px] tracking-ultra text-gray-600 uppercase">
-              <span>© 2024 Refenti Group | Urban Destinations</span>
+              <span>© {new Date().getFullYear()} Refenti Group</span>
               <span>
                 Made by{" "}
                 <a

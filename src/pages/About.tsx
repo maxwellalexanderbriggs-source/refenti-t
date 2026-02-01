@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 
 const SECTIONS = [
   { id: "about-refenti", label: "Our Philosophy" },
@@ -47,7 +47,7 @@ function About() {
         <div
           className="absolute inset-[-5%]"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2000')`,
+            backgroundImage: `url('/about/about-hero.webp')`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             transform: `translateY(${-scrollY * 0.12}px)`,
@@ -119,7 +119,7 @@ function About() {
                   </p>
                   <div className="relative aspect-video overflow-hidden rounded-[2rem] shadow-lg md:rounded-[2.5rem]">
                     <img
-                      src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200"
+                      src="/about/about-decor-1.webp"
                       className="h-full w-full object-cover"
                       alt="Architectural Detail"
                     />
@@ -132,7 +132,7 @@ function About() {
                 </div>
                 <div className="aspect-[4/5] overflow-hidden rounded-[2.5rem] shadow-2xl md:rounded-[4rem]">
                   <img
-                    src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80&w=1200"
+                    src="/about/about-decor-2.webp"
                     className="h-full w-full object-cover"
                     alt="Interior Luxury"
                   />
@@ -145,7 +145,7 @@ function About() {
           <section className="">
             <div className="aspect-[21/9] w-full overflow-hidden rounded-[2rem] border border-gray-100 shadow-sm md:rounded-[4rem]">
               <img
-                src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=2000"
+                src="/about/about-decor-3.webp"
                 className="h-full w-full object-cover opacity-90 grayscale-[0.2]"
                 alt="Building Atmosphere"
               />
@@ -174,7 +174,7 @@ function About() {
                 <div className="space-y-6 md:space-y-8">
                   <div className="mb-6 aspect-video overflow-hidden rounded-[2rem] shadow-xl md:mb-10 md:rounded-[3rem]">
                     <img
-                      src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80&w=1200"
+                      src="/about/about-decor-4.webp"
                       className="h-full w-full object-cover"
                       alt="Office Space"
                     />
@@ -191,7 +191,7 @@ function About() {
                 <div className="space-y-6 md:space-y-8 md:pt-24 lg:pt-32">
                   <div className="mb-6 aspect-video overflow-hidden rounded-[2rem] shadow-xl md:mb-10 md:rounded-[3rem]">
                     <img
-                      src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80&w=1200"
+                      src="/about/about-decor-5.webp"
                       className="h-full w-full object-cover"
                       alt="Residential Excellence"
                     />
@@ -219,7 +219,7 @@ function About() {
             <div className="relative flex flex-col items-center gap-10 overflow-hidden rounded-[2.5rem] bg-refenti-charcoal p-8 text-white shadow-2xl md:rounded-[4rem] md:p-16 lg:flex-row lg:gap-16 lg:p-24">
               <div className="pointer-events-none absolute inset-0 opacity-10">
                 <img
-                  src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=1600"
+                  src="/about/about-decor-6.webp"
                   className="h-full w-full object-cover"
                   alt=""
                 />
@@ -249,7 +249,7 @@ function About() {
               </div>
               <div className="relative z-10 aspect-square w-full overflow-hidden rounded-[2rem] border border-white/10 shadow-2xl md:rounded-[3rem] lg:w-2/5">
                 <img
-                  src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1000"
+                  src="/about/about-decor-3.webp"
                   className="h-full w-full object-cover"
                   alt="Future Development"
                 />

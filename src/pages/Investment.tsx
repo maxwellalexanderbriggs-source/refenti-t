@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 
 const SECTIONS = [
   { id: "about", label: "Who We Are" },
@@ -47,7 +47,7 @@ function Investment() {
         <div
           className="absolute inset-[-5%]"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2000')`,
+            backgroundImage: `url('/investment/investment-hero.webp')`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             transform: `translateY(${-scrollY * 0.12}px)`,
@@ -117,7 +117,7 @@ function Investment() {
                 </p>
                 <div className="aspect-square overflow-hidden rounded-[2rem] shadow-2xl md:rounded-[3rem]">
                   <img
-                    src="https://images.unsplash.com/photo-1497366616548-37526070297c?auto=format&fit=crop&q=80&w=1000"
+                    src="/investment/investment-decor-1.webp"
                     className="h-full w-full object-cover"
                     alt="High-Rise Vision"
                   />
@@ -126,7 +126,7 @@ function Investment() {
               <div className="space-y-6 md:space-y-8 md:pt-24">
                 <div className="mb-6 aspect-[4/5] overflow-hidden rounded-[2rem] shadow-2xl md:mb-8 md:rounded-[3rem]">
                   <img
-                    src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80&w=1000"
+                    src="/investment/investment-decor-2.webp"
                     className="h-full w-full object-cover"
                     alt="Urban Landscape"
                   />
@@ -158,14 +158,14 @@ function Investment() {
                     <span className="text-refenti-gold italic">Outlook</span>
                   </h2>
                 </div>
-                <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+                <div className="grid items-center gap-10">
                   <p className="text-justify text-xl leading-tight font-light text-gray-300 md:text-3xl lg:text-4xl">
                     We create developments that stand as benchmarks for quality,
                     offering immediate impact and enduring value.
                   </p>
                   <div className="aspect-video overflow-hidden rounded-[1.5rem] border border-white/10 shadow-xl md:rounded-[2.5rem]">
                     <img
-                      src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200"
+                      src="/investment/clear-outlook.webp"
                       className="h-full w-full object-cover opacity-80"
                       alt="Building Structure"
                     />
@@ -220,20 +220,17 @@ function Investment() {
               {[
                 {
                   title: "Development",
-                  image:
-                    "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=600",
+                  image: "/investment/development.webp",
                   desc: "Developing landmarks that integrate perfectly with their urban surroundings.",
                 },
                 {
                   title: "Management",
-                  image:
-                    "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80&w=600",
+                  image: "/investment/management.webp",
                   desc: "Ensuring that every project we deliver remains a top-tier asset for years to come.",
                 },
                 {
                   title: "Vision",
-                  image:
-                    "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80&w=600",
+                  image: "/investment/vision.webp",
                   desc: "Identifying the next great urban node and building its infrastructure.",
                 },
               ].map((act, i) => (
@@ -269,17 +266,16 @@ function Investment() {
             }}
             className="space-y-16 md:space-y-32"
           >
-            <div className="grid items-center gap-12 md:grid-cols-2 md:gap-24">
-              <div className="space-y-8 md:space-y-12">
-                <div className="space-y-4 md:space-y-6">
-                  <p className="font-sans text-[9px] font-bold tracking-ultra text-refenti-gold uppercase md:text-[10px]">
-                    Execution
-                  </p>
-                  <h2 className="font-display text-4xl leading-none font-light text-refenti-charcoal uppercase sm:text-6xl md:text-8xl">
-                    The{" "}
-                    <span className="text-refenti-gold italic">Approach</span>
-                  </h2>
-                </div>
+            <div className="space-y-8 md:space-y-12">
+              <div className="space-y-4 md:space-y-6">
+                <p className="font-sans text-[9px] font-bold tracking-ultra text-refenti-gold uppercase md:text-[10px]">
+                  Execution
+                </p>
+                <h2 className="font-display text-4xl leading-none font-light text-refenti-charcoal uppercase sm:text-6xl md:text-8xl">
+                  The <span className="text-refenti-gold italic">Approach</span>
+                </h2>
+              </div>
+              <div className="grid items-start gap-12 md:grid-cols-2 md:gap-24">
                 <div className="space-y-6 text-lg leading-relaxed font-light text-gray-700 md:space-y-8 md:text-xl">
                   <p className="text-justify">
                     We operate with control over the vision and strategy of
@@ -291,16 +287,16 @@ function Investment() {
                     "Precision is non-negotiable. We build for performance."
                   </p>
                 </div>
-              </div>
-              <div className="relative">
-                <div className="relative z-10 aspect-[4/5] overflow-hidden rounded-[2.5rem] shadow-2xl md:rounded-[4rem]">
-                  <img
-                    src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1200"
-                    className="h-full w-full object-cover"
-                    alt="Focused Design"
-                  />
+                <div className="relative">
+                  <div className="relative z-10 aspect-[4/5] overflow-hidden rounded-[2.5rem] shadow-2xl md:rounded-[4rem]">
+                    <img
+                      src="/investment/investment-decor-3.webp"
+                      className="h-full w-full object-cover"
+                      alt="Focused Design"
+                    />
+                  </div>
+                  <div className="absolute -right-10 -bottom-10 -z-10 hidden h-full w-full rounded-[4rem] border-2 border-refenti-gold/20 md:block" />
                 </div>
-                <div className="absolute -right-10 -bottom-10 -z-10 hidden h-full w-full rounded-[4rem] border-2 border-refenti-gold/20 md:block" />
               </div>
             </div>
           </section>
@@ -366,6 +362,13 @@ function Investment() {
                       Expansion & Connection
                     </p>
                   </div>
+                </div>
+                <div className="aspect-[2/3] overflow-hidden rounded-[2rem] shadow-xl md:rounded-[3rem]">
+                  <img
+                    src="/investment/regional-presence.webp"
+                    className="h-full w-full object-cover"
+                    alt="Regional Presence"
+                  />
                 </div>
               </div>
             </div>
