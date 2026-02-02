@@ -82,8 +82,17 @@ function AppContent() {
                   Refenti Realty Group
                 </h2>
                 <p className="text-[13px] leading-relaxed font-light text-gray-700">
-                  A specialized real estate group defining new standards in
-                  urban living through precision and architectural intent.
+                  Refenti Realty Group is a real estate investment and
+                  development platform operating under{" "}
+                  <a
+                    href="https://solstice-ventures-beta.webflow.io/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-refenti-gold transition-colors hover:underline"
+                  >
+                    Solstice Ventures Holding
+                  </a>
+                  .
                 </p>
               </div>
               <div className="grid w-full grid-cols-2 gap-10 md:w-auto md:grid-cols-3">
