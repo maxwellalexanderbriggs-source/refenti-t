@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { Helmet } from "react-helmet-async"
 import { Link } from "react-router-dom"
+import FadeIn from "../components/FadeIn"
 import { getEvents, getNews } from "../lib/api"
 import type { EventItem, NewsItem } from "../types"
 
@@ -113,91 +114,99 @@ function EventsNews() {
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-refenti-offwhite via-refenti-offwhite/80 to-transparent" />
 
         <div className="relative z-10 mx-auto max-w-6xl space-y-6 px-4 text-center">
-          <div className="space-y-6">
-            <h1 className="font-display text-7xl leading-none font-light tracking-tighter text-refenti-charcoal uppercase md:text-[9rem]">
-              News & Events
-            </h1>
-            <p className="font-sans text-[10px] font-bold tracking-[0.7em] text-refenti-gold uppercase md:text-xs">
-              Institutional Updates
-            </p>
-          </div>
+          <FadeIn direction="none" duration={1000}>
+            <div className="space-y-6">
+              <h1 className="font-display text-7xl leading-none font-light tracking-tighter text-refenti-charcoal uppercase md:text-[9rem]">
+                News & Events
+              </h1>
+              <p className="font-sans text-[10px] font-bold tracking-[0.7em] text-refenti-gold uppercase md:text-xs">
+                Institutional Updates
+              </p>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
       <div className="px-6 py-16 md:px-12 md:py-28">
         {loading ? (
-          <div className="py-20 text-center text-gray-400">Loading...</div>
+          <FadeIn>
+            <div className="py-20 text-center text-gray-400">Loading...</div>
+          </FadeIn>
         ) : (
           <div className="mx-auto max-w-7xl space-y-20 md:space-y-32">
             <section className="space-y-10">
-              <div className="flex flex-col items-start justify-between border-b border-gray-300 pb-8 md:flex-row md:items-end">
-                <div className="space-y-2">
-                  <p className="font-sans text-[8px] font-bold tracking-ultra text-refenti-gold uppercase">
-                    Sector Insights
-                  </p>
-                  <h2 className="font-display text-4xl font-light text-refenti-charcoal uppercase md:text-6xl">
-                    Asset <br className="hidden md:block" /> Milestones
-                  </h2>
+              <FadeIn>
+                <div className="flex flex-col items-start justify-between border-b border-gray-300 pb-8 md:flex-row md:items-end">
+                  <div className="space-y-2">
+                    <p className="font-sans text-[8px] font-bold tracking-ultra text-refenti-gold uppercase">
+                      Sector Insights
+                    </p>
+                    <h2 className="font-display text-4xl font-light text-refenti-charcoal uppercase md:text-6xl">
+                      Asset <br className="hidden md:block" /> Milestones
+                    </h2>
+                  </div>
                 </div>
-              </div>
+              </FadeIn>
 
               <div className="grid grid-cols-1 items-start gap-12 md:grid-cols-2 lg:grid-cols-3">
                 {news.map((item, idx) => (
-                  <NewsCard key={item.id} item={item} index={idx} />
+                  <FadeIn key={item.id} delay={idx * 100}>
+                    <NewsCard item={item} index={idx} />
+                  </FadeIn>
                 ))}
               </div>
             </section>
 
             <section className="space-y-12">
-              <div className="space-y-4 text-center">
-                <p className="font-sans text-[9px] font-bold tracking-ultra text-refenti-gold uppercase">
-                  Strategic Engagements
-                </p>
-                <h2 className="font-display text-5xl font-light text-refenti-charcoal uppercase md:text-7xl">
-                  Technical Events
-                </h2>
-              </div>
+              <FadeIn>
+                <div className="space-y-4 text-center">
+                  <p className="font-sans text-[9px] font-bold tracking-ultra text-refenti-gold uppercase">
+                    Strategic Engagements
+                  </p>
+                  <h2 className="font-display text-5xl font-light text-refenti-charcoal uppercase md:text-7xl">
+                    Technical Events
+                  </h2>
+                </div>
+              </FadeIn>
 
               <div className="mx-auto max-w-5xl space-y-8">
                 {events.map((event, idx) => (
-                  <div
-                    key={event.id}
-                    className="group flex flex-col items-center gap-6 rounded-[2rem] border border-gray-200 bg-white p-6 shadow-sm transition-all duration-700 md:flex-row md:gap-8 md:p-8"
-                    style={{ transitionDelay: `${idx * 200}ms` }}
-                  >
-                    <div className="aspect-square w-full flex-shrink-0 overflow-hidden rounded-[1.5rem] bg-gray-50 shadow-inner md:w-32">
-                      <img
-                        src={event.image}
-                        className="h-full w-full object-cover"
-                        alt={event.title}
-                      />
-                    </div>
-                    <div className="flex-1 space-y-4">
-                      <div className="space-y-2">
-                        <div className="flex items-center gap-4">
-                          <span className="font-sans text-[10px] font-bold tracking-ultra text-refenti-gold uppercase">
-                            {event.date}
-                          </span>
-                          <span className="h-px w-8 bg-gray-300" />
-                          <span className="font-sans text-[10px] font-bold tracking-ultra text-gray-800 uppercase">
-                            {event.location}
-                          </span>
-                        </div>
-                        <h3 className="font-display text-3xl leading-none font-light text-refenti-charcoal">
-                          {event.title}
-                        </h3>
+                  <FadeIn key={event.id} delay={idx * 150}>
+                    <div className="group flex flex-col items-center gap-6 rounded-[2rem] border border-gray-200 bg-white p-6 shadow-sm transition-all duration-700 md:flex-row md:gap-8 md:p-8">
+                      <div className="aspect-square w-full flex-shrink-0 overflow-hidden rounded-[1.5rem] bg-gray-50 shadow-inner md:w-32">
+                        <img
+                          src={event.image}
+                          className="h-full w-full object-cover"
+                          alt={event.title}
+                        />
                       </div>
-                      <p className="line-clamp-3 text-justify text-sm leading-relaxed font-light text-gray-800">
-                        {event.details}
-                      </p>
-                      <Link
-                        to="/contact"
-                        className="inline-block rounded-xl bg-refenti-charcoal px-8 py-3 text-[10px] font-bold tracking-ultra text-white uppercase shadow-xl transition-all duration-500 hover:bg-refenti-gold"
-                      >
-                        Inquire for Details
-                      </Link>
+                      <div className="flex-1 space-y-4">
+                        <div className="space-y-2">
+                          <div className="flex items-center gap-4">
+                            <span className="font-sans text-[10px] font-bold tracking-ultra text-refenti-gold uppercase">
+                              {event.date}
+                            </span>
+                            <span className="h-px w-8 bg-gray-300" />
+                            <span className="font-sans text-[10px] font-bold tracking-ultra text-gray-800 uppercase">
+                              {event.location}
+                            </span>
+                          </div>
+                          <h3 className="font-display text-3xl leading-none font-light text-refenti-charcoal">
+                            {event.title}
+                          </h3>
+                        </div>
+                        <p className="line-clamp-3 text-justify text-sm leading-relaxed font-light text-gray-800">
+                          {event.details}
+                        </p>
+                        <Link
+                          to="/contact"
+                          className="inline-block rounded-xl bg-refenti-charcoal px-8 py-3 text-[10px] font-bold tracking-ultra text-white uppercase shadow-xl transition-all duration-500 hover:bg-refenti-gold"
+                        >
+                          Inquire for Details
+                        </Link>
+                      </div>
                     </div>
-                  </div>
+                  </FadeIn>
                 ))}
               </div>
             </section>
