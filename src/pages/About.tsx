@@ -297,8 +297,8 @@ function About() {
                     </div>
                   </FadeIn>
                 </div>
-                <FadeIn delay={200} direction="right">
-                  <div className="relative z-10 aspect-square w-full overflow-hidden rounded-[2rem] border border-white/10 shadow-2xl md:rounded-[3rem] lg:w-2/5">
+                <FadeIn delay={200} direction="right" className="lg:w-2/5">
+                  <div className="relative z-10 aspect-square w-full overflow-hidden rounded-[2rem] border border-white/10 shadow-2xl md:rounded-[3rem]">
                     <img
                       src="/about/about-decor-3.webp"
                       className="h-full w-full object-cover"
