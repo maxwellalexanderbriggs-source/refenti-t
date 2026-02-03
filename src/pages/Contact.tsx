@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react"
 import { Helmet } from "react-helmet-async"
+import FadeIn from "../components/FadeIn"
 import { createInquiry } from "../lib/api"
 import type { Inquiry } from "../types"
 
@@ -142,14 +143,16 @@ function Contact() {
         />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-refenti-offwhite via-refenti-offwhite/70 to-transparent" />
         <div className="relative z-10 mx-auto max-w-6xl space-y-6 px-4 text-center md:space-y-8">
-          <div className="space-y-4">
-            <h1 className="font-display text-6xl leading-none font-light tracking-tight text-refenti-charcoal uppercase md:text-8xl lg:text-[9rem]">
-              Contact
-            </h1>
-            <p className="font-sans text-[10px] font-bold tracking-[0.5em] text-refenti-gold uppercase">
-              Direct Engagement
-            </p>
-          </div>
+          <FadeIn direction="none" duration={1000}>
+            <div className="space-y-4">
+              <h1 className="font-display text-6xl leading-none font-light tracking-tight text-refenti-charcoal uppercase md:text-8xl lg:text-[9rem]">
+                Contact
+              </h1>
+              <p className="font-sans text-[10px] font-bold tracking-[0.5em] text-refenti-gold uppercase">
+                Direct Engagement
+              </p>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
@@ -157,15 +160,17 @@ function Contact() {
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-8 md:grid-cols-12 md:gap-10">
             <div className="space-y-6 md:col-span-5 md:space-y-8">
-              <div className="space-y-4 md:space-y-6">
-                <h2 className="font-display text-4xl leading-none font-light text-refenti-charcoal uppercase md:text-5xl">
-                  Connect <br />
-                  <span className="text-refenti-gold italic">With Us</span>
-                </h2>
-                <p className="font-display text-[10px] font-bold tracking-widest text-refenti-gold uppercase md:text-xs">
-                  Inquiry Portal
-                </p>
-              </div>
+              <FadeIn>
+                <div className="space-y-4 md:space-y-6">
+                  <h2 className="font-display text-4xl leading-none font-light text-refenti-charcoal uppercase md:text-5xl">
+                    Connect <br />
+                    <span className="text-refenti-gold italic">With Us</span>
+                  </h2>
+                  <p className="font-display text-[10px] font-bold tracking-widest text-refenti-gold uppercase md:text-xs">
+                    Inquiry Portal
+                  </p>
+                </div>
+              </FadeIn>
 
               <div className="space-y-8 md:space-y-10">
                 {[
@@ -175,21 +180,24 @@ function Contact() {
                     label: "Our Hub",
                     val: "Refenti (Bole Bulbula), Addis Ababa, Ethiopia",
                   },
-                ].map((item) => (
-                  <div key={item.label} className="space-y-1 md:space-y-2">
-                    <p className="text-[10px] font-bold tracking-widest text-gray-400 uppercase">
-                      {item.label}
-                    </p>
-                    <p className="text-xl font-light break-words md:text-2xl">
-                      {item.val}
-                    </p>
-                  </div>
+                ].map((item, idx) => (
+                  <FadeIn key={item.label} delay={100 + idx * 100}>
+                    <div className="space-y-1 md:space-y-2">
+                      <p className="text-[10px] font-bold tracking-widest text-gray-400 uppercase">
+                        {item.label}
+                      </p>
+                      <p className="text-xl font-light break-words md:text-2xl">
+                        {item.val}
+                      </p>
+                    </div>
+                  </FadeIn>
                 ))}
               </div>
             </div>
 
-            <div className="relative min-h-[600px] rounded-[2.5rem] border border-gray-50 bg-white p-6 shadow-2xl md:col-span-7 md:rounded-[3rem] md:p-12">
-              <form
+            <FadeIn delay={200} direction="right" className="md:col-span-7">
+              <div className="relative min-h-[600px] rounded-[2.5rem] border border-gray-50 bg-white p-6 shadow-2xl md:rounded-[3rem] md:p-12">
+                <form
                 onSubmit={handleSubmit}
                 className={`space-y-6 transition-opacity duration-300 md:space-y-8 ${isSent ? "pointer-events-none opacity-0" : "opacity-100"}`}
               >
@@ -386,7 +394,8 @@ function Contact() {
                     Your inquiry has been logged for review by our team.
                   </p>
                 </div>
-            </div>
+              </div>
+            </FadeIn>
           </div>
         </div>
       </div>

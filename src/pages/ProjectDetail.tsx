@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react"
 import { Helmet } from "react-helmet-async"
 import { Navigate, useParams } from "react-router-dom"
+import FadeIn from "../components/FadeIn"
 import { getProjectById } from "../lib/api"
 import type { Project } from "../types"
 
@@ -89,25 +90,29 @@ function FeatureSection({
       </div>
 
       <div className={`w-full space-y-6 px-4 md:w-1/2 md:px-12`}>
-        <div className="space-y-2">
-          <span className="font-display text-7xl leading-none font-light text-refenti-gold opacity-10 select-none">
-            0{index + 1}
-          </span>
-          <h3 className="font-display text-4xl leading-[1.1] font-light tracking-tight text-refenti-charcoal md:text-5xl">
-            {section.title}
-          </h3>
-        </div>
-        <div className="max-w-lg space-y-4">
-          <p className="text-justify text-sm leading-relaxed font-light text-gray-700">
-            {section.text}
-          </p>
-          <div className="flex items-center gap-6">
-            <div className="h-px w-12 bg-refenti-gold" />
-            <p className="font-sans text-[10px] font-bold tracking-[0.3em] text-refenti-gold uppercase">
-              Standard of Excellence
-            </p>
+        <FadeIn delay={100}>
+          <div className="space-y-2">
+            <span className="font-display text-7xl leading-none font-light text-refenti-gold opacity-10 select-none">
+              0{index + 1}
+            </span>
+            <h3 className="font-display text-4xl leading-[1.1] font-light tracking-tight text-refenti-charcoal md:text-5xl">
+              {section.title}
+            </h3>
           </div>
-        </div>
+        </FadeIn>
+        <FadeIn delay={200}>
+          <div className="max-w-lg space-y-4">
+            <p className="text-justify text-sm leading-relaxed font-light text-gray-700">
+              {section.text}
+            </p>
+            <div className="flex items-center gap-6">
+              <div className="h-px w-12 bg-refenti-gold" />
+              <p className="font-sans text-[10px] font-bold tracking-[0.3em] text-refenti-gold uppercase">
+                Standard of Excellence
+              </p>
+            </div>
+          </div>
+        </FadeIn>
       </div>
     </div>
   )
@@ -179,75 +184,85 @@ function ProjectDetail() {
         <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-refenti-offwhite via-refenti-offwhite/80 to-transparent" />
 
         <div className="relative z-10 mx-auto max-w-6xl space-y-8 px-4 text-center">
-          <div className="space-y-6">
-            <h1 className="font-display text-7xl leading-none font-light tracking-tighter text-refenti-charcoal uppercase md:text-[10rem]">
-              {project.name}
-            </h1>
-            <p className="font-sans text-[10px] font-bold tracking-[0.7em] text-refenti-gold uppercase md:text-xs">
-              The Refenti Collection
-            </p>
-          </div>
+          <FadeIn direction="none" duration={1000}>
+            <div className="space-y-6">
+              <h1 className="font-display text-7xl leading-none font-light tracking-tighter text-refenti-charcoal uppercase md:text-[10rem]">
+                {project.name}
+              </h1>
+              <p className="font-sans text-[10px] font-bold tracking-[0.7em] text-refenti-gold uppercase md:text-xs">
+                The Refenti Collection
+              </p>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
       {/* Action Bar */}
       <section className="relative border-b border-gray-100 bg-refenti-offwhite">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-8 py-8 md:flex-row">
-          <div className="flex flex-col items-center md:items-start">
-            <p className="font-sans text-[10px] font-bold tracking-[0.2em] text-refenti-charcoal uppercase opacity-40">
-              Project Inquiry Portal
-            </p>
-          </div>
-
-          <div className="flex flex-col items-center gap-2 md:items-end">
-            {project.brochureUrl && (
-              <a
-                href={project.brochureUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-full bg-refenti-charcoal px-12 py-4 text-center font-sans text-[10px] font-bold tracking-widest text-white uppercase shadow-xl transition-all hover:bg-refenti-gold active:scale-95"
-              >
-                Download Brochure
-              </a>
-            )}
-            <div className="flex items-center gap-2">
-              <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-refenti-gold" />
-              <p className="text-[9px] font-bold tracking-[0.15em] text-refenti-gold uppercase">
-                Under Construction
+        <FadeIn>
+          <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-8 py-8 md:flex-row">
+            <div className="flex flex-col items-center md:items-start">
+              <p className="font-sans text-[10px] font-bold tracking-[0.2em] text-refenti-charcoal uppercase opacity-40">
+                Project Inquiry Portal
               </p>
             </div>
+
+            <div className="flex flex-col items-center gap-2 md:items-end">
+              {project.brochureUrl && (
+                <a
+                  href={project.brochureUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-full bg-refenti-charcoal px-12 py-4 text-center font-sans text-[10px] font-bold tracking-widest text-white uppercase shadow-xl transition-all hover:bg-refenti-gold active:scale-95"
+                >
+                  Download Brochure
+                </a>
+              )}
+              <div className="flex items-center gap-2">
+                <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-refenti-gold" />
+                <p className="text-[9px] font-bold tracking-[0.15em] text-refenti-gold uppercase">
+                  Under Construction
+                </p>
+              </div>
+            </div>
           </div>
-        </div>
+        </FadeIn>
       </section>
 
       {/* Asset Narrative Section */}
       <section className="bg-white px-8 py-16 md:px-12 md:py-28">
         <div className="mx-auto grid max-w-7xl items-center gap-10 md:grid-cols-2">
           <div className="space-y-8">
-            <div className="space-y-3">
-              <p className="font-sans text-[9px] font-bold tracking-ultra text-refenti-gold uppercase">
-                Asset Narrative
+            <FadeIn>
+              <div className="space-y-3">
+                <p className="font-sans text-[9px] font-bold tracking-ultra text-refenti-gold uppercase">
+                  Asset Narrative
+                </p>
+                <h2 className="font-display text-4xl leading-tight font-light text-refenti-charcoal uppercase md:text-6xl">
+                  {project.introTitle?.split(" ")[0]} <br />
+                  <span className="text-refenti-gold italic">
+                    {project.introTitle?.split(" ").slice(1).join(" ")}
+                  </span>
+                </h2>
+              </div>
+            </FadeIn>
+            <FadeIn delay={100}>
+              <p className="max-w-xl text-justify text-sm leading-relaxed font-light text-gray-700">
+                {project.introText}
               </p>
-              <h2 className="font-display text-4xl leading-tight font-light text-refenti-charcoal uppercase md:text-6xl">
-                {project.introTitle?.split(" ")[0]} <br />
-                <span className="text-refenti-gold italic">
-                  {project.introTitle?.split(" ").slice(1).join(" ")}
-                </span>
-              </h2>
-            </div>
-            <p className="max-w-xl text-justify text-sm leading-relaxed font-light text-gray-700">
-              {project.introText}
-            </p>
+            </FadeIn>
           </div>
 
-          <div className="relative aspect-16/10 overflow-hidden rounded-[2.5rem] shadow-2xl">
-            <img
-              src={project.introImage || project.image}
-              className="h-full w-full object-cover"
-              alt={`${project.name} Perspective`}
-            />
-            <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-refenti-charcoal/20 to-transparent" />
-          </div>
+          <FadeIn delay={200} direction="right">
+            <div className="relative aspect-16/10 overflow-hidden rounded-[2.5rem] shadow-2xl">
+              <img
+                src={project.introImage || project.image}
+                className="h-full w-full object-cover"
+                alt={`${project.name} Perspective`}
+              />
+              <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-refenti-charcoal/20 to-transparent" />
+            </div>
+          </FadeIn>
         </div>
       </section>
 
@@ -255,27 +270,27 @@ function ProjectDetail() {
       {project.projectFeatures && project.projectFeatures.length > 0 && (
         <section className="border-t border-gray-100 bg-refenti-offwhite px-8 py-16 md:px-12">
           <div className="mx-auto max-w-7xl space-y-10">
-            <div className="space-y-3 text-center md:text-left">
-              <p className="font-sans text-[9px] font-bold tracking-ultra text-refenti-gold uppercase">
-                Scope of Amenities
-              </p>
-              <h2 className="font-display text-4xl font-light text-refenti-charcoal uppercase md:text-5xl">
-                Project{" "}
-                <span className="text-refenti-gold italic">Features</span>
-              </h2>
-            </div>
+            <FadeIn>
+              <div className="space-y-3 text-center md:text-left">
+                <p className="font-sans text-[9px] font-bold tracking-ultra text-refenti-gold uppercase">
+                  Scope of Amenities
+                </p>
+                <h2 className="font-display text-4xl font-light text-refenti-charcoal uppercase md:text-5xl">
+                  Project{" "}
+                  <span className="text-refenti-gold italic">Features</span>
+                </h2>
+              </div>
+            </FadeIn>
 
             <div className="flex flex-wrap gap-4">
               {project.projectFeatures.map((feature, idx) => (
-                <div
-                  key={idx}
-                  className="group flex cursor-default items-center justify-center rounded-full border border-gray-100 bg-white px-10 py-5 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-md"
-                  style={{ transitionDelay: `${idx * 100}ms` }}
-                >
-                  <span className="text-[11px] font-bold tracking-widest text-refenti-charcoal uppercase transition-colors group-hover:text-refenti-gold">
-                    {feature}
-                  </span>
-                </div>
+                <FadeIn key={idx} delay={idx * 75}>
+                  <div className="group flex cursor-default items-center justify-center rounded-full border border-gray-100 bg-white px-10 py-5 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-md">
+                    <span className="text-[11px] font-bold tracking-widest text-refenti-charcoal uppercase transition-colors group-hover:text-refenti-gold">
+                      {feature}
+                    </span>
+                  </div>
+                </FadeIn>
               ))}
             </div>
           </div>
@@ -285,14 +300,16 @@ function ProjectDetail() {
       {/* Main Attributes Section */}
       <section className="bg-white py-16 md:py-20">
         <div className="mx-auto mb-10 max-w-7xl px-8 md:px-12">
-          <div className="space-y-3 text-center md:text-left">
-            <p className="font-sans text-[9px] font-bold tracking-ultra text-refenti-gold uppercase">
-              Technical Depth
-            </p>
-            <h2 className="font-display text-4xl font-light text-refenti-charcoal uppercase md:text-6xl">
-              Main <span className="text-refenti-gold italic">Attributes</span>
-            </h2>
-          </div>
+          <FadeIn>
+            <div className="space-y-3 text-center md:text-left">
+              <p className="font-sans text-[9px] font-bold tracking-ultra text-refenti-gold uppercase">
+                Technical Depth
+              </p>
+              <h2 className="font-display text-4xl font-light text-refenti-charcoal uppercase md:text-6xl">
+                Main <span className="text-refenti-gold italic">Attributes</span>
+              </h2>
+            </div>
+          </FadeIn>
         </div>
         <div className="w-full">
           {project.detailSections?.map((section, idx) => (
