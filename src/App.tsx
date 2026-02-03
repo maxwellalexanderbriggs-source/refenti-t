@@ -81,13 +81,13 @@ function AppContent() {
 
       {!isAdmin && (
         <>
-          <footer className="border-t border-gray-100 bg-white px-8 py-16">
+          <footer className="border-t border-gray-100 bg-white px-8 py-24">
             <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-12 md:flex-row">
               <div className="max-w-sm space-y-4">
-                <h2 className="font-display text-3xl font-light text-refenti-gold">
+                <h2 className="font-display text-4xl font-light text-refenti-gold">
                   Refenti Realty Group
                 </h2>
-                <p className="text-base leading-relaxed font-light text-gray-700">
+                <p className="text-lg leading-relaxed font-light text-gray-700">
                   Refenti Realty Group is a real estate investment and
                   development platform operating under{" "}
                   <a
@@ -103,10 +103,10 @@ function AppContent() {
               </div>
               <div className="grid w-full grid-cols-2 gap-10 md:w-auto md:grid-cols-3">
                 <div className="space-y-4">
-                  <h4 className="font-sans text-xs font-bold text-gray-500 uppercase">
+                  <h4 className="font-sans text-sm font-bold text-gray-500 uppercase">
                     Links
                   </h4>
-                  <ul className="space-y-2 text-sm font-light text-refenti-charcoal">
+                  <ul className="space-y-2 text-base font-light text-refenti-charcoal">
                     <li>
                       <Link
                         to="/"
@@ -158,27 +158,27 @@ function AppContent() {
                   </ul>
                 </div>
                 <div className="space-y-4">
-                  <h4 className="font-sans text-xs font-bold text-gray-500 uppercase">
+                  <h4 className="font-sans text-sm font-bold text-gray-500 uppercase">
                     Principles
                   </h4>
-                  <ul className="space-y-2 text-sm font-light text-refenti-charcoal">
+                  <ul className="space-y-2 text-base font-light text-refenti-charcoal">
                     <li>Investor Care</li>
                     <li>Asset Standards</li>
                     <li>Global Reach</li>
                   </ul>
                 </div>
                 <div className="col-span-2 space-y-4 md:col-span-1">
-                  <h4 className="font-sans text-xs font-bold text-gray-500 uppercase">
+                  <h4 className="font-sans text-sm font-bold text-gray-500 uppercase">
                     Contact
                   </h4>
-                  <ul className="space-y-2 text-sm font-light text-refenti-charcoal">
+                  <ul className="space-y-2 text-base font-light text-refenti-charcoal">
                     <li>info@refenti.com</li>
                     <li>+251 986 1986 86</li>
                   </ul>
                 </div>
               </div>
             </div>
-            <div className="mx-auto mt-16 flex max-w-7xl items-center justify-between border-t border-gray-100 pt-8 text-xs text-gray-600 uppercase">
+            <div className="mx-auto mt-16 flex max-w-7xl items-center justify-between border-t border-gray-100 pt-8 text-sm text-gray-600 uppercase">
               <span>© {new Date().getFullYear()} Refenti Group</span>
               <span>
                 Made by{" "}
