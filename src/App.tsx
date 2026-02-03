@@ -81,7 +81,7 @@ function AppContent() {
 
       {!isAdmin && (
         <>
-          <footer className="border-t border-gray-100 bg-white px-8 py-20">
+          <footer className="border-t border-gray-100 bg-white px-8 py-24">
             <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-12 md:flex-row">
               <div className="max-w-sm space-y-4">
                 <h2 className="font-display text-4xl font-light text-refenti-gold">
