@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from "react"
 import { Helmet } from "react-helmet-async"
 import { Link } from "react-router-dom"
+import FadeIn from "../components/FadeIn"
+import LazyImage from "../components/LazyImage"
 import { getEvents, getProjects } from "../lib/api"
 import type { EventItem, Project } from "../types"
-import LazyImage from "../components/LazyImage"
 
 function EventCard({ event, index }: { event: EventItem; index: number }) {
   const [isOpen, setIsOpen] = useState(false)
@@ -89,24 +90,30 @@ function PhilosophySection() {
       >
         <div className="grid items-center gap-8 md:grid-cols-2 md:gap-10">
           <div className="space-y-6 md:space-y-8">
-            <h2 className="font-display text-3xl leading-[1.1] font-light tracking-tight text-refenti-charcoal sm:text-4xl md:text-6xl">
-              The Art of <br />{" "}
-              <span className="text-refenti-gold italic">Urban</span> <br />{" "}
-              Development.
-            </h2>
-            <p className="max-w-sm text-justify text-sm leading-relaxed font-light text-gray-600 md:text-base">
-              Operating under Solstice Ventures Holding, Refenti manages
-              structural ecosystems through architectural precision and
-              high-standard delivery.
-            </p>
+            <FadeIn delay={100}>
+              <h2 className="font-display text-3xl leading-[1.1] font-light tracking-tight text-refenti-charcoal sm:text-4xl md:text-6xl">
+                The Art of <br />{" "}
+                <span className="text-refenti-gold italic">Urban</span> <br />{" "}
+                Development.
+              </h2>
+            </FadeIn>
+            <FadeIn delay={200}>
+              <p className="max-w-sm text-justify text-sm leading-relaxed font-light text-gray-600 md:text-base">
+                Operating under Solstice Ventures Holding, Refenti manages
+                structural ecosystems through architectural precision and
+                high-standard delivery.
+              </p>
+            </FadeIn>
           </div>
-          <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-gray-50 shadow-sm md:rounded-[3rem]">
-            <img
-              src="/art.webp"
-              className="h-full w-full object-cover opacity-90"
-              alt="Interior"
-            />
-          </div>
+          <FadeIn delay={300} direction="right">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-gray-50 shadow-sm md:rounded-[3rem]">
+              <img
+                src="/art.webp"
+                className="h-full w-full object-cover opacity-90"
+                alt="Interior"
+              />
+            </div>
+          </FadeIn>
         </div>
       </div>
     </section>
@@ -171,17 +178,19 @@ function Home() {
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-refenti-offwhite via-refenti-offwhite/40 to-transparent" />
 
         <div className="relative z-10 mx-auto max-w-6xl space-y-6 px-4 text-center sm:px-6 md:space-y-10">
-          <div className="space-y-3 md:space-y-6">
-            <img
-              // src="/hero-text.png"
-              src="/reftext.png"
-              alt="Refenti Realty Group"
-              className="mx-auto w-full max-w-3xl"
-            />
-            <p className="font-sans text-[7px] font-bold tracking-ultra text-refenti-gold uppercase opacity-90 md:text-[10px]">
-              Refining urban landscapes
-            </p>
-          </div>
+          <FadeIn direction="none" duration={1000}>
+            <div className="space-y-3 md:space-y-6">
+              <img
+                // src="/hero-text.png"
+                src="/reftext.png"
+                alt="Refenti Realty Group"
+                className="mx-auto w-full max-w-3xl"
+              />
+              <p className="font-sans text-[7px] font-bold tracking-ultra text-refenti-gold uppercase opacity-90 md:text-[10px]">
+                Refining urban landscapes
+              </p>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
@@ -190,64 +199,74 @@ function Home() {
       <section className="relative z-10 -mt-6 rounded-[2.5rem] border-t border-gray-50 bg-white px-4 py-14 shadow-sm sm:px-6 md:-mt-16 md:rounded-[6rem] md:px-12 md:py-32">
         <div className="mx-auto max-w-7xl">
           <div className="mb-8 md:mb-16">
-            <div className="space-y-1 text-center md:space-y-2 md:text-left">
-              <h2 className="font-display text-5xl leading-none font-light tracking-tighter text-black uppercase select-none sm:text-6xl md:text-9xl">
-                Portfolio
-              </h2>
-              <p className="font-sans text-[7px] font-bold tracking-ultra text-refenti-gold uppercase md:text-[8px]">
-                The Collection
-              </p>
-            </div>
+            <FadeIn>
+              <div className="space-y-1 text-center md:space-y-2 md:text-left">
+                <h2 className="font-display text-5xl leading-none font-light tracking-tighter text-black uppercase select-none sm:text-6xl md:text-9xl">
+                  Portfolio
+                </h2>
+                <p className="font-sans text-[7px] font-bold tracking-ultra text-refenti-gold uppercase md:text-[8px]">
+                  The Collection
+                </p>
+              </div>
+            </FadeIn>
           </div>
 
           <div className="grid grid-cols-1 gap-8 md:grid-cols-12 md:gap-16">
             {projects.length > 0 && (
               <div className="group relative md:col-span-7">
-                <Link to={`/projects/${projects[0].id}`} className="block">
-                  <div className="aspect-video overflow-hidden rounded-[2rem] border border-gray-100 bg-white shadow-lg md:rounded-[2.5rem]">
-                    <LazyImage
-                      src={projects[0].image}
-                      alt={projects[0].name}
-                      className="h-full w-full object-cover opacity-90 transition-transform duration-1000 group-hover:scale-105"
-                    />
+                <FadeIn delay={100} direction="left">
+                  <Link to={`/projects/${projects[0].id}`} className="block">
+                    <div className="aspect-video overflow-hidden rounded-[2rem] border border-gray-100 bg-white shadow-lg md:rounded-[2.5rem]">
+                      <LazyImage
+                        src={projects[0].image}
+                        alt={projects[0].name}
+                        className="h-full w-full object-cover opacity-90 transition-transform duration-1000 group-hover:scale-105"
+                      />
+                    </div>
+                  </Link>
+                </FadeIn>
+                <FadeIn delay={200}>
+                  <div className="mt-6 space-y-2 px-2 md:mt-10 md:space-y-4 md:px-4">
+                    <h3 className="font-display text-2xl leading-none font-light text-refenti-charcoal md:text-4xl">
+                      {projects[0].name}
+                    </h3>
+                    <p className="text-[7px] font-bold tracking-ultra text-refenti-gold uppercase opacity-80 md:text-[8px]">
+                      {projects[0].assetClass}
+                    </p>
+                    <p className="max-w-md text-justify text-sm leading-relaxed font-light text-gray-600">
+                      {projects[0].description}
+                    </p>
                   </div>
-                </Link>
-                <div className="mt-6 space-y-2 px-2 md:mt-10 md:space-y-4 md:px-4">
-                  <h3 className="font-display text-2xl leading-none font-light text-refenti-charcoal md:text-4xl">
-                    {projects[0].name}
-                  </h3>
-                  <p className="text-[7px] font-bold tracking-ultra text-refenti-gold uppercase opacity-80 md:text-[8px]">
-                    {projects[0].assetClass}
-                  </p>
-                  <p className="max-w-md text-justify text-sm leading-relaxed font-light text-gray-600">
-                    {projects[0].description}
-                  </p>
-                </div>
+                </FadeIn>
               </div>
             )}
 
             {projects.length > 1 && (
               <div className="group md:col-span-5 md:mt-32">
-                <Link to={`/projects/${projects[1].id}`} className="block">
-                  <div className="aspect-[4/5] overflow-hidden rounded-[2rem] border border-gray-100 bg-white shadow-lg">
-                    <LazyImage
-                      src={projects[1].image}
-                      alt={projects[1].name}
-                      className="h-full w-full object-cover opacity-90 transition-transform duration-1000 group-hover:scale-105"
-                    />
+                <FadeIn delay={200} direction="right">
+                  <Link to={`/projects/${projects[1].id}`} className="block">
+                    <div className="aspect-[4/5] overflow-hidden rounded-[2rem] border border-gray-100 bg-white shadow-lg">
+                      <LazyImage
+                        src={projects[1].image}
+                        alt={projects[1].name}
+                        className="h-full w-full object-cover opacity-90 transition-transform duration-1000 group-hover:scale-105"
+                      />
+                    </div>
+                  </Link>
+                </FadeIn>
+                <FadeIn delay={300}>
+                  <div className="mt-6 space-y-2 px-2 md:mt-8 md:space-y-4 md:px-4">
+                    <h3 className="font-display text-2xl leading-none font-light text-refenti-charcoal md:text-3xl">
+                      {projects[1].name}
+                    </h3>
+                    <p className="text-[7px] font-bold tracking-ultra text-refenti-gold uppercase opacity-80 md:text-[8px]">
+                      {projects[1].assetClass}
+                    </p>
+                    <p className="max-w-md text-justify text-sm leading-relaxed font-light text-gray-600">
+                      {projects[1].description}
+                    </p>
                   </div>
-                </Link>
-                <div className="mt-6 space-y-2 px-2 md:mt-8 md:space-y-4 md:px-4">
-                  <h3 className="font-display text-2xl leading-none font-light text-refenti-charcoal md:text-3xl">
-                    {projects[1].name}
-                  </h3>
-                  <p className="text-[7px] font-bold tracking-ultra text-refenti-gold uppercase opacity-80 md:text-[8px]">
-                    {projects[1].assetClass}
-                  </p>
-                  <p className="max-w-md text-justify text-sm leading-relaxed font-light text-gray-600">
-                    {projects[1].description}
-                  </p>
-                </div>
+                </FadeIn>
               </div>
             )}
           </div>
@@ -256,25 +275,31 @@ function Home() {
 
       <section className="bg-refenti-offwhite px-4 py-14 sm:px-6 md:py-28">
         <div className="mx-auto max-w-7xl">
-          <div className="mb-8 space-y-2 text-center md:mb-10 md:space-y-3">
-            <h2 className="font-display text-3xl font-light text-refenti-charcoal md:text-6xl">
-              Featured Updates
-            </h2>
-            <p className="font-sans text-[8px] font-bold tracking-ultra text-refenti-gold uppercase opacity-80 md:text-[9px]">
-              Current Milestones
-            </p>
-          </div>
+          <FadeIn>
+            <div className="mb-8 space-y-2 text-center md:mb-10 md:space-y-3">
+              <h2 className="font-display text-3xl font-light text-refenti-charcoal md:text-6xl">
+                Featured Updates
+              </h2>
+              <p className="font-sans text-[8px] font-bold tracking-ultra text-refenti-gold uppercase opacity-80 md:text-[9px]">
+                Current Milestones
+              </p>
+            </div>
+          </FadeIn>
 
           {featuredEvents.length > 0 ? (
             <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:gap-10 lg:grid-cols-3">
               {featuredEvents.map((event, idx) => (
-                <EventCard key={event.id} event={event} index={idx} />
+                <FadeIn key={event.id} delay={idx * 150}>
+                  <EventCard event={event} index={idx} />
+                </FadeIn>
               ))}
             </div>
           ) : (
-            <div className="py-20 text-center font-display text-lg text-gray-500 italic md:text-xl">
-              No recent updates at this moment.
-            </div>
+            <FadeIn delay={200}>
+              <div className="py-20 text-center font-display text-lg text-gray-500 italic md:text-xl">
+                No recent updates at this moment.
+              </div>
+            </FadeIn>
           )}
         </div>
       </section>
