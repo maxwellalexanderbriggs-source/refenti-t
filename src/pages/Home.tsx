@@ -178,19 +178,27 @@ function Home() {
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-refenti-offwhite via-refenti-offwhite/40 to-transparent" />
 
         <div className="relative z-10 mx-auto max-w-6xl space-y-6 px-4 text-center sm:px-6 md:space-y-10">
-          <FadeIn direction="none" duration={1000}>
-            <div className="space-y-3 md:space-y-6">
-              <img
-                // src="/hero-text.png"
-                src="/reftext.png"
-                alt="Refenti Realty Group"
-                className="mx-auto w-full max-w-3xl"
-              />
-              <p className="font-sans text-xs font-bold text-refenti-gold uppercase opacity-90 md:text-sm">
-                Refining urban landscapes
-              </p>
-            </div>
-          </FadeIn>
+          <div className="space-y-3 md:space-y-6">
+            <img
+              src="/reftext.png"
+              alt="Refenti Realty Group"
+              className="gradient-reveal mx-auto w-full max-w-3xl"
+              style={{
+                animationDelay: "0.3s",
+                opacity: 0,
+                animationFillMode: "forwards",
+              }}
+            />
+            <p
+              className="gradient-reveal-fast font-sans text-xs font-bold text-refenti-gold uppercase opacity-0 md:text-sm"
+              style={{
+                animationDelay: "1.5s",
+                animationFillMode: "forwards",
+              }}
+            >
+              Refining urban landscapes
+            </p>
+          </div>
         </div>
       </section>
 

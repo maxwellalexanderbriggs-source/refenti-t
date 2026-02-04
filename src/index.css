@@ -33,6 +33,19 @@
       transform: translateY(0);
     }
   }
+
+  @keyframes gradient-reveal {
+    from {
+      opacity: 1;
+      mask-position: -100% 0;
+      -webkit-mask-position: -100% 0;
+    }
+    to {
+      opacity: 1;
+      mask-position: 100% 0;
+      -webkit-mask-position: 100% 0;
+    }
+  }
 }
 
 @layer base {
@@ -90,6 +103,26 @@
     overflow: visible;
     clip: auto;
     white-space: normal;
+  }
+
+  .gradient-reveal {
+    mask-image: linear-gradient(to right, transparent 0%, black 30%, black 70%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 30%, black 70%, transparent 100%);
+    mask-size: 200% 100%;
+    -webkit-mask-size: 200% 100%;
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    animation: gradient-reveal 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
+
+  .gradient-reveal-fast {
+    mask-image: linear-gradient(to right, transparent 0%, black 30%, black 70%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 30%, black 70%, transparent 100%);
+    mask-size: 200% 100%;
+    -webkit-mask-size: 200% 100%;
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    animation: gradient-reveal 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
   }
 }
 
