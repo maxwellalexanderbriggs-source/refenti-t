@@ -14,7 +14,7 @@ function Navbar() {
   const menuTimeoutRef = useRef<number | null>(null)
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsVisible(true), 600)
+    const timer = setTimeout(() => setIsVisible(true), 1600)
     return () => clearTimeout(timer)
   }, [])
 

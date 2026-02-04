@@ -178,14 +178,14 @@ function Home() {
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-refenti-offwhite via-refenti-offwhite/40 to-transparent" />
 
         <div className="relative z-10 mx-auto max-w-6xl space-y-3 px-4 text-center sm:px-6 md:space-y-6">
-          <FadeIn direction="none" duration={1000} delay={0}>
+          <FadeIn direction="none" duration={1000} delay={1000}>
             <img
               src="/reftext.png"
               alt="Refenti Realty Group"
               className="mx-auto w-full max-w-3xl"
             />
           </FadeIn>
-          <FadeIn direction="none" duration={1000} delay={300}>
+          <FadeIn direction="none" duration={1000} delay={1300}>
             <p className="font-sans text-xs font-bold text-refenti-gold uppercase opacity-90 md:text-sm">
               Refining urban landscapes
             </p>
