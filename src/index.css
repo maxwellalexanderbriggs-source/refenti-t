@@ -112,7 +112,7 @@
     -webkit-mask-size: 250% 100%;
     mask-repeat: no-repeat;
     -webkit-mask-repeat: no-repeat;
-    animation: gradient-reveal 2.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation: gradient-reveal 2.5s cubic-bezier(0.4, 0, 0.2, 1) both;
   }
 
   .gradient-reveal-fast {
@@ -122,7 +122,7 @@
     -webkit-mask-size: 250% 100%;
     mask-repeat: no-repeat;
     -webkit-mask-repeat: no-repeat;
-    animation: gradient-reveal 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation: gradient-reveal 2s cubic-bezier(0.4, 0, 0.2, 1) both;
   }
 }
 

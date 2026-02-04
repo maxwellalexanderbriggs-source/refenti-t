@@ -185,15 +185,12 @@ function Home() {
               className="gradient-reveal mx-auto w-full max-w-3xl"
               style={{
                 animationDelay: "0.3s",
-                opacity: 0,
-                animationFillMode: "forwards",
               }}
             />
             <p
-              className="gradient-reveal-fast font-sans text-xs font-bold text-refenti-gold uppercase opacity-0 md:text-sm"
+              className="gradient-reveal-fast font-sans text-xs font-bold text-refenti-gold uppercase md:text-sm"
               style={{
                 animationDelay: "2.3s",
-                animationFillMode: "forwards",
               }}
             >
               Refining urban landscapes

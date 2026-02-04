@@ -77,8 +77,6 @@ function Navbar() {
           className={`gradient-reveal-fast rounded-full border border-white/40 bg-white/70 px-8 py-3 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] backdrop-blur-xl transition-all duration-700 ease-out md:px-12 md:py-4 ${scrolled ? "-translate-y-2 opacity-95" : ""} `}
           style={{
             animationDelay: "3.8s",
-            opacity: 0,
-            animationFillMode: "forwards",
           }}
         >
           <ul className="flex items-center gap-8 md:gap-10">
