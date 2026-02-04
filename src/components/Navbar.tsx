@@ -70,11 +70,13 @@ function Navbar() {
     }, 400)
   }
 
+  const isHomePage = location.pathname === "/"
+
   return (
     <div className="pointer-events-none fixed top-6 left-0 z-100 w-full px-4 md:top-8">
       <div className="pointer-events-auto relative mx-auto max-w-4/5 lg:max-w-fit">
         <nav
-          className={`rounded-full border border-white/40 bg-white/70 px-8 py-3 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] backdrop-blur-xl transition-all duration-700 ease-out md:px-12 md:py-4 ${scrolled ? "-translate-y-2 opacity-95" : "opacity-100"} `}
+          className={`rounded-full border border-white/40 bg-white/70 px-8 py-3 shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] backdrop-blur-xl transition-all duration-700 ease-out md:px-12 md:py-4 ${scrolled ? "-translate-y-2 opacity-95" : "opacity-100"} ${isHomePage ? "animate-navbar-fade opacity-0" : ""}`}
         >
           <ul className="flex items-center gap-8 md:gap-10">
             <li className="flex items-center">
