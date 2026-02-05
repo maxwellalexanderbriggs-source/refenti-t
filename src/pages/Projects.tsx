@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { Helmet } from "react-helmet-async"
 import { Link } from "react-router-dom"
 import FadeIn from "../components/FadeIn"
@@ -7,13 +7,32 @@ import { getProjects } from "../lib/api"
 import type { Project } from "../types"
 
 function Projects() {
-  const [scrollY, setScrollY] = useState(0)
+  const [parallaxOffset, setParallaxOffset] = useState(0)
   const [projects, setProjects] = useState<Project[]>([])
   const [loading, setLoading] = useState(true)
+  const heroRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY)
+    const handleScroll = () => {
+      if (!heroRef.current) return
+      const rect = heroRef.current.getBoundingClientRect()
+      const sectionTop = rect.top
+      const sectionHeight = rect.height
+      const windowHeight = window.innerHeight
+
+      // Calculate parallax offset when hero section is in viewport
+      if (sectionTop < windowHeight && sectionTop + sectionHeight > 0) {
+        const scrollProgress =
+          (windowHeight - sectionTop) / (windowHeight + sectionHeight)
+        // Image is 150% tall, so extra space is 50% of section height
+        // Move from +25% to -25% of section height for smooth parallax
+        const maxOffset = sectionHeight * 0.25
+        setParallaxOffset(maxOffset - scrollProgress * maxOffset * 2)
+      }
+    }
+
     window.addEventListener("scroll", handleScroll, { passive: true })
+    handleScroll()
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
@@ -41,14 +60,17 @@ function Projects() {
       </Helmet>
       <div className="min-h-screen bg-refenti-offwhite pb-16">
         {/* Cinematic Hero Banner */}
-        <section className="relative flex min-h-[70vh] w-full items-end justify-center overflow-hidden bg-refenti-offwhite pb-16 md:min-h-[90vh] md:pb-32">
+        <section
+          ref={heroRef}
+          className="relative flex min-h-[70vh] w-full items-end justify-center overflow-hidden bg-refenti-offwhite pb-16 md:min-h-[90vh] md:pb-32"
+        >
           <div
-            className="absolute inset-[-10%]"
+            className="absolute inset-0 h-[150%] w-full"
             style={{
               backgroundImage: `url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2400')`,
               backgroundSize: "cover",
               backgroundPosition: "center",
-              transform: `translateY(${-scrollY * 0.15}px)`,
+              transform: `translateY(${parallaxOffset}px)`,
               willChange: "transform",
             }}
           />
