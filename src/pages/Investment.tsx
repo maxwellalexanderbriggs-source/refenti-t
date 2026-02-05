@@ -243,7 +243,7 @@ function Investment() {
             <FadeIn direction="up" duration={800} delay={100}>
               <div className="group overflow-hidden rounded-[2rem]">
                 <LazyImage
-                  src="/investment/vision.webp"
+                  src="/governance.jpg"
                   alt="Quality and governance"
                   className="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
