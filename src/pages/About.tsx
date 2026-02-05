@@ -61,11 +61,11 @@ function About() {
                 <h2 className="font-display text-2xl leading-tight font-light text-refenti-gold uppercase tracking-wide md:text-3xl">
                   Mission
                 </h2>
-                <p className="leading-relaxed font-light text-refenti-charcoal md:text-lg">
-                  To develop and steward real estate assets with a primary focus
-                  on long-term capital appreciation, applying institutional
-                  standards of governance, quality, and discipline in
-                  structurally undersupplied markets.
+                <p className="leading-relaxed font-light text-refenti-charcoal italic md:text-lg">
+                  "To develop and steward real estate assets with a primary
+                  focus on long-term capital appreciation, applying
+                  institutional standards of governance, quality, and discipline
+                  in structurally undersupplied markets."
                 </p>
               </div>
             </FadeIn>
@@ -76,24 +76,37 @@ function About() {
                 <h2 className="font-display text-2xl leading-tight font-light text-refenti-gold uppercase tracking-wide md:text-3xl">
                   Vision
                 </h2>
-                <p className="leading-relaxed font-light text-refenti-charcoal md:text-lg">
-                  To operate as a disciplined, scalable real estate investment
+                <p className="leading-relaxed font-light text-refenti-charcoal italic md:text-lg">
+                  "To operate as a disciplined, scalable real estate investment
                   and development platform aligned with long-term capital and
-                  institutional stakeholders.
+                  institutional stakeholders."
                 </p>
               </div>
             </FadeIn>
 
             {/* Values */}
             <FadeIn direction="up" duration={800} delay={200}>
-              <div className="space-y-6">
+              <div className="space-y-8">
                 <h2 className="font-display text-2xl leading-tight font-light text-refenti-gold uppercase tracking-wide md:text-3xl">
                   Values
                 </h2>
-                <p className="leading-relaxed font-light text-refenti-charcoal md:text-lg">
-                  Governance discipline, execution certainty, structured risk
-                  management, and long-term orientation.
-                </p>
+                <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+                  {[
+                    "Governance discipline",
+                    "Execution certainty",
+                    "Structured risk management",
+                    "Long-term orientation",
+                  ].map((value, idx) => (
+                    <div
+                      key={idx}
+                      className="rounded-xl border border-gray-200 bg-white px-6 py-5 shadow-sm transition-shadow hover:shadow-md"
+                    >
+                      <p className="font-light text-refenti-charcoal md:text-lg">
+                        {value}
+                      </p>
+                    </div>
+                  ))}
+                </div>
               </div>
             </FadeIn>
           </div>
