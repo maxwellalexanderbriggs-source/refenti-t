@@ -284,6 +284,15 @@ function Home() {
                 </FadeIn>
               </div>
             </div>
+
+            {/* Portfolio Hero Image */}
+            <div className="relative aspect-[21/9] w-full overflow-hidden">
+              <img
+                src="/portfolio-hero.jpg"
+                alt="Portfolio"
+                className="h-full w-full object-cover"
+              />
+            </div>
           </div>
         </div>
       </section>
