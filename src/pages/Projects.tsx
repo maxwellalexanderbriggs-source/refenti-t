@@ -45,7 +45,7 @@ function Projects() {
           <div
             className="absolute inset-[-10%] animate-fade-in"
             style={{
-              backgroundImage: `url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2400')`,
+              backgroundImage: `url('/portfolio-hero.jpg')`,
               backgroundSize: "cover",
               backgroundPosition: "center",
               transform: `translateY(${-scrollY * 0.15}px)`,
