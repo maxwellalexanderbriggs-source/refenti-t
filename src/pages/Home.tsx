@@ -168,7 +168,7 @@ function Home() {
         <div
           className="absolute inset-[-5%]"
           style={{
-            backgroundImage: `url('/home-hero.webp')`,
+            backgroundImage: `url('/home-hero.jpg')`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             transform: `translateY(${-scrollY * 0.1}px)`,
