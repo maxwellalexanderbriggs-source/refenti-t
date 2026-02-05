@@ -27,6 +27,7 @@ type ProjectRow = {
   location: string
   image: string
   description: string
+  status: string | null
   brochure_url: string | null
   intro_title: string | null
   intro_text: string | null
@@ -84,6 +85,7 @@ const toDbProject = (
   location: project.location,
   image: project.image,
   description: project.description,
+  status: project.status || null,
   brochure_url: project.brochureUrl || null,
   intro_title: project.introTitle || null,
   intro_text: project.introText || null,
@@ -99,6 +101,7 @@ const fromDbProject = (row: ProjectRow): Project => ({
   location: row.location,
   image: row.image,
   description: row.description,
+  status: row.status || undefined,
   brochureUrl: row.brochure_url || undefined,
   introTitle: row.intro_title || undefined,
   introText: row.intro_text || undefined,

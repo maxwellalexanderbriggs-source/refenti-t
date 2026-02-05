@@ -11,6 +11,7 @@ export interface Project {
   location: string
   image: string
   description: string
+  status?: string
   brochureUrl?: string
   introTitle?: string
   introText?: string

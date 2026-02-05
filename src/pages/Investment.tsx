@@ -28,53 +28,25 @@ function Investment() {
       image: "/investment/investment-decor-3.webp",
       alt: "Commercial development",
     },
-  ]
-
-  const developmentSteps = [
     {
-      number: "01",
-      title: "Opportunity Origination and Site Selection",
-      description:
-        "Identification of development sites and investment opportunities through market analysis and strategic positioning.",
-      image: "/investment/vision.webp",
+      title: "Serviced Apartments",
+      image: "/investment/investment-decor-4.webp",
+      alt: "Serviced apartments",
     },
     {
-      number: "02",
-      title: "Design, Structuring, and Feasibility",
-      description:
-        "Architectural development, financial structuring, and comprehensive feasibility assessment.",
-      image: "/investment/clear-outlook.webp",
-    },
-    {
-      number: "03",
-      title: "Development and Construction Delivery",
-      description:
-        "Project execution with institutional-grade construction management and quality oversight.",
-      image: "/investment/development.webp",
-    },
-    {
-      number: "04",
-      title: "Asset Stabilization and Optimization",
-      description:
-        "Lease-up, operational optimization, and positioning for long-term performance.",
-      image: "/investment/management.webp",
-    },
-    {
-      number: "05",
-      title: "Long-term Management or Strategic Exit",
-      description:
-        "Active asset management and strategic capital allocation decisions aligned with market conditions.",
-      image: "/investment/regional-presence.webp",
+      title: "Hospitality",
+      image: "/investment/investment-decor-5.webp",
+      alt: "Hospitality assets",
     },
   ]
 
   return (
     <div className="min-h-screen bg-refenti-offwhite">
       <Helmet>
-        <title>Investment Opportunities - Refenti Group</title>
+        <title>Investment Approach - Refenti Realty Group</title>
         <meta
           name="description"
-          content="Explore precision-driven real estate investment opportunities with Refenti Group. Development, management, and strategic vision across residential, commercial, and mixed-use projects."
+          content="Institutional real estate investment platform. RRG's disciplined approach to development, risk management, and governance across residential, commercial, and mixed-use assets."
         />
       </Helmet>
 
@@ -97,82 +69,246 @@ function Investment() {
               Investment
             </h1>
             <p className="font-sans text-xs font-bold text-refenti-gold uppercase">
-              Precision in Real Estate
+              Institutional Real Estate Platform
             </p>
           </div>
         </div>
       </section>
 
-      {/* Investment Mandate */}
+      {/* Investment Approach */}
       <section className="px-4 py-20 md:px-12 md:py-28">
-        <div className="mx-auto max-w-5xl space-y-12">
+        <div className="mx-auto max-w-6xl space-y-12">
           <FadeIn direction="up" duration={800}>
             <p className="text-xs font-bold tracking-wider text-refenti-gold uppercase">
-              INVESTMENT MANDATE
+              INVESTMENT APPROACH
             </p>
           </FadeIn>
           <FadeIn direction="up" duration={800} delay={100}>
             <h2 className="font-display text-4xl leading-tight font-light text-refenti-charcoal uppercase md:text-6xl">
-              Investment & Development{" "}
-              <span className="text-refenti-gold italic">Mandate</span>
+              Institutional-Grade{" "}
+              <span className="text-refenti-gold italic">Real Estate</span>
             </h2>
           </FadeIn>
           <FadeIn direction="up" duration={800} delay={200}>
             <div className="space-y-6 leading-relaxed font-light text-refenti-charcoal md:text-lg">
               <p>
-                Refenti focuses on three core areas within urban real estate:
+                RRG originates, develops, and manages real estate assets that
+                meet institutional standards of quality, risk management, and
+                long-term value creation. The platform focuses on assets with
+                durable demand, clear governance, and long-term income
+                stability.
               </p>
-              <ul className="space-y-4">
-                <li>
-                  • Urban residential developments positioned for long-term
-                  demand
-                </li>
-                <li>
-                  • Mixed-use and integrated assets that combine residential,
-                  commercial, and community functions
-                </li>
-                <li>
-                  • Select commercial and serviced real estate assets aligned
-                  with operational capabilities
-                </li>
-              </ul>
+              <p>
+                Investment decisions are made with a long-term perspective,
+                emphasizing disciplined governance, execution certainty,
+                conservative underwriting, and resilience across market cycles.
+              </p>
             </div>
           </FadeIn>
         </div>
       </section>
 
-      {/* Development Focus */}
+      {/* How We Develop */}
       <section className="px-4 py-16 md:px-12 md:py-24">
         <div className="mx-auto max-w-7xl">
-          <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
+          <div className="grid grid-cols-1 gap-12 md:grid-cols-2 md:gap-16">
             <FadeIn direction="up" duration={800}>
               <div className="group overflow-hidden rounded-[2rem]">
                 <LazyImage
                   src="/investment/development.webp"
-                  alt="Construction site development"
-                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  alt="Development process"
+                  className="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
             </FadeIn>
             <FadeIn direction="up" duration={800} delay={100}>
               <div className="space-y-8">
                 <h2 className="font-display text-4xl leading-tight font-light text-refenti-charcoal uppercase md:text-6xl">
-                  Development{" "}
-                  <span className="text-refenti-gold italic">Focus</span>
+                  How We <span className="text-refenti-gold italic">Develop</span>
                 </h2>
+                <div className="space-y-6 leading-relaxed font-light text-refenti-charcoal md:text-lg">
+                  <p>
+                    RRG operates as an integrated development platform,
+                    retaining strategic control over concept definition, asset
+                    strategy, structuring, and delivery oversight.
+                  </p>
+                  <ul className="space-y-4">
+                    <li>
+                      • Core development leadership, design coordination, asset
+                      stewardship, and investment structuring are managed
+                      in-house.
+                    </li>
+                    <li>
+                      • Construction and specialized services are delivered
+                      through vetted partners under defined performance and risk
+                      frameworks.
+                    </li>
+                    <li>
+                      • Delivery follows phased execution, disciplined cost
+                      control, and conservative assumptions.
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* Managing Risk */}
+      <section className="px-4 py-20 md:px-12 md:py-28">
+        <div className="mx-auto max-w-6xl">
+          <FadeIn direction="none" duration={1000}>
+            <div className="space-y-12 rounded-[2rem] border border-gray-100 bg-white px-8 py-12 shadow-lg md:px-16 md:py-20">
+              <div className="space-y-4">
+                <p className="text-xs font-bold tracking-wider text-refenti-gold uppercase">
+                  RISK MANAGEMENT
+                </p>
+                <h2 className="font-display text-3xl leading-tight font-light text-refenti-charcoal uppercase md:text-5xl">
+                  Disciplined{" "}
+                  <span className="text-refenti-gold italic">Risk Framework</span>
+                </h2>
+              </div>
+              <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+                <div className="space-y-3">
+                  <h3 className="font-display text-xl font-bold text-refenti-charcoal uppercase">
+                    Execution
+                  </h3>
+                  <p className="leading-relaxed font-light text-refenti-charcoal">
+                    Integrated oversight, experienced partners, phased
+                    construction
+                  </p>
+                </div>
+                <div className="space-y-3">
+                  <h3 className="font-display text-xl font-bold text-refenti-charcoal uppercase">
+                    Financing
+                  </h3>
+                  <p className="leading-relaxed font-light text-refenti-charcoal">
+                    Conservative structuring, diversified funding, aligned
+                    timelines
+                  </p>
+                </div>
+                <div className="space-y-3">
+                  <h3 className="font-display text-xl font-bold text-refenti-charcoal uppercase">
+                    Market
+                  </h3>
+                  <p className="leading-relaxed font-light text-refenti-charcoal">
+                    Demand-driven asset selection, disciplined positioning,
+                    phased releases
+                  </p>
+                </div>
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Quality & Governance */}
+      <section className="px-4 py-16 md:px-12 md:py-24">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid grid-cols-1 gap-12 md:grid-cols-2 md:gap-16">
+            <FadeIn direction="up" duration={800}>
+              <div className="space-y-8">
+                <h2 className="font-display text-4xl leading-tight font-light text-refenti-charcoal uppercase md:text-6xl">
+                  Quality &{" "}
+                  <span className="text-refenti-gold italic">Governance</span>
+                </h2>
+                <div className="space-y-6 leading-relaxed font-light text-refenti-charcoal md:text-lg">
+                  <p>
+                    RRG operates to institutional-grade standards across
+                    governance, delivery, and asset quality:
+                  </p>
+                  <ul className="space-y-4">
+                    <li>
+                      • Strong governance, transparency, and reporting
+                      discipline
+                    </li>
+                    <li>• Disciplined capital and cost management</li>
+                    <li>
+                      • High design, engineering, and construction standards
+                    </li>
+                    <li>• Reliable delivery through phased execution</li>
+                    <li>
+                      • Assets designed for long-term operational performance
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </FadeIn>
+            <FadeIn direction="up" duration={800} delay={100}>
+              <div className="group overflow-hidden rounded-[2rem]">
+                <LazyImage
+                  src="/investment/vision.webp"
+                  alt="Quality and governance"
+                  className="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* Assets & Structures */}
+      <section className="px-4 py-20 md:px-12 md:py-32">
+        <div className="mx-auto max-w-7xl space-y-16">
+          {/* Asset Classes */}
+          <div className="space-y-12">
+            <FadeIn direction="up" duration={800}>
+              <h2 className="font-display text-4xl leading-tight font-light text-refenti-charcoal uppercase md:text-6xl">
+                Asset <span className="text-refenti-gold italic">Classes</span>
+              </h2>
+            </FadeIn>
+            <FadeIn direction="up" duration={800} delay={100}>
+              <p className="leading-relaxed font-light text-refenti-charcoal md:text-lg">
+                RRG focuses on asset classes with resilient demand and long-term
+                income potential:
+              </p>
+            </FadeIn>
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+              {assetClasses.map((asset, idx) => (
+                <FadeIn
+                  key={idx}
+                  direction="up"
+                  duration={800}
+                  delay={idx * 100}
+                >
+                  <div className="group overflow-hidden rounded-[2rem] border border-gray-100 bg-white shadow-sm transition-shadow duration-300 hover:shadow-lg">
+                    <div className="aspect-[4/3] overflow-hidden">
+                      <LazyImage
+                        src={asset.image}
+                        alt={asset.alt}
+                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    </div>
+                    <div className="p-6">
+                      <h3 className="font-display text-xl font-light text-refenti-charcoal uppercase md:text-2xl">
+                        {asset.title}
+                      </h3>
+                    </div>
+                  </div>
+                </FadeIn>
+              ))}
+            </div>
+          </div>
+
+          {/* Investment Structures */}
+          <div className="space-y-8">
+            <FadeIn direction="up" duration={800}>
+              <h2 className="font-display text-4xl leading-tight font-light text-refenti-charcoal uppercase md:text-6xl">
+                Investment{" "}
+                <span className="text-refenti-gold italic">Structures</span>
+              </h2>
+            </FadeIn>
+            <FadeIn direction="up" duration={800} delay={100}>
+              <div className="space-y-6 rounded-[2rem] border border-gray-100 bg-white px-8 py-10 shadow-sm md:px-12">
+                <p className="leading-relaxed font-light text-refenti-charcoal md:text-lg">
+                  Investment structures are tailored to project context and
+                  partner alignment, including:
+                </p>
                 <ul className="space-y-4 leading-relaxed font-light text-refenti-charcoal md:text-lg">
-                  <li>
-                    • Ground-up development and strategic repositioning of
-                    existing assets
-                  </li>
-                  <li>
-                    • Design-led approach with emphasis on architectural quality
-                    and urban integration
-                  </li>
-                  <li>
-                    • Institutional construction management and delivery
-                    standards
-                  </li>
+                  <li>• Joint ventures and co-development</li>
+                  <li>• Own-balance-sheet development</li>
+                  <li>• EPC+F or other structured delivery models</li>
                 </ul>
               </div>
             </FadeIn>
@@ -180,119 +316,10 @@ function Investment() {
         </div>
       </section>
 
-      {/* Asset Classes */}
-      <section className="px-4 py-20 md:px-12 md:py-32">
-        <div className="mx-auto max-w-7xl">
-          <FadeIn direction="up" duration={800}>
-            <h2 className="mb-12 font-display text-4xl leading-tight font-light text-refenti-charcoal uppercase md:text-6xl">
-              Asset <span className="text-refenti-gold italic">Classes</span>
-            </h2>
-          </FadeIn>
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {assetClasses.map((asset, idx) => (
-              <FadeIn key={idx} direction="up" duration={800} delay={idx * 100}>
-                <div className="group overflow-hidden rounded-[2rem] border border-gray-100 bg-white shadow-sm transition-shadow duration-300 hover:shadow-lg">
-                  <div className="aspect-[4/3] overflow-hidden">
-                    <LazyImage
-                      src={asset.image}
-                      alt={asset.alt}
-                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                  </div>
-                  <div className="p-6">
-                    <h3 className="font-display text-2xl font-light text-refenti-charcoal uppercase">
-                      {asset.title}
-                    </h3>
-                  </div>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Development Model */}
-      <section className="px-4 py-20 md:px-12 md:py-32">
-        <div className="mx-auto max-w-6xl">
-          <FadeIn direction="up" duration={800}>
-            <h2 className="mb-16 font-display text-4xl leading-tight font-light text-refenti-charcoal uppercase md:text-6xl">
-              Development{" "}
-              <span className="text-refenti-gold italic">Model</span>
-            </h2>
-          </FadeIn>
-          <div className="space-y-12">
-            {developmentSteps.map((step, idx) => (
-              <FadeIn
-                key={idx}
-                direction="right"
-                duration={800}
-                delay={idx * 100}
-              >
-                <div className="grid grid-cols-1 gap-8 md:grid-cols-12">
-                  <div className="md:col-span-7">
-                    <div className="space-y-4">
-                      <div className="text-3xl font-light text-refenti-gold">
-                        {step.number}
-                      </div>
-                      <h3 className="font-display text-2xl font-light text-refenti-charcoal uppercase md:text-3xl">
-                        {step.title}
-                      </h3>
-                      <p className="leading-relaxed font-light text-refenti-charcoal md:text-lg">
-                        {step.description}
-                      </p>
-                    </div>
-                  </div>
-                  <div className="md:col-span-5">
-                    <div className="group overflow-hidden rounded-[2rem]">
-                      <LazyImage
-                        src={step.image}
-                        alt={step.title}
-                        className="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Regional Presence */}
-      <section className="relative overflow-hidden py-16 md:py-24">
-        <div className="relative h-[60vh] md:h-[70vh]">
-          {/* <img
-            src="/investment/regional-presence.webp"
-            alt="Regional urban development"
-            className="absolute inset-0 h-full w-full object-cover"
-            style={{
-              transform: `translateY(${-scrollY * 0.05}px)`,
-              willChange: "transform",
-            }}
-          /> */}
-          <div className="absolute inset-0 bg-refenti-charcoal/30" />
-          <div className="relative z-10 flex h-full items-center justify-center px-4">
-            <FadeIn direction="none" duration={1000}>
-              <div className="max-w-3xl text-center">
-                <h2 className="mb-6 font-display text-4xl leading-tight font-light text-white uppercase md:text-6xl">
-                  Regional{" "}
-                  <span className="text-refenti-gold italic">Presence</span>
-                </h2>
-                <p className="leading-relaxed font-light text-white md:text-xl">
-                  Refenti maintains a selective approach to geographic
-                  expansion, focusing on markets with strong fundamentals and
-                  alignment with institutional investment criteria.
-                </p>
-              </div>
-            </FadeIn>
-          </div>
-        </div>
-      </section>
-
       {/* Footer */}
-      <section className="px-8 pb-12 md:px-12">
+      <section className="px-4 pt-4 pb-20 md:px-12 md:pt-6 md:pb-26">
         <div className="mx-auto max-w-6xl text-center">
-          <p className="font-light text-refenti-charcoal">
+          <p className="text-sm font-light text-refenti-charcoal">
             Refenti Realty Group is a real estate investment and development
             platform operating under{" "}
             <a

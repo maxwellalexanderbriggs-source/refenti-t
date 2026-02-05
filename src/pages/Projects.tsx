@@ -69,8 +69,33 @@ function Projects() {
           </div>
         </section>
 
+        {/* Portfolio Overview */}
+        <div className="relative z-10 px-6 pt-16 pb-20 md:px-12 md:py-32">
+          <FadeIn delay={200}>
+            <div className="mx-auto max-w-5xl">
+              <div className="relative overflow-hidden rounded-3xl border border-gray-200/50 bg-white/80 p-8 shadow-xl backdrop-blur-sm md:p-12">
+                <div className="absolute top-0 left-0 h-1 w-full bg-linear-to-r from-refenti-gold via-refenti-gold/50 to-transparent" />
+                <div className="space-y-4">
+                  <p className="font-sans text-xs font-bold tracking-wider text-refenti-gold uppercase">
+                    Portfolio Overview
+                  </p>
+                  <p className="text-sm leading-relaxed font-light text-gray-700 md:text-base">
+                    Refenti's portfolio comprises selectively developed assets
+                    aligned with its investment and development mandate.
+                    Projects are presented on a representative basis and may
+                    include assets that are completed, under development, or in
+                    advanced planning stages. Portfolio presentation is intended
+                    to demonstrate platform capability rather than commercial
+                    availability.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+
         {/* Project Grid */}
-        <div className="relative z-10 -mt-10 px-6 pt-16 md:-mt-16 md:px-12 md:pt-28">
+        <div className="relative z-10 px-6 md:px-12">
           <div className="mx-auto max-w-7xl">
             {loading ? (
               <FadeIn>
@@ -91,7 +116,7 @@ function Projects() {
                         <LazyImage
                           src={project.image}
                           alt={project.name}
-                          className="h-full w-full object-cover grayscale-[0.2] transition-all duration-500 group-hover:scale-105 group-hover:grayscale-0"
+                          className="h-full w-full object-cover grayscale-[0.2] transition-transform duration-500 group-hover:scale-105 group-hover:grayscale-0"
                         />
                       </div>
 

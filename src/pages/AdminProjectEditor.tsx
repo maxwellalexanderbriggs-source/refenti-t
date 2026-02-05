@@ -40,6 +40,39 @@ function AdminInput({
   )
 }
 
+function AdminSelect({
+  label,
+  value,
+  onChange,
+  options,
+  small,
+}: {
+  label: string
+  value: string
+  onChange: (v: string) => void
+  options: string[]
+  small?: boolean
+}) {
+  return (
+    <div className="group space-y-2">
+      <label className="text-[10px] font-bold tracking-widest text-refenti-gold uppercase transition-colors group-focus-within:text-refenti-charcoal">
+        {label}
+      </label>
+      <select
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        className={`w-full border-b-2 border-gray-200 bg-transparent py-4 font-medium text-refenti-charcoal transition-all focus:border-refenti-gold focus:outline-none ${small ? "text-base" : "text-3xl md:text-4xl"}`}
+      >
+        {options.map((option) => (
+          <option key={option} value={option}>
+            {option}
+          </option>
+        ))}
+      </select>
+    </div>
+  )
+}
+
 function AdminProjectEditor() {
   const { id } = useParams()
   const navigate = useNavigate()
@@ -178,6 +211,25 @@ function AdminProjectEditor() {
               value={formData.location || ""}
               onChange={(v) => setFormData({ ...formData, location: v })}
               placeholder="e.g. Bole, Addis Ababa"
+            />
+          </div>
+          <div className="grid gap-4 md:grid-cols-2">
+            <AdminSelect
+              label="Asset Class"
+              value={formData.assetClass || "Residential"}
+              onChange={(v) =>
+                setFormData({
+                  ...formData,
+                  assetClass: v as Project["assetClass"],
+                })
+              }
+              options={["Residential", "Mixed-Use", "Commercial", "Hospitality"]}
+            />
+            <AdminInput
+              label="Status"
+              value={formData.status || ""}
+              onChange={(v) => setFormData({ ...formData, status: v })}
+              placeholder="e.g. In Development, Completed"
             />
           </div>
         </div>

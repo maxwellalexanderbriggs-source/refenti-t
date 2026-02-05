@@ -218,12 +218,6 @@ function ProjectDetail() {
                   Download Brochure
                 </a>
               )}
-              <div className="flex items-center gap-2">
-                <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-refenti-gold" />
-                <p className="text-xs font-bold text-refenti-gold uppercase">
-                  Under Construction
-                </p>
-              </div>
             </div>
           </div>
         </FadeIn>
@@ -254,15 +248,132 @@ function ProjectDetail() {
           </div>
 
           <FadeIn delay={200} direction="right">
-            <div className="relative aspect-16/10 overflow-hidden rounded-[2.5rem] shadow-2xl">
+            <div className="relative overflow-hidden rounded-[2.5rem] shadow-2xl">
               <img
                 src={project.introImage || project.image}
-                className="h-full w-full object-cover"
+                className="w-full"
                 alt={`${project.name} Perspective`}
               />
               <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-refenti-charcoal/20 to-transparent" />
             </div>
           </FadeIn>
+        </div>
+      </section>
+
+      {/* Project Information Section */}
+      <section className="border-y border-gray-100 bg-refenti-offwhite px-8 py-16 md:px-12 md:py-20">
+        <div className="mx-auto max-w-7xl">
+          <FadeIn>
+            <div className="mb-12 space-y-3 text-center">
+              <p className="font-sans text-xs font-bold text-refenti-gold uppercase">
+                Project Intelligence
+              </p>
+              <h2 className="font-display text-3xl font-light text-refenti-charcoal uppercase md:text-4xl">
+                Key <span className="text-refenti-gold italic">Details</span>
+              </h2>
+            </div>
+          </FadeIn>
+
+          <div className="grid gap-8 md:grid-cols-3">
+            <FadeIn delay={100}>
+              <div className="group relative overflow-hidden rounded-3xl border border-gray-100 bg-white p-8 shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+                <div className="absolute top-0 left-0 h-1 w-full bg-gradient-to-r from-refenti-gold to-transparent" />
+                <div className="space-y-4">
+                  <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-refenti-gold/10">
+                    <svg
+                      className="h-8 w-8 text-refenti-gold"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={1.5}
+                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                      />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={1.5}
+                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                      />
+                    </svg>
+                  </div>
+                  <div className="space-y-2">
+                    <p className="font-sans text-xs font-bold text-gray-400 uppercase">
+                      Location
+                    </p>
+                    <p className="font-display text-2xl font-light text-refenti-charcoal">
+                      {project.location}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </FadeIn>
+
+            <FadeIn delay={200}>
+              <div className="group relative overflow-hidden rounded-3xl border border-gray-100 bg-white p-8 shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+                <div className="absolute top-0 left-0 h-1 w-full bg-gradient-to-r from-refenti-gold to-transparent" />
+                <div className="space-y-4">
+                  <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-refenti-gold/10">
+                    <svg
+                      className="h-8 w-8 text-refenti-gold"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={1.5}
+                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                      />
+                    </svg>
+                  </div>
+                  <div className="space-y-2">
+                    <p className="font-sans text-xs font-bold text-gray-400 uppercase">
+                      Asset Class
+                    </p>
+                    <p className="font-display text-2xl font-light text-refenti-charcoal">
+                      {project.assetClass}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </FadeIn>
+
+            <FadeIn delay={300}>
+              <div className="group relative overflow-hidden rounded-3xl border border-gray-100 bg-white p-8 shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+                <div className="absolute top-0 left-0 h-1 w-full bg-gradient-to-r from-refenti-gold to-transparent" />
+                <div className="space-y-4">
+                  <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-refenti-gold/10">
+                    <svg
+                      className="h-8 w-8 text-refenti-gold"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={1.5}
+                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                  </div>
+                  <div className="space-y-2">
+                    <p className="font-sans text-xs font-bold text-gray-400 uppercase">
+                      Status
+                    </p>
+                    <p className="font-display text-2xl font-light text-refenti-charcoal">
+                      {project.status || "In Progress"}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </FadeIn>
+          </div>
         </div>
       </section>
 
@@ -306,7 +417,8 @@ function ProjectDetail() {
                 Technical Depth
               </p>
               <h2 className="font-display text-4xl font-light text-refenti-charcoal uppercase md:text-6xl">
-                Main <span className="text-refenti-gold italic">Attributes</span>
+                Main{" "}
+                <span className="text-refenti-gold italic">Attributes</span>
               </h2>
             </div>
           </FadeIn>

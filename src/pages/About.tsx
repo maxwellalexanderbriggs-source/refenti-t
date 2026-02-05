@@ -52,64 +52,106 @@ function About() {
       </section>
 
       {/* Section 1: Mission, Vision, Values */}
-      <section className="px-4 py-20 md:px-12 md:py-28">
-        <div className="mx-auto max-w-5xl">
-          <div className="grid grid-cols-1 gap-16 md:gap-20">
-            {/* Mission */}
-            <FadeIn direction="up" duration={800}>
-              <div className="space-y-6">
-                <h2 className="font-display text-2xl leading-tight font-light text-refenti-gold uppercase tracking-wide md:text-3xl">
-                  Mission
-                </h2>
-                <p className="leading-relaxed font-light text-refenti-charcoal italic md:text-lg">
-                  "To develop and steward real estate assets with a primary
-                  focus on long-term capital appreciation, applying
-                  institutional standards of governance, quality, and discipline
-                  in structurally undersupplied markets."
-                </p>
-              </div>
-            </FadeIn>
-
-            {/* Vision */}
-            <FadeIn direction="up" duration={800} delay={100}>
-              <div className="space-y-6">
-                <h2 className="font-display text-2xl leading-tight font-light text-refenti-gold uppercase tracking-wide md:text-3xl">
-                  Vision
-                </h2>
-                <p className="leading-relaxed font-light text-refenti-charcoal italic md:text-lg">
-                  "To operate as a disciplined, scalable real estate investment
-                  and development platform aligned with long-term capital and
-                  institutional stakeholders."
-                </p>
-              </div>
-            </FadeIn>
-
-            {/* Values */}
-            <FadeIn direction="up" duration={800} delay={200}>
-              <div className="space-y-8">
-                <h2 className="font-display text-2xl leading-tight font-light text-refenti-gold uppercase tracking-wide md:text-3xl">
-                  Values
-                </h2>
-                <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-                  {[
-                    "Governance discipline",
-                    "Execution certainty",
-                    "Structured risk management",
-                    "Long-term orientation",
-                  ].map((value, idx) => (
-                    <div
-                      key={idx}
-                      className="rounded-xl border border-gray-200 bg-white px-6 py-5 shadow-sm transition-shadow hover:shadow-md"
+      <section className="overflow-hidden px-4 py-16 md:px-12 md:py-20">
+        <div className="mx-auto max-w-7xl">
+          {/* Vision - Left aligned, rounded right */}
+          <FadeIn direction="up" duration={800}>
+            <div className="flex justify-start">
+              <div className="w-full max-w-xl rounded-l-none rounded-r-full bg-refenti-charcoal px-8 py-8 text-center shadow-2xl md:px-12 md:py-10">
+                <div className="mx-auto flex flex-col items-center space-y-4">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-refenti-gold shadow-lg md:h-16 md:w-16">
+                    <svg
+                      className="h-7 w-7 text-white md:h-8 md:w-8"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
                     >
-                      <p className="font-light text-refenti-charcoal md:text-lg">
-                        {value}
-                      </p>
-                    </div>
-                  ))}
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={1.5}
+                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                      />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={1.5}
+                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+                      />
+                    </svg>
+                  </div>
+                  <h2 className="font-display text-2xl font-light text-white uppercase md:text-3xl">
+                    Vision
+                  </h2>
+                  <p className="max-w-md text-sm leading-relaxed font-light text-white/90 italic">
+                    "To operate as a disciplined, scalable real estate
+                    investment and development platform aligned with long-term
+                    capital and institutional stakeholders."
+                  </p>
                 </div>
               </div>
-            </FadeIn>
-          </div>
+            </div>
+          </FadeIn>
+
+          {/* Mission - Right aligned, rounded left */}
+          <FadeIn direction="up" duration={800} delay={100}>
+            <div className="flex justify-end">
+              <div className="w-full max-w-xl rounded-l-full rounded-r-none bg-refenti-charcoal px-8 py-8 text-center shadow-2xl md:px-12 md:py-10">
+                <div className="mx-auto flex flex-col items-center space-y-4">
+                  <div className="flex h-14 w-14 items-center justify-center rounded-full bg-refenti-gold shadow-lg md:h-16 md:w-16">
+                    <svg
+                      className="h-7 w-7 text-white md:h-8 md:w-8"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={1.5}
+                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                      />
+                    </svg>
+                  </div>
+                  <h2 className="font-display text-2xl font-light text-white uppercase md:text-3xl">
+                    Mission
+                  </h2>
+                  <p className="max-w-md text-sm leading-relaxed font-light text-white/90 italic">
+                    "To develop and steward real estate assets with a primary
+                    focus on long-term capital appreciation, applying
+                    institutional standards of governance, quality, and
+                    discipline in structurally undersupplied markets."
+                  </p>
+                </div>
+              </div>
+            </div>
+          </FadeIn>
+
+          {/* Values */}
+          <FadeIn direction="up" duration={800} delay={200}>
+            <div className="space-y-8 pt-16">
+              <h2 className="text-center font-display text-2xl leading-tight font-light tracking-wide text-refenti-gold uppercase md:text-3xl">
+                Values
+              </h2>
+              <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+                {[
+                  "Governance discipline",
+                  "Execution certainty",
+                  "Structured risk management",
+                  "Long-term orientation",
+                ].map((value, idx) => (
+                  <div
+                    key={idx}
+                    className="rounded-xl border border-gray-200 bg-white px-6 py-5 text-center shadow-sm transition-shadow hover:shadow-md"
+                  >
+                    <p className="font-light text-refenti-charcoal md:text-lg">
+                      {value}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
@@ -186,7 +228,7 @@ function About() {
       </section>
 
       {/* Footer */}
-      <section className="px-4 pt-8 pb-12 md:px-12">
+      <section className="px-4 pt-4 pb-20 md:px-12 md:pt-6 md:pb-26">
         <div className="mx-auto max-w-6xl text-center">
           <p className="text-sm font-light text-refenti-charcoal">
             Refenti Realty Group is a real estate investment and development

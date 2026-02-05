@@ -52,38 +52,40 @@ function EventCard({ event, index }: { event: EventItem; index: number }) {
 }
 
 function PhilosophySection() {
-  const [progress, setProgress] = useState(0)
-  const sectionRef = useRef<HTMLDivElement>(null)
+  // const [progress, setProgress] = useState(0)
+  // const sectionRef = useRef<HTMLDivElement>(null)
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!sectionRef.current) return
-      const rect = sectionRef.current.getBoundingClientRect()
-      const windowHeight = window.innerHeight
-      let p = (windowHeight - rect.top) / (windowHeight * 0.8)
-      setProgress(Math.min(Math.max(p, 0), 1))
-    }
-    window.addEventListener("scroll", handleScroll, { passive: true })
-    handleScroll()
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (!sectionRef.current) return
+  //     const rect = sectionRef.current.getBoundingClientRect()
+  //     const windowHeight = window.innerHeight
+  //     let p = (windowHeight - rect.top) / (windowHeight * 0.8)
+  //     setProgress(Math.min(Math.max(p, 0), 1))
+  //   }
+  //   window.addEventListener("scroll", handleScroll, { passive: true })
+  //   handleScroll()
+  //   return () => window.removeEventListener("scroll", handleScroll)
+  // }, [])
 
   const isMobile = typeof window !== "undefined" && window.innerWidth < 768
-  const archRadiusY = isMobile ? 150 - progress * 100 : 250 - progress * 200
+  // const archRadiusY = isMobile ? 150 - progress * 100 : 250 - progress * 200
   const baseRadius = isMobile ? "2.5rem" : "4rem"
 
   return (
     <section
-      ref={sectionRef}
-      className="flex items-center justify-center bg-refenti-offwhite px-4 py-16 md:px-8 md:py-28"
+      // ref={sectionRef}
+      className="flex items-center justify-center bg-refenti-offwhite px-4 pt-16 md:px-8 md:pt-28"
     >
       <div
         className="relative w-full max-w-6xl overflow-hidden border border-gray-100 bg-white p-6 shadow-sm transition-all duration-700 ease-out md:p-14"
         style={{
-          borderTopLeftRadius:
-            progress >= 0.95 ? baseRadius : `${50}% ${archRadiusY}px`,
-          borderTopRightRadius:
-            progress >= 0.95 ? baseRadius : `${50}% ${archRadiusY}px`,
+          borderTopLeftRadius: baseRadius,
+          borderTopRightRadius: baseRadius,
+          // borderTopLeftRadius:
+          //   progress >= 0.95 ? baseRadius : `${50}% ${archRadiusY}px`,
+          // borderTopRightRadius:
+          //   progress >= 0.95 ? baseRadius : `${50}% ${archRadiusY}px`,
           borderBottomLeftRadius: baseRadius,
           borderBottomRightRadius: baseRadius,
         }}
@@ -92,21 +94,21 @@ function PhilosophySection() {
           <div className="space-y-6 md:space-y-8">
             <FadeIn delay={100}>
               <h2 className="font-display text-3xl leading-[1.1] font-light text-refenti-charcoal sm:text-4xl md:text-6xl">
-                The Art of <br />{" "}
-                <span className="text-refenti-gold italic">Urban</span> <br />{" "}
-                Development.
+                Quality <br />{" "}
+                <span className="text-refenti-gold italic">Assets</span> <br />{" "}
+                in Growth Markets.
               </h2>
             </FadeIn>
             <FadeIn delay={200}>
               <p className="max-w-sm text-sm leading-relaxed font-light text-gray-600 md:text-base">
-                Operating under Solstice Ventures Holding, Refenti manages
-                structural ecosystems through architectural precision and
-                high-standard delivery.
+                Refenti Realty Group is a real estate investment and development
+                platform focused on the creation of institutional-quality assets
+                in select growth markets.
               </p>
             </FadeIn>
           </div>
           <FadeIn delay={300} direction="right">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-gray-50 shadow-sm md:rounded-[3rem]">
+            <div className="relative aspect-4/5 overflow-hidden rounded-4xl border border-gray-50 shadow-sm md:rounded-[3rem]">
               <img
                 src="/art.webp"
                 className="h-full w-full object-cover opacity-90"
@@ -175,7 +177,7 @@ function Home() {
             willChange: "transform",
           }}
         />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-refenti-offwhite via-refenti-offwhite/40 to-transparent" />
+        <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-refenti-offwhite via-refenti-offwhite/40 to-transparent" />
 
         <div className="relative z-10 mx-auto max-w-6xl space-y-3 px-4 text-center sm:px-6 md:space-y-6">
           <FadeIn direction="none" duration={1000} delay={1000}>
@@ -195,79 +197,92 @@ function Home() {
 
       <PhilosophySection />
 
-      <section className="relative z-10 -mt-6 rounded-[2.5rem] border-t border-gray-50 bg-white px-4 py-14 shadow-sm sm:px-6 md:-mt-16 md:rounded-[6rem] md:px-12 md:py-32">
+      <section className="bg-refenti-offwhite px-4 pt-20 pb-24 md:pt-40 md:pb-54">
+        <div className="mx-auto max-w-6xl">
+          <FadeIn>
+            <div className="space-y-6 text-center md:space-y-8">
+              <h2 className="font-display text-3xl leading-[1.2] font-light text-refenti-charcoal md:text-5xl">
+                A Platform Built for{" "}
+                <span className="text-refenti-gold italic">
+                  Long-Term Value
+                </span>
+              </h2>
+              <p className="mx-auto max-w-3xl text-sm leading-relaxed font-light text-gray-600 md:text-base">
+                The platform operates with a long-term orientation, disciplined
+                capital deployment, and a structured development approach
+                designed to support governance, execution certainty, and
+                long-term asset performance. Refenti operates under Solstice
+                Ventures Holding (SVH) and serves as a public, non-operational
+                institutional reference point.
+              </p>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      <section className="bg-refenti-offwhite px-6 pb-20 md:px-12 md:pb-32">
         <div className="mx-auto max-w-7xl">
-          <div className="mb-8 md:mb-16">
-            <FadeIn>
-              <div className="space-y-1 text-center md:space-y-2 md:text-left">
-                <h2 className="font-display text-5xl leading-none font-light text-black uppercase select-none sm:text-6xl md:text-9xl">
-                  Portfolio
-                </h2>
-                <p className="font-sans text-xs font-bold text-refenti-gold uppercase">
-                  The Collection
-                </p>
-              </div>
-            </FadeIn>
-          </div>
-
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-12 md:gap-16">
-            {projects.length > 0 && (
-              <div className="group relative md:col-span-7">
-                <FadeIn delay={100} direction="left">
-                  <Link to={`/projects/${projects[0].id}`} className="block">
-                    <div className="aspect-video overflow-hidden rounded-[2rem] border border-gray-100 bg-white shadow-lg md:rounded-[2.5rem]">
-                      <LazyImage
-                        src={projects[0].image}
-                        alt={projects[0].name}
-                        className="h-full w-full object-cover opacity-90 transition-transform duration-500 group-hover:scale-105"
-                      />
+          <div className="overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-xl md:rounded-3xl">
+            <div className="grid gap-0 md:grid-cols-5">
+              {/* Left Column - Heading */}
+              <div className="flex flex-col justify-center border-b border-gray-100 bg-gradient-to-br from-refenti-offwhite to-white p-8 md:col-span-2 md:border-r md:border-b-0 md:p-12">
+                <FadeIn>
+                  <div className="space-y-4">
+                    <div className="inline-flex items-center gap-3 rounded-full border border-refenti-gold/20 bg-refenti-gold/5 px-4 py-2">
+                      <div className="h-2 w-2 rounded-full bg-refenti-gold" />
+                      <span className="font-sans text-xs font-bold tracking-wider text-refenti-gold uppercase">
+                        The Collection
+                      </span>
                     </div>
-                  </Link>
-                </FadeIn>
-                <FadeIn delay={200}>
-                  <div className="mt-6 space-y-2 px-2 md:mt-10 md:space-y-4 md:px-4">
-                    <h3 className="font-display text-2xl leading-none font-light text-refenti-charcoal md:text-4xl">
-                      {projects[0].name}
-                    </h3>
-                    <p className="text-xs font-bold text-refenti-gold uppercase opacity-80">
-                      {projects[0].assetClass}
-                    </p>
-                    <p className="max-w-md text-sm leading-relaxed font-light text-gray-600">
-                      {projects[0].description}
-                    </p>
+                    <h2 className="font-display text-4xl leading-tight font-light text-refenti-charcoal uppercase md:text-5xl">
+                      Portfolio
+                    </h2>
                   </div>
                 </FadeIn>
               </div>
-            )}
 
-            {projects.length > 1 && (
-              <div className="group md:col-span-5 md:mt-32">
-                <FadeIn delay={200} direction="right">
-                  <Link to={`/projects/${projects[1].id}`} className="block">
-                    <div className="aspect-[4/5] overflow-hidden rounded-[2rem] border border-gray-100 bg-white shadow-lg">
-                      <LazyImage
-                        src={projects[1].image}
-                        alt={projects[1].name}
-                        className="h-full w-full object-cover opacity-90 transition-transform duration-500 group-hover:scale-105"
-                      />
+              {/* Right Column - Content */}
+              <div className="flex flex-col justify-center p-8 md:col-span-3 md:p-12">
+                <FadeIn delay={100}>
+                  <div className="space-y-8">
+                    <p className="text-sm leading-relaxed font-light text-gray-700 md:text-base md:leading-relaxed">
+                      Refenti's portfolio represents the application of a
+                      consistent investment and development logic across a
+                      selective set of real estate assets. Each project reflects
+                      how the platform originates, structures, and stewards
+                      assets with a primary focus on long-term capital
+                      appreciation, supported by disciplined execution and
+                      operational resilience.
+                    </p>
+                    <div className="flex items-center gap-4">
+                      <Link
+                        to="/projects"
+                        className="group inline-flex items-center gap-3 rounded-xl bg-refenti-charcoal px-6 py-3 text-xs font-bold text-white uppercase shadow-lg transition-all duration-300 hover:bg-refenti-gold hover:shadow-xl"
+                      >
+                        View Projects
+                        <svg
+                          className="h-4 w-4 transition-transform group-hover:translate-x-1"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M17 8l4 4m0 0l-4 4m4-4H3"
+                          />
+                        </svg>
+                      </Link>
+                      <div className="flex items-center gap-2 text-xs font-light text-gray-400">
+                        <div className="h-px w-8 bg-gray-200" />
+                        <span>Selective Development</span>
+                      </div>
                     </div>
-                  </Link>
-                </FadeIn>
-                <FadeIn delay={300}>
-                  <div className="mt-6 space-y-2 px-2 md:mt-8 md:space-y-4 md:px-4">
-                    <h3 className="font-display text-2xl leading-none font-light text-refenti-charcoal md:text-3xl">
-                      {projects[1].name}
-                    </h3>
-                    <p className="text-xs font-bold text-refenti-gold uppercase opacity-80">
-                      {projects[1].assetClass}
-                    </p>
-                    <p className="max-w-md text-sm leading-relaxed font-light text-gray-600">
-                      {projects[1].description}
-                    </p>
                   </div>
                 </FadeIn>
               </div>
-            )}
+            </div>
           </div>
         </div>
       </section>
