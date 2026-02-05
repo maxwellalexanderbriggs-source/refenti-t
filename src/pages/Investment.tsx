@@ -20,22 +20,22 @@ function Investment() {
     },
     {
       title: "Mixed-Use",
-      image: "/investment/mixed-use.webp",
+      image: "/mixed-use.jpg",
       alt: "Mixed-use development",
     },
     {
       title: "Commercial & Serviced",
-      image: "/investment/commercial.webp",
+      image: "/commercial.jpg",
       alt: "Commercial development",
     },
     {
       title: "Serviced Apartments",
-      image: "/investment/serviced-apartments.webp",
+      image: "/serviced-apartements.jpg",
       alt: "Serviced apartments",
     },
     {
       title: "Hospitality",
-      image: "/investment/hospitality.webp",
+      image: "/hospitality.jpg",
       alt: "Hospitality assets",
     },
   ]
