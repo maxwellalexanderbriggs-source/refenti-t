@@ -168,13 +168,14 @@ function Home() {
       </Helmet>
       <section className="relative flex min-h-[80vh] w-full items-end justify-center overflow-hidden bg-refenti-offwhite pb-12 md:min-h-screen md:pb-20">
         <div
-          className="absolute inset-[-5%]"
+          className="absolute inset-[-5%] animate-fade-in"
           style={{
             backgroundImage: `url('/home-hero.jpg')`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             transform: `translateY(${-scrollY * 0.1}px)`,
             willChange: "transform",
+            animationDuration: "1200ms",
           }}
         />
         <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-refenti-offwhite via-refenti-offwhite/40 to-transparent" />

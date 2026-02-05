@@ -30,24 +30,27 @@ function About() {
           src="/about/about-hero.webp"
           alt="About Hero"
           fetchPriority="high"
-          className="absolute top-[-5%] left-0 h-[110%] w-full object-cover"
+          className="absolute top-[-5%] left-0 h-[110%] w-full animate-fade-in object-cover"
           style={{
             transform: `translateY(${-scrollY * 0.12}px)`,
             willChange: "transform",
+            animationDuration: "1200ms",
           }}
         />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-refenti-offwhite via-refenti-offwhite/70 to-transparent" />
         <div className="relative z-10 mx-auto max-w-6xl space-y-6 px-4 text-center md:space-y-8">
-          <FadeIn direction="none" duration={1000}>
-            <div className="space-y-3 md:space-y-6">
+          <div className="space-y-3 md:space-y-6">
+            <FadeIn direction="none" duration={1000} delay={1000}>
               <h1 className="font-display text-6xl leading-none font-light text-refenti-charcoal uppercase md:text-9xl">
                 About
               </h1>
+            </FadeIn>
+            <FadeIn direction="none" duration={1000} delay={1300}>
               <p className="font-sans text-xs font-bold text-refenti-gold uppercase">
                 Institutional Real Estate Platform
               </p>
-            </div>
-          </FadeIn>
+            </FadeIn>
+          </div>
         </div>
       </section>
 

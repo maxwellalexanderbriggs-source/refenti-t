@@ -56,21 +56,26 @@ function Investment() {
           src="/investment/investment-hero.webp"
           alt="Investment Hero"
           fetchPriority="high"
-          className="absolute top-[-5%] left-0 h-[110%] w-full object-cover"
+          className="absolute top-[-5%] left-0 h-[110%] w-full animate-fade-in object-cover"
           style={{
             transform: `translateY(${-scrollY * 0.12}px)`,
             willChange: "transform",
+            animationDuration: "1200ms",
           }}
         />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-refenti-offwhite via-refenti-offwhite/80 to-transparent" />
         <div className="relative z-10 mx-auto max-w-6xl space-y-6 px-4 text-center md:space-y-8">
           <div className="space-y-3 md:space-y-6">
-            <h1 className="font-display text-6xl leading-none font-light text-refenti-charcoal uppercase md:text-9xl">
-              Investment
-            </h1>
-            <p className="font-sans text-xs font-bold text-refenti-gold uppercase">
-              Institutional Real Estate Platform
-            </p>
+            <FadeIn direction="none" duration={1000} delay={1000}>
+              <h1 className="font-display text-6xl leading-none font-light text-refenti-charcoal uppercase md:text-9xl">
+                Investment
+              </h1>
+            </FadeIn>
+            <FadeIn direction="none" duration={1000} delay={1300}>
+              <p className="font-sans text-xs font-bold text-refenti-gold uppercase">
+                Institutional Real Estate Platform
+              </p>
+            </FadeIn>
           </div>
         </div>
       </section>

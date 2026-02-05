@@ -43,29 +43,32 @@ function Projects() {
         {/* Cinematic Hero Banner */}
         <section className="relative flex min-h-[70vh] w-full items-end justify-center overflow-hidden bg-refenti-offwhite pb-16 md:min-h-[90vh] md:pb-32">
           <div
-            className="absolute inset-[-10%]"
+            className="absolute inset-[-10%] animate-fade-in"
             style={{
               backgroundImage: `url('/portfolio-hero.jpg')`,
               backgroundSize: "cover",
               backgroundPosition: "center",
               transform: `translateY(${-scrollY * 0.15}px)`,
               willChange: "transform",
+              animationDuration: "1200ms",
             }}
           />
           {/* Deep gradient overlay for text legibility and transition to off-white */}
           <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-refenti-offwhite via-refenti-offwhite/60 to-black/20" />
 
           <div className="relative z-10 mx-auto max-w-6xl space-y-6 px-4 text-center md:space-y-8">
-            <FadeIn direction="none" duration={1000}>
-              <div className="space-y-3 md:space-y-6">
+            <div className="space-y-3 md:space-y-6">
+              <FadeIn direction="none" duration={1000} delay={1000}>
                 <h1 className="font-display text-6xl leading-none font-light text-refenti-charcoal uppercase md:text-9xl">
                   Portfolio
                 </h1>
+              </FadeIn>
+              <FadeIn direction="none" duration={1000} delay={1300}>
                 <p className="font-sans text-xs font-bold text-refenti-gold uppercase">
                   Refined Urban Assets
                 </p>
-              </div>
-            </FadeIn>
+              </FadeIn>
+            </div>
           </div>
         </section>
 

@@ -102,28 +102,31 @@ function EventsNews() {
       </Helmet>
       <section className="relative flex min-h-[70vh] w-full items-end justify-center overflow-hidden bg-refenti-offwhite pb-16 md:min-h-[90vh] md:pb-32">
         <div
-          className="absolute inset-[-5%]"
+          className="absolute inset-[-5%] animate-fade-in"
           style={{
             backgroundImage: `url('https://images.unsplash.com/photo-1540575861501-7cf05a4b125a?auto=format&fit=crop&q=80&w=2000')`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             transform: `translateY(${-scrollY * 0.1}px)`,
             willChange: "transform",
+            animationDuration: "1200ms",
           }}
         />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-refenti-offwhite via-refenti-offwhite/80 to-transparent" />
 
         <div className="relative z-10 mx-auto max-w-6xl space-y-6 px-4 text-center md:space-y-8">
-          <FadeIn direction="none" duration={1000}>
-            <div className="space-y-3 md:space-y-6">
+          <div className="space-y-3 md:space-y-6">
+            <FadeIn direction="none" duration={1000} delay={1000}>
               <h1 className="font-display text-6xl leading-none font-light text-refenti-charcoal uppercase md:text-9xl">
                 News & Events
               </h1>
+            </FadeIn>
+            <FadeIn direction="none" duration={1000} delay={1300}>
               <p className="font-sans text-xs font-bold text-refenti-gold uppercase">
                 Institutional Updates
               </p>
-            </div>
-          </FadeIn>
+            </FadeIn>
+          </div>
         </div>
       </section>
 
