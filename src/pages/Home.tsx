@@ -220,6 +220,19 @@ function Home() {
         </div>
       </section>
 
+      <section className="relative h-[60vh] w-full overflow-hidden md:h-[70vh]">
+        <div
+          className="absolute inset-[-5%]"
+          style={{
+            backgroundImage: `url('/parallax.jpg')`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            transform: `translateY(${-scrollY * 0.15}px)`,
+            willChange: "transform",
+          }}
+        />
+      </section>
+
       <section className="bg-refenti-offwhite px-6 pb-20 md:px-12 md:pb-32">
         <div className="mx-auto max-w-7xl">
           <div className="overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-xl md:rounded-3xl">
