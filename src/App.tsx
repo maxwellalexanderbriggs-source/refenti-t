@@ -45,13 +45,27 @@ function AppContent() {
 
   return (
     <div className="min-h-screen bg-refenti-offwhite font-sans text-refenti-charcoal selection:bg-refenti-gold selection:text-white">
-      <a
-        href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[9999] focus:rounded-lg focus:bg-refenti-gold focus:px-6 focus:py-3 focus:text-white focus:shadow-xl focus:ring-2 focus:ring-white focus:outline-none"
-      >
-        Skip to main content
-      </a>
-      {!isAdmin && <Navbar />}
+      {/* Site-wide background pattern - centered, 20% width, vertical repeat only */}
+      <div
+        className="pointer-events-none fixed inset-0 z-0"
+        style={{
+          backgroundImage: "url(/pattern.png)",
+          backgroundRepeat: "repeat-y",
+          backgroundPosition: "center",
+          backgroundSize: "20% auto",
+          opacity: 0.12,
+        }}
+      />
+
+      {/* Main content wrapper with higher z-index */}
+      <div className="relative z-10">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[9999] focus:rounded-lg focus:bg-refenti-gold focus:px-6 focus:py-3 focus:text-white focus:shadow-xl focus:ring-2 focus:ring-white focus:outline-none"
+        >
+          Skip to main content
+        </a>
+        {!isAdmin && <Navbar />}
       <main id="main-content">
         <Layout>
           <Routes>
@@ -195,6 +209,7 @@ function AppContent() {
           </footer>
         </>
       )}
+      </div>
     </div>
   )
 }
