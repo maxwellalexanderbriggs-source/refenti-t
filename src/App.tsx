@@ -27,7 +27,7 @@ const ScrollToTop = () => {
 }
 
 function Layout({ children }: { children: React.ReactNode }) {
-  return <div className="animate-fade-in">{children}</div>
+  return <div>{children}</div>
 }
 
 function App() {
@@ -48,7 +48,7 @@ function AppContent() {
       {/* Site-wide background layer */}
       <div
         className="pointer-events-none fixed inset-0 bg-refenti-offwhite"
-        style={{ zIndex: -1 }}
+        style={{ zIndex: -1, animation: "none", transition: "none" }}
       />
       {/* Site-wide background pattern */}
       <div
@@ -64,7 +64,7 @@ function AppContent() {
           transition: "none",
         }}
       />
-      <div className="relative min-h-screen font-sans text-refenti-charcoal selection:bg-refenti-gold selection:text-white">
+      <div className="relative min-h-screen font-sans text-refenti-charcoal selection:bg-refenti-gold selection:text-white" style={{ animation: "none", transition: "none" }}>
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[9999] focus:rounded-lg focus:bg-refenti-gold focus:px-6 focus:py-3 focus:text-white focus:shadow-xl focus:ring-2 focus:ring-white focus:outline-none"
