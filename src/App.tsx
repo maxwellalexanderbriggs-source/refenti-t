@@ -53,7 +53,7 @@ function AppContent() {
           backgroundRepeat: "repeat-y",
           backgroundPosition: "center",
           backgroundSize: "20% auto",
-          opacity: 0.12,
+          opacity: 0.08,
         }}
       />
 
