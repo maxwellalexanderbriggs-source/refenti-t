@@ -44,24 +44,31 @@ function AppContent() {
   const isAdmin = location.pathname.startsWith("/admin")
 
   return (
-    <div className="relative min-h-screen bg-refenti-offwhite font-sans text-refenti-charcoal selection:bg-refenti-gold selection:text-white">
+    <>
+      {/* Site-wide background layer */}
+      <div
+        className="pointer-events-none fixed inset-0 bg-refenti-offwhite"
+        style={{ zIndex: -1 }}
+      />
       {/* Site-wide background pattern */}
       <div
-        className="pointer-events-none fixed inset-0 -z-10"
+        className="pointer-events-none fixed inset-0"
         style={{
           backgroundImage: "url(/pattern.png)",
           backgroundPosition: "center top",
           backgroundRepeat: "repeat-y",
           backgroundSize: "20% auto",
           opacity: 0.12,
+          zIndex: 0,
         }}
       />
-      <a
-        href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[9999] focus:rounded-lg focus:bg-refenti-gold focus:px-6 focus:py-3 focus:text-white focus:shadow-xl focus:ring-2 focus:ring-white focus:outline-none"
-      >
-        Skip to main content
-      </a>
+      <div className="relative min-h-screen font-sans text-refenti-charcoal selection:bg-refenti-gold selection:text-white">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[9999] focus:rounded-lg focus:bg-refenti-gold focus:px-6 focus:py-3 focus:text-white focus:shadow-xl focus:ring-2 focus:ring-white focus:outline-none"
+        >
+          Skip to main content
+        </a>
       {!isAdmin && <Navbar />}
       <main id="main-content">
         <Layout>
@@ -206,7 +213,8 @@ function AppContent() {
           </footer>
         </>
       )}
-    </div>
+      </div>
+    </>
   )
 }
 
