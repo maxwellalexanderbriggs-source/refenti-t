@@ -44,7 +44,7 @@ function AppContent() {
   const isAdmin = location.pathname.startsWith("/admin")
 
   return (
-    <div className="relative z-[1] min-h-screen font-sans text-refenti-charcoal selection:bg-refenti-gold selection:text-white">
+    <div className="relative z-10 min-h-screen font-sans text-refenti-charcoal selection:bg-refenti-gold selection:text-white">
       <a
         href="#main-content"
         className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-[9999] focus:rounded-lg focus:bg-refenti-gold focus:px-6 focus:py-3 focus:text-white focus:shadow-xl focus:ring-2 focus:ring-white focus:outline-none"

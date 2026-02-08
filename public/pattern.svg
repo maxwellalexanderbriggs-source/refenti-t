@@ -1,0 +1,17 @@
+<svg width="200" height="400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="subtle-lines" x="0" y="0" width="200" height="40" patternUnits="userSpaceOnUse">
+      <!-- Vertical line -->
+      <line x1="100" y1="0" x2="100" y2="40" stroke="#b7a371" stroke-width="1.5" opacity="0.3"/>
+
+      <!-- Diagonal accent lines -->
+      <line x1="80" y1="10" x2="120" y2="10" stroke="#b7a371" stroke-width="0.5" opacity="0.2"/>
+      <line x1="85" y1="30" x2="115" y2="30" stroke="#b7a371" stroke-width="0.5" opacity="0.2"/>
+
+      <!-- Subtle dots -->
+      <circle cx="100" cy="20" r="2" fill="#b7a371" opacity="0.15"/>
+    </pattern>
+  </defs>
+
+  <rect width="200" height="400" fill="url(#subtle-lines)"/>
+</svg>

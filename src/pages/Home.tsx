@@ -158,7 +158,7 @@ function Home() {
   }, [])
 
   return (
-    <div className="overflow-hidden bg-refenti-offwhite">
+    <div className="overflow-hidden">
       <Helmet>
         <title>Refenti Group - Premium Real Estate Development</title>
         <meta
@@ -166,7 +166,7 @@ function Home() {
           content="Refenti Group specializes in luxury real estate development across residential, mixed-use, commercial, and hospitality sectors. Precision-driven urban destinations in Ethiopia and Dubai."
         />
       </Helmet>
-      <section className="relative flex min-h-[80vh] w-full items-end justify-center overflow-hidden bg-refenti-offwhite pb-12 md:min-h-screen md:pb-20">
+      <section className="relative flex min-h-[80vh] w-full items-end justify-center overflow-hidden pb-12 md:min-h-screen md:pb-20">
         <div
           className="absolute inset-[-5%] animate-fade-in"
           style={{
@@ -198,7 +198,7 @@ function Home() {
 
       <PhilosophySection />
 
-      <section className="bg-refenti-offwhite px-4 pt-20 pb-24 md:pt-40 md:pb-54">
+      <section className="px-4 pt-20 pb-24 md:pt-40 md:pb-54">
         <div className="mx-auto max-w-6xl">
           <FadeIn>
             <div className="space-y-6 text-center md:space-y-8">
@@ -221,7 +221,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="bg-refenti-offwhite px-6 pb-20 md:px-12 md:pb-32">
+      <section className="px-6 pb-20 md:px-12 md:pb-32">
         <div className="mx-auto max-w-7xl">
           <div className="overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-xl md:rounded-3xl">
             <div className="grid gap-0 md:grid-cols-5">
@@ -297,7 +297,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="bg-refenti-offwhite px-4 py-14 sm:px-6 md:py-28">
+      <section className="px-4 py-14 sm:px-6 md:py-28">
         <div className="mx-auto max-w-7xl">
           <FadeIn>
             <div className="mb-8 space-y-4 text-center md:mb-10 md:space-y-6">

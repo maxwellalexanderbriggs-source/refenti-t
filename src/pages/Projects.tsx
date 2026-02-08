@@ -39,9 +39,9 @@ function Projects() {
           content="Explore Refenti Group's portfolio of luxury real estate projects. From residential developments to mixed-use landmarks across Ethiopia and Dubai."
         />
       </Helmet>
-      <div className="min-h-screen bg-refenti-offwhite pb-16">
+      <div className="min-h-screen pb-16">
         {/* Cinematic Hero Banner */}
-        <section className="relative flex min-h-[70vh] w-full items-end justify-center overflow-hidden bg-refenti-offwhite pb-16 md:min-h-[90vh] md:pb-32">
+        <section className="relative flex min-h-[70vh] w-full items-end justify-center overflow-hidden pb-16 md:min-h-[90vh] md:pb-32">
           <div
             className="absolute inset-[-10%] animate-fade-in"
             style={{

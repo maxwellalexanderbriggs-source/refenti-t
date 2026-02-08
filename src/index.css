@@ -112,7 +112,7 @@ body {
   position: relative;
 }
 
-/* Site-wide background pattern */
+/* Site-wide background pattern - sits above beige bg but below all content */
 body::before {
   content: "";
   position: fixed;
@@ -121,13 +121,13 @@ body::before {
   transform: translateX(-50%);
   width: 20%;
   height: 100%;
-  background-image: url("/pattern.png");
+  background-image: url("/pattern.svg");
   background-position: center top;
   background-repeat: repeat-y;
   background-size: 100% auto;
   opacity: 0.12;
   pointer-events: none;
-  z-index: 0;
+  z-index: 5;
 }
 
 /* Custom scrollbar */
