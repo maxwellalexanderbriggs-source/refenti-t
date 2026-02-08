@@ -90,7 +90,7 @@ function EventsNews() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-refenti-offwhite">
+    <div className="min-h-screen">
       <Helmet>
         <title>Events & News - Refenti Group Updates</title>
         <meta
@@ -98,7 +98,7 @@ function EventsNews() {
           content="Stay updated with Refenti Group's latest events, milestones, and industry insights. Real estate development news and announcements from Ethiopia and Dubai."
         />
       </Helmet>
-      <section className="relative flex min-h-[70vh] w-full items-end justify-center overflow-hidden bg-refenti-offwhite pb-16 md:min-h-[90vh] md:pb-32">
+      <section className="relative flex min-h-[70vh] w-full items-end justify-center overflow-hidden pb-16 md:min-h-[90vh] md:pb-32">
         <div
           className="absolute inset-[-5%] animate-fade-in"
           style={{

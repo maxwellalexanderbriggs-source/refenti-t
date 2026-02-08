@@ -47,7 +47,7 @@ function AppContent() {
     <div className="min-h-screen bg-refenti-offwhite font-sans text-refenti-charcoal selection:bg-refenti-gold selection:text-white">
       {/* Site-wide background pattern - centered, 20% width, vertical repeat only */}
       <div
-        className="pointer-events-none fixed inset-0 z-0"
+        className="pointer-events-none fixed inset-0 z-1"
         style={{
           backgroundImage: "url(/pattern.png)",
           backgroundRepeat: "repeat-y",

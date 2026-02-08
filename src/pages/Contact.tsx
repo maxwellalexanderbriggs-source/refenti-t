@@ -119,7 +119,7 @@ function Contact() {
   }
 
   return (
-    <div className="min-h-screen bg-refenti-offwhite">
+    <div className="min-h-screen">
       <Helmet>
         <title>
           Contact Refenti Group - Partnership & Investment Inquiries
@@ -130,7 +130,7 @@ function Contact() {
         />
       </Helmet>
       {/* Hero Section */}
-      <section className="relative flex min-h-[70vh] w-full items-end justify-center overflow-hidden bg-refenti-offwhite pb-16 md:min-h-[90vh] md:pb-32">
+      <section className="relative flex min-h-[70vh] w-full items-end justify-center overflow-hidden pb-16 md:min-h-[90vh] md:pb-32">
         <div
           className="absolute inset-[-5%] animate-fade-in"
           style={{
