@@ -60,9 +60,9 @@ function About() {
           {/* Vision - Left aligned, rounded right */}
           <FadeIn direction="up" duration={800}>
             <div className="flex justify-start">
-              <div className="w-full max-w-xl rounded-l-none rounded-r-full bg-amber-50 px-8 py-8 text-center shadow-2xl md:px-12 md:py-10">
+              <div className="w-full max-w-xl rounded-l-none rounded-r-full bg-amber-100 px-8 py-8 text-center shadow-2xl md:px-12 md:py-10">
                 <div className="mx-auto flex flex-col items-center space-y-2">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-refenti-gold opacity-60 shadow-lg md:h-12 md:w-12">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-refenti-gold opacity-40 shadow-lg md:h-12 md:w-12">
                     <svg
                       className="h-5 w-5 text-white md:h-6 md:w-6"
                       fill="none"
@@ -99,9 +99,9 @@ function About() {
           {/* Mission - Right aligned, rounded left */}
           <FadeIn direction="up" duration={800} delay={100}>
             <div className="flex justify-end">
-              <div className="w-full max-w-xl rounded-l-full rounded-r-none bg-amber-50 px-8 py-8 text-center shadow-2xl md:px-12 md:py-10">
+              <div className="w-full max-w-xl rounded-l-full rounded-r-none bg-amber-100 px-8 py-8 text-center shadow-2xl md:px-12 md:py-10">
                 <div className="mx-auto flex flex-col items-center space-y-2">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-refenti-gold opacity-60 shadow-lg md:h-12 md:w-12">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-refenti-gold opacity-40 shadow-lg md:h-12 md:w-12">
                     <svg
                       className="h-5 w-5 text-white md:h-6 md:w-6"
                       fill="none"
@@ -136,19 +136,34 @@ function About() {
               <h2 className="text-center font-display text-2xl leading-tight font-light tracking-wide text-refenti-gold uppercase md:text-3xl">
                 Values
               </h2>
-              <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+              <div className="grid grid-cols-1 gap-4 md:grid-cols-4">
                 {[
-                  "Governance discipline",
-                  "Execution certainty",
-                  "Structured risk management",
-                  "Long-term orientation",
-                ].map((value, idx) => (
+                  {
+                    value: "Governance discipline",
+                    description: "Institutional standards and oversight frameworks",
+                  },
+                  {
+                    value: "Execution certainty",
+                    description: "Reliable delivery on commitments and timelines",
+                  },
+                  {
+                    value: "Structured risk management",
+                    description: "Systematic approach to identifying and mitigating risk",
+                  },
+                  {
+                    value: "Long-term orientation",
+                    description: "Focus on sustained capital appreciation",
+                  },
+                ].map((item, idx) => (
                   <div
                     key={idx}
-                    className="rounded-xl border border-gray-200 bg-white px-6 py-5 text-center shadow-sm transition-shadow hover:shadow-md"
+                    className="rounded-xl border border-gray-200 bg-white px-8 py-8 text-center shadow-sm transition-shadow hover:shadow-md"
                   >
-                    <p className="font-light text-refenti-charcoal md:text-lg">
-                      {value}
+                    <p className="mb-3 text-lg font-light text-refenti-charcoal md:text-xl">
+                      {item.value}
+                    </p>
+                    <p className="text-xs leading-relaxed text-refenti-charcoal/60 md:text-sm">
+                      {item.description}
                     </p>
                   </div>
                 ))}
