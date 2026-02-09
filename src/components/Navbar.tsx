@@ -25,25 +25,12 @@ function Navbar() {
     window.addEventListener("scroll", handleScroll)
 
     const fetchProjects = async () => {
-      const cached = sessionStorage.getItem("refenti-projects")
-      if (cached) {
-        try {
-          const data = JSON.parse(cached)
-          setProjects(data)
-          if (data.length > 0) setHoveredProject(data[0])
-          return
-        } catch (e) {
-          console.error("Failed to parse cached projects")
-        }
-      }
-
       const { data, error } = await getProjects()
       if (error) {
         console.error("Failed to load projects:", error.message)
       } else {
         setProjects(data)
         if (data.length > 0) setHoveredProject(data[0])
-        sessionStorage.setItem("refenti-projects", JSON.stringify(data))
       }
     }
     fetchProjects()
