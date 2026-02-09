@@ -129,37 +129,7 @@ function Contact() {
           content="Get in touch with Refenti Group for partnership opportunities, investment inquiries, or stakeholder engagement. Connect with our team in Ethiopia and Dubai."
         />
       </Helmet>
-      {/* Hero Section */}
-      <section className="relative flex min-h-[70vh] w-full items-end justify-center overflow-hidden pb-16 md:min-h-[90vh] md:pb-32">
-        <div
-          className="absolute inset-[-5%] animate-fade-in"
-          style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80&w=1600')`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            transform: `translateY(${-scrollY * 0.1}px)`,
-            willChange: "transform",
-            animationDuration: "1200ms",
-          }}
-        />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-refenti-offwhite via-refenti-offwhite/70 to-transparent" />
-        <div className="relative z-10 mx-auto max-w-6xl space-y-6 px-4 text-center md:space-y-8">
-          <div className="space-y-3 md:space-y-6">
-            <FadeIn direction="none" duration={1000} delay={1000}>
-              <h1 className="font-display text-6xl leading-none font-light text-refenti-charcoal uppercase md:text-9xl">
-                Contact
-              </h1>
-            </FadeIn>
-            <FadeIn direction="none" duration={1000} delay={1300}>
-              <p className="font-sans text-xs font-bold text-refenti-gold uppercase">
-                Direct Engagement
-              </p>
-            </FadeIn>
-          </div>
-        </div>
-      </section>
-
-      <div className="relative z-20 px-6 py-8 md:px-8 md:py-16">
+      <div className="relative z-20 px-6 py-20 md:px-8 md:py-32">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-8 md:grid-cols-12 md:gap-10">
             <div className="space-y-6 md:col-span-5 md:space-y-8">
@@ -167,7 +137,7 @@ function Contact() {
                 <div className="space-y-4 md:space-y-6">
                   <h2 className="font-display text-4xl leading-none font-light text-refenti-charcoal uppercase md:text-5xl">
                     Connect <br />
-                    <span className="text-refenti-gold italic">With Us</span>
+                    <span className="text-refenti-gold ">With Us</span>
                   </h2>
                   <p className="font-display text-xs font-bold text-refenti-gold uppercase">
                     Inquiry Portal

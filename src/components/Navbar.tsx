@@ -229,9 +229,6 @@ function Navbar() {
           >
             <div className="flex min-h-120 overflow-hidden rounded-[3rem] border border-gray-100/50 bg-white shadow-[0_30px_80px_-20px_rgba(0,0,0,0.08)]">
               <div className="w-[38%] space-y-10 border-r border-gray-100 bg-white p-12">
-                <p className="text-xs font-bold text-refenti-gold uppercase opacity-80">
-                  Refenti Collection
-                </p>
                 <div className="space-y-8">
                   {projects.map((project) => (
                     <Link

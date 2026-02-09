@@ -92,7 +92,7 @@ function FeatureSection({
       <div className={`w-full space-y-6 px-4 md:w-1/2 md:px-12`}>
         <FadeIn delay={100}>
           <div className="space-y-2">
-            <span className="font-display text-7xl leading-none font-light text-refenti-gold opacity-10 select-none">
+            <span className="font-display text-5xl leading-none font-light text-refenti-gold opacity-10 select-none">
               0{index + 1}
             </span>
             <h3 className="font-display text-4xl leading-[1.1] font-light text-refenti-charcoal md:text-5xl">
@@ -185,14 +185,9 @@ function ProjectDetail() {
 
         <div className="relative z-10 mx-auto max-w-6xl space-y-6 px-4 text-center md:space-y-8">
           <FadeIn direction="none" duration={1000}>
-            <div className="space-y-3 md:space-y-6">
-              <h1 className="font-display text-6xl leading-none font-light text-refenti-charcoal uppercase md:text-9xl">
-                {project.name}
-              </h1>
-              <p className="font-sans text-xs font-bold text-refenti-gold uppercase">
-                The Refenti Collection
-              </p>
-            </div>
+            <h1 className="font-display text-5xl leading-none font-light text-refenti-charcoal uppercase md:text-7xl">
+              {project.name}
+            </h1>
           </FadeIn>
         </div>
       </section>
@@ -224,7 +219,7 @@ function ProjectDetail() {
       </section>
 
       {/* Asset Narrative Section */}
-      <section className="bg-white px-8 py-16 md:px-12 md:py-28">
+      <section className="bg-white px-8 py-20 md:px-12 md:py-36">
         <div className="mx-auto grid max-w-7xl items-center gap-10 md:grid-cols-2">
           <div className="space-y-8">
             <FadeIn>
@@ -234,7 +229,7 @@ function ProjectDetail() {
                 </p>
                 <h2 className="font-display text-4xl leading-tight font-light text-refenti-charcoal uppercase md:text-6xl">
                   {project.introTitle?.split(" ")[0]} <br />
-                  <span className="text-refenti-gold italic">
+                  <span className="text-refenti-gold ">
                     {project.introTitle?.split(" ").slice(1).join(" ")}
                   </span>
                 </h2>
@@ -269,7 +264,7 @@ function ProjectDetail() {
                 Project Intelligence
               </p>
               <h2 className="font-display text-3xl font-light text-refenti-charcoal uppercase md:text-4xl">
-                Key <span className="text-refenti-gold italic">Details</span>
+                Key <span className="text-refenti-gold ">Details</span>
               </h2>
             </div>
           </FadeIn>
@@ -388,7 +383,7 @@ function ProjectDetail() {
                 </p>
                 <h2 className="font-display text-4xl font-light text-refenti-charcoal uppercase md:text-5xl">
                   Project{" "}
-                  <span className="text-refenti-gold italic">Features</span>
+                  <span className="text-refenti-gold ">Features</span>
                 </h2>
               </div>
             </FadeIn>
@@ -418,7 +413,7 @@ function ProjectDetail() {
               </p>
               <h2 className="font-display text-4xl font-light text-refenti-charcoal uppercase md:text-6xl">
                 Main{" "}
-                <span className="text-refenti-gold italic">Attributes</span>
+                <span className="text-refenti-gold ">Attributes</span>
               </h2>
             </div>
           </FadeIn>

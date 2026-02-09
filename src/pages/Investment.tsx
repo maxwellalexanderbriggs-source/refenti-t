@@ -67,7 +67,7 @@ function Investment() {
         <div className="relative z-10 mx-auto max-w-6xl space-y-6 px-4 text-center md:space-y-8">
           <div className="space-y-3 md:space-y-6">
             <FadeIn direction="none" duration={1000} delay={1000}>
-              <h1 className="font-display text-6xl leading-none font-light text-refenti-charcoal uppercase md:text-9xl">
+              <h1 className="font-display text-5xl leading-none font-light text-refenti-charcoal uppercase md:text-7xl">
                 Investment
               </h1>
             </FadeIn>
@@ -91,7 +91,7 @@ function Investment() {
           <FadeIn direction="up" duration={800} delay={100}>
             <h2 className="font-display text-4xl leading-tight font-light text-refenti-charcoal uppercase md:text-6xl">
               Institutional-Grade{" "}
-              <span className="text-refenti-gold italic">Real Estate</span>
+              <span className="text-refenti-gold ">Real Estate</span>
             </h2>
           </FadeIn>
           <FadeIn direction="up" duration={800} delay={200}>
@@ -129,7 +129,7 @@ function Investment() {
             <FadeIn direction="up" duration={800} delay={100}>
               <div className="space-y-8">
                 <h2 className="font-display text-4xl leading-tight font-light text-refenti-charcoal uppercase md:text-6xl">
-                  How We <span className="text-refenti-gold italic">Develop</span>
+                  How We <span className="text-refenti-gold ">Develop</span>
                 </h2>
                 <div className="space-y-6 leading-relaxed font-light text-refenti-charcoal md:text-lg">
                   <p>
@@ -171,7 +171,7 @@ function Investment() {
                 </p>
                 <h2 className="font-display text-3xl leading-tight font-light text-refenti-charcoal uppercase md:text-5xl">
                   Disciplined{" "}
-                  <span className="text-refenti-gold italic">Risk Framework</span>
+                  <span className="text-refenti-gold ">Risk Framework</span>
                 </h2>
               </div>
               <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
@@ -216,7 +216,7 @@ function Investment() {
               <div className="space-y-8">
                 <h2 className="font-display text-4xl leading-tight font-light text-refenti-charcoal uppercase md:text-6xl">
                   Quality &{" "}
-                  <span className="text-refenti-gold italic">Governance</span>
+                  <span className="text-refenti-gold ">Governance</span>
                 </h2>
                 <div className="space-y-6 leading-relaxed font-light text-refenti-charcoal md:text-lg">
                   <p>
@@ -260,7 +260,7 @@ function Investment() {
           <div className="space-y-12">
             <FadeIn direction="up" duration={800}>
               <h2 className="font-display text-4xl leading-tight font-light text-refenti-charcoal uppercase md:text-6xl">
-                Asset <span className="text-refenti-gold italic">Classes</span>
+                Asset <span className="text-refenti-gold ">Classes</span>
               </h2>
             </FadeIn>
             <FadeIn direction="up" duration={800} delay={100}>
@@ -302,7 +302,7 @@ function Investment() {
             <FadeIn direction="up" duration={800}>
               <h2 className="font-display text-4xl leading-tight font-light text-refenti-charcoal uppercase md:text-6xl">
                 Investment{" "}
-                <span className="text-refenti-gold italic">Structures</span>
+                <span className="text-refenti-gold ">Structures</span>
               </h2>
             </FadeIn>
             <FadeIn direction="up" duration={800} delay={100}>
@@ -332,7 +332,7 @@ function Investment() {
               href="https://solsticeventures.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-refenti-gold italic transition-opacity hover:opacity-70"
+              className="text-refenti-gold  transition-opacity hover:opacity-70"
             >
               Solstice Ventures Holding
             </a>

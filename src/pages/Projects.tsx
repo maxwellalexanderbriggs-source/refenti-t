@@ -59,7 +59,7 @@ function Projects() {
           <div className="relative z-10 mx-auto max-w-6xl space-y-6 px-4 text-center md:space-y-8">
             <div className="space-y-3 md:space-y-6">
               <FadeIn direction="none" duration={1000} delay={1000}>
-                <h1 className="font-display text-6xl leading-none font-light text-refenti-charcoal uppercase md:text-9xl">
+                <h1 className="font-display text-5xl leading-none font-light text-refenti-charcoal uppercase md:text-7xl">
                   Portfolio
                 </h1>
               </FadeIn>
@@ -127,7 +127,7 @@ function Projects() {
                       <div className="space-y-6 px-6 md:px-10">
                         <div className="space-y-3">
                           <div className="flex items-center gap-4">
-                            <p className="text-xs font-bold text-refenti-gold uppercase">
+                            <p className="rounded-full border border-refenti-gold bg-refenti-gold/10 px-4 py-1.5 text-xs font-extrabold tracking-wider text-refenti-gold uppercase">
                               {project.assetClass}
                             </p>
                             <div className="h-px w-8 bg-gray-200" />
@@ -139,7 +139,7 @@ function Projects() {
                             {project.location}
                           </p>
                         </div>
-                        <p className="max-w-lg text-sm leading-relaxed font-light text-gray-600 opacity-80 transition-opacity duration-500 group-hover:opacity-100">
+                        <p className="max-w-md text-sm leading-relaxed font-light text-gray-600 opacity-80 transition-opacity duration-500 group-hover:opacity-100">
                           {project.description}
                         </p>
 

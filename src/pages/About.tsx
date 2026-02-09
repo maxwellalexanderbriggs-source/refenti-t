@@ -41,7 +41,7 @@ function About() {
         <div className="relative z-10 mx-auto max-w-6xl space-y-6 px-4 text-center md:space-y-8">
           <div className="space-y-3 md:space-y-6">
             <FadeIn direction="none" duration={1000} delay={1000}>
-              <h1 className="font-display text-6xl leading-none font-light text-refenti-charcoal uppercase md:text-9xl">
+              <h1 className="font-display text-5xl leading-none font-light text-refenti-charcoal uppercase md:text-7xl">
                 About
               </h1>
             </FadeIn>
@@ -86,7 +86,7 @@ function About() {
                   <h2 className="font-display text-2xl font-light text-white uppercase md:text-3xl">
                     Vision
                   </h2>
-                  <p className="max-w-md text-sm leading-relaxed font-light text-white/90 italic">
+                  <p className="max-w-md text-sm leading-relaxed font-light text-white/90 ">
                     "To operate as a disciplined, scalable real estate
                     investment and development platform aligned with long-term
                     capital and institutional stakeholders."
@@ -119,7 +119,7 @@ function About() {
                   <h2 className="font-display text-2xl font-light text-white uppercase md:text-3xl">
                     Mission
                   </h2>
-                  <p className="max-w-md text-sm leading-relaxed font-light text-white/90 italic">
+                  <p className="max-w-md text-sm leading-relaxed font-light text-white/90 ">
                     "To develop and steward real estate assets with a primary
                     focus on long-term capital appreciation, applying
                     institutional standards of governance, quality, and
@@ -175,7 +175,7 @@ function About() {
               <div className="space-y-8">
                 <h2 className="font-display text-4xl leading-tight font-light text-refenti-charcoal uppercase md:text-6xl">
                   Origin &{" "}
-                  <span className="text-refenti-gold italic">Philosophy</span>
+                  <span className="text-refenti-gold ">Philosophy</span>
                 </h2>
                 <div className="space-y-6 leading-relaxed font-light text-refenti-charcoal md:text-lg">
                   <p>
@@ -209,7 +209,7 @@ function About() {
               </p>
               <h2 className="font-display text-3xl leading-tight font-light text-refenti-charcoal uppercase md:text-5xl">
                 Governance & Alignment with{" "}
-                <span className="text-refenti-gold italic">
+                <span className="text-refenti-gold ">
                   Solstice Ventures Holding
                 </span>
               </h2>
@@ -240,7 +240,7 @@ function About() {
               href="https://solsticeventures.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-refenti-gold italic transition-opacity hover:opacity-70"
+              className="text-refenti-gold  transition-opacity hover:opacity-70"
             >
               Solstice Ventures Holding
             </a>

@@ -95,7 +95,7 @@ function PhilosophySection() {
             <FadeIn delay={100}>
               <h2 className="font-display text-3xl leading-[1.1] font-light text-refenti-charcoal sm:text-4xl md:text-6xl">
                 Quality <br />{" "}
-                <span className="text-refenti-gold italic">Assets</span> <br />{" "}
+                <span className="text-refenti-gold ">Assets</span> <br />{" "}
                 in Growth Markets.
               </h2>
             </FadeIn>
@@ -108,7 +108,7 @@ function PhilosophySection() {
             </FadeIn>
           </div>
           <FadeIn delay={300} direction="right">
-            <div className="relative aspect-4/5 overflow-hidden rounded-4xl border border-gray-50 shadow-sm md:rounded-[3rem]">
+            <div className="relative aspect-square overflow-hidden rounded-4xl border border-gray-50 shadow-sm md:rounded-[3rem]">
               <img
                 src="/art.webp"
                 className="h-full w-full object-cover opacity-90"
@@ -204,7 +204,7 @@ function Home() {
             <div className="space-y-6 text-center md:space-y-8">
               <h2 className="font-display text-3xl leading-[1.2] font-light text-refenti-charcoal md:text-5xl">
                 A Platform Built for{" "}
-                <span className="text-refenti-gold italic">
+                <span className="text-refenti-gold ">
                   Long-Term Value
                 </span>
               </h2>
@@ -341,7 +341,7 @@ function Home() {
             </div>
           ) : (
             <FadeIn delay={200}>
-              <div className="py-20 text-center font-display text-lg text-gray-500 italic md:text-xl">
+              <div className="py-20 text-center font-display text-lg text-gray-500  md:text-xl">
                 No recent updates at this moment.
               </div>
             </FadeIn>
