@@ -70,7 +70,7 @@ function PhilosophySection() {
 
   const isMobile = typeof window !== "undefined" && window.innerWidth < 768
   // const archRadiusY = isMobile ? 150 - progress * 100 : 250 - progress * 200
-  const baseRadius = isMobile ? "2.5rem" : "4rem"
+  const baseRadius = isMobile ? "1.25rem" : "1.5rem"
 
   return (
     <section
@@ -101,13 +101,17 @@ function PhilosophySection() {
             <FadeIn delay={200}>
               <p className="max-w-sm text-sm leading-relaxed font-light text-gray-600 md:text-base">
                 Refenti Realty Group is a real estate investment and development
-                platform focused on the creation of institutional-quality assets
-                in select growth markets.
+                platform that originates, structures, and manages assets across
+                residential, mixed-use, commercial, and hospitality sectors. The
+                platform operates under Solstice Ventures Holding and applies
+                consistent governance standards, structured development
+                processes, and disciplined capital deployment across each
+                project in its portfolio.
               </p>
             </FadeIn>
           </div>
           <FadeIn delay={300} direction="right">
-            <div className="relative aspect-square overflow-hidden rounded-4xl border border-gray-50 shadow-sm md:rounded-[3rem]">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-gray-50 shadow-sm md:rounded-2xl">
               <img
                 src="/art.webp"
                 className="h-full w-full object-cover opacity-90"

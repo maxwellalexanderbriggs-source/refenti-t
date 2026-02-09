@@ -133,7 +133,7 @@ function About() {
           {/* Values */}
           <FadeIn direction="up" duration={800} delay={200}>
             <div className="space-y-8 pt-16">
-              <h2 className="text-center font-display text-2xl leading-tight font-light tracking-wide text-refenti-gold uppercase md:text-3xl">
+              <h2 className="text-center font-display text-3xl leading-tight font-light tracking-wide text-refenti-gold uppercase md:text-4xl">
                 Values
               </h2>
               <div className="grid grid-cols-1 gap-4 md:grid-cols-4">
@@ -157,7 +157,7 @@ function About() {
                 ].map((item, idx) => (
                   <div
                     key={idx}
-                    className="rounded-xl border border-gray-200 bg-white px-8 py-8 text-center shadow-sm transition-shadow hover:shadow-md"
+                    className="rounded-xl bg-white px-8 py-8 text-center shadow-md transition-shadow hover:shadow-lg"
                   >
                     <p className="mb-3 text-lg font-light text-refenti-charcoal md:text-xl">
                       {item.value}

@@ -126,14 +126,14 @@ function Projects() {
 
                         {/* Project Info Container */}
                         <div className="space-y-6 px-4 md:px-0">
-                          <div className="space-y-3">
+                          <div className="space-y-5 md:space-y-6">
                             <div className="flex items-center gap-4">
                               <p className="rounded-full border border-refenti-gold/60 bg-refenti-gold/10 px-5 py-2 text-xs font-black tracking-wider text-refenti-gold uppercase shadow-sm">
                                 {project.assetClass}
                               </p>
                               <div className="h-px w-8 bg-gray-200" />
                             </div>
-                            <h2 className="font-display text-4xl leading-none font-light text-refenti-charcoal transition-colors duration-500 group-hover:text-refenti-gold md:text-5xl lg:text-6xl">
+                            <h2 className="mt-7 font-display text-4xl leading-none font-light text-refenti-charcoal transition-colors duration-500 group-hover:text-refenti-gold md:mt-8 md:text-5xl lg:text-6xl">
                               {project.name}
                             </h2>
                             <p className="font-sans text-xs font-bold text-gray-400 uppercase">

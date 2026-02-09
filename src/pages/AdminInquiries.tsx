@@ -85,7 +85,7 @@ function AdminInquiries() {
             Engagement Portal
           </p>
           <h1 className="font-display text-5xl leading-none font-light text-refenti-charcoal uppercase md:text-7xl">
-            Global <span className="text-refenti-gold italic">Inquiries</span>
+            Global <span className="text-refenti-gold">Inquiries</span>
           </h1>
         </div>
 
@@ -172,7 +172,7 @@ function AdminInquiries() {
       <div className="space-y-4">
         {filteredInquiries.length === 0 ? (
           <div className="rounded-xl border-2 border-dashed border-gray-200 bg-white p-12 text-center">
-            <p className="font-display text-2xl text-gray-500 italic">
+            <p className="font-display text-2xl text-gray-500">
               No matching engagement records found.
             </p>
           </div>
@@ -283,7 +283,7 @@ function AdminInquiries() {
                           <span className="absolute top-4 left-4 font-display text-[6rem] text-refenti-gold opacity-5 select-none">
                             "
                           </span>
-                          <p className="relative z-10 px-2 font-display text-base leading-relaxed font-light text-gray-700 italic md:px-4 md:text-lg">
+                          <p className="relative z-10 px-2 font-display text-base leading-relaxed font-light text-gray-700 md:px-4 md:text-lg">
                             {i.message}
                           </p>
                           <span className="absolute -right-4 -bottom-8 font-display text-[6rem] text-refenti-gold opacity-5 select-none">

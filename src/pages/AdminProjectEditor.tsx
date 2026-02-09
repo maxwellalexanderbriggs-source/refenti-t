@@ -186,7 +186,7 @@ function AdminProjectEditor() {
           <span className="text-lg">←</span> Back to Assets
         </button>
         <h1 className="font-display text-5xl font-light text-refenti-charcoal uppercase">
-          Project <span className="text-refenti-gold italic">Editor</span>
+          Project <span className="text-refenti-gold">Editor</span>
         </h1>
       </header>
 
@@ -230,6 +230,20 @@ function AdminProjectEditor() {
               value={formData.status || ""}
               onChange={(v) => setFormData({ ...formData, status: v })}
               placeholder="e.g. In Development, Completed"
+            />
+          </div>
+          <div className="space-y-3">
+            <label className="text-[10px] font-bold tracking-widest text-refenti-gold uppercase">
+              Description
+            </label>
+            <textarea
+              value={formData.description || ""}
+              onChange={(e) =>
+                setFormData({ ...formData, description: e.target.value })
+              }
+              placeholder="Short description shown on the portfolio page..."
+              rows={3}
+              className="w-full rounded-xl border-2 border-transparent bg-refenti-offwhite/50 p-4 text-base leading-relaxed font-medium text-refenti-charcoal transition-all placeholder:text-gray-300 focus:border-refenti-gold focus:outline-none"
             />
           </div>
         </div>
@@ -310,7 +324,7 @@ function AdminProjectEditor() {
           <div className="flex items-center justify-between">
             <h2 className="font-display text-3xl font-light text-refenti-charcoal uppercase">
               Feature{" "}
-              <span className="text-refenti-gold italic">Attributes</span>
+              <span className="text-refenti-gold">Attributes</span>
             </h2>
             <button
               type="button"
@@ -349,7 +363,7 @@ function AdminProjectEditor() {
           <div className="flex items-center justify-between">
             <h2 className="font-display text-2xl font-light text-refenti-charcoal uppercase">
               Detailed{" "}
-              <span className="text-refenti-gold italic">Showcases</span>
+              <span className="text-refenti-gold">Showcases</span>
             </h2>
             <button
               type="button"

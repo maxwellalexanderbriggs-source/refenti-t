@@ -129,7 +129,7 @@ function Contact() {
           content="Get in touch with Refenti Group for partnership opportunities, investment inquiries, or stakeholder engagement. Connect with our team in Ethiopia and Dubai."
         />
       </Helmet>
-      <div className="relative z-20 px-6 py-20 md:px-8 md:py-32">
+      <div className="relative z-20 px-6 pt-32 pb-20 md:px-8 md:pt-44 md:pb-32">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-8 md:grid-cols-12 md:gap-10">
             <div className="space-y-6 md:col-span-5 md:space-y-8">

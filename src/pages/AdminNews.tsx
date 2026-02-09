@@ -102,7 +102,7 @@ function AdminNews() {
             Journal Management
           </p>
           <h1 className="font-display text-5xl leading-none font-light text-refenti-charcoal uppercase md:text-6xl">
-            Editorial <span className="text-refenti-gold italic">Feed</span>
+            Editorial <span className="text-refenti-gold">Feed</span>
           </h1>
         </div>
         <button
@@ -115,7 +115,7 @@ function AdminNews() {
 
       {/* Editor Form */}
       <div className="space-y-4 rounded-xl border border-gray-100 bg-white p-6 shadow-xl">
-        <h2 className="border-b border-gray-50 pb-3 font-display text-2xl text-refenti-charcoal uppercase italic">
+        <h2 className="border-b border-gray-50 pb-3 font-display text-2xl text-refenti-charcoal uppercase">
           {editingId ? "Modify Story" : "New Story"}
         </h2>
         <form onSubmit={handleSave} className="space-y-4">
@@ -191,7 +191,7 @@ function AdminNews() {
       <div className="grid gap-3">
         {news.length === 0 ? (
           <div className="rounded-xl border-2 border-dashed border-gray-100 bg-white p-12 text-center">
-            <p className="font-display text-2xl text-gray-300 italic">
+            <p className="font-display text-2xl text-gray-300">
               Editorial feed empty.
             </p>
           </div>

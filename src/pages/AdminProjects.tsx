@@ -42,7 +42,7 @@ function AdminProjects() {
             Portfolio Management
           </p>
           <h1 className="font-display text-5xl leading-none font-light text-refenti-charcoal uppercase md:text-6xl">
-            Global <span className="text-refenti-gold italic">Assets</span>
+            Global <span className="text-refenti-gold">Assets</span>
           </h1>
         </div>
         <button
