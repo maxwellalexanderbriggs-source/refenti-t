@@ -127,7 +127,7 @@ function Projects() {
                       <div className="space-y-6 px-6 md:px-10">
                         <div className="space-y-3">
                           <div className="flex items-center gap-4">
-                            <p className="rounded-full border-2 border-refenti-gold bg-refenti-gold/20 px-5 py-2 text-xs font-black tracking-wider text-refenti-gold uppercase shadow-lg">
+                            <p className="rounded-full border-[3px] border-refenti-gold bg-refenti-gold/20 px-5 py-2 text-xs font-black tracking-wider text-refenti-gold uppercase shadow-lg">
                               {project.assetClass}
                             </p>
                             <div className="h-px w-8 bg-gray-200" />
