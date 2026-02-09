@@ -180,8 +180,8 @@ function About() {
             <FadeIn direction="up" duration={800}>
               <div className="group overflow-hidden rounded-[2rem]">
                 <LazyImage
-                  src="/about/about-decor-1.webp"
-                  alt="Real estate development"
+                  src="/drone.jpg"
+                  alt="Aerial view of real estate development"
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
               </div>
