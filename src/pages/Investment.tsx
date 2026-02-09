@@ -51,7 +51,7 @@ function Investment() {
       </Helmet>
 
       {/* Hero Section */}
-      <section className="relative flex min-h-[70vh] w-full items-end justify-center overflow-hidden pb-16 md:min-h-[90vh] md:pb-32">
+      <section className="relative flex min-h-[56vh] w-full items-end justify-center overflow-hidden pb-16 md:min-h-[72vh] md:pb-32">
         <img
           src="/investment/investment-hero.webp"
           alt="Investment Hero"

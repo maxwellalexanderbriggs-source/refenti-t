@@ -25,9 +25,9 @@ function About() {
       </Helmet>
 
       {/* Hero Section */}
-      <section className="relative flex min-h-[70vh] w-full items-end justify-center overflow-hidden pb-16 md:min-h-[90vh] md:pb-32">
+      <section className="relative flex min-h-[56vh] w-full items-end justify-center overflow-hidden pb-16 md:min-h-[72vh] md:pb-32">
         <img
-          src="/about/about-hero.webp"
+          src="/about-hero.jpg"
           alt="About Hero"
           fetchPriority="high"
           className="absolute top-[-5%] left-0 h-[110%] w-full animate-fade-in object-cover"
