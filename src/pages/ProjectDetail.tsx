@@ -271,8 +271,7 @@ function ProjectDetail() {
 
           <div className="grid gap-8 md:grid-cols-3">
             <FadeIn delay={100}>
-              <div className="group relative overflow-hidden rounded-3xl border border-gray-100 bg-white p-8 shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
-                <div className="absolute top-0 left-0 h-1 w-full bg-gradient-to-r from-refenti-gold to-transparent" />
+              <div className="group relative rounded-3xl border-2 border-gray-200 bg-white p-8 shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.35)]">
                 <div className="space-y-4">
                   <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-refenti-gold/10">
                     <svg
@@ -308,7 +307,7 @@ function ProjectDetail() {
             </FadeIn>
 
             <FadeIn delay={200}>
-              <div className="group relative overflow-hidden rounded-3xl border border-gray-100 bg-white p-8 shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+              <div className="group relative overflow-hidden rounded-3xl border-2 border-gray-200 bg-white p-8 shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.35)]">
                 <div className="absolute top-0 left-0 h-1 w-full bg-gradient-to-r from-refenti-gold to-transparent" />
                 <div className="space-y-4">
                   <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-refenti-gold/10">
@@ -339,8 +338,7 @@ function ProjectDetail() {
             </FadeIn>
 
             <FadeIn delay={300}>
-              <div className="group relative overflow-hidden rounded-3xl border border-gray-100 bg-white p-8 shadow-lg transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
-                <div className="absolute top-0 left-0 h-1 w-full bg-gradient-to-r from-refenti-gold to-transparent" />
+              <div className="group relative rounded-3xl border-2 border-gray-200 bg-white p-8 shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.35)]">
                 <div className="space-y-4">
                   <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-refenti-gold/10">
                     <svg

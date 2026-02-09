@@ -322,24 +322,6 @@ function Investment() {
         </div>
       </section>
 
-      {/* Footer */}
-      <section className="px-4 pt-4 pb-20 md:px-12 md:pt-6 md:pb-26">
-        <div className="mx-auto max-w-6xl text-center">
-          <p className="text-sm font-light text-refenti-charcoal">
-            Refenti Realty Group is a real estate investment and development
-            platform operating under{" "}
-            <a
-              href="https://solsticeventures.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-refenti-gold  transition-opacity hover:opacity-70"
-            >
-              Solstice Ventures Holding
-            </a>
-            .
-          </p>
-        </div>
-      </section>
     </div>
   )
 }
