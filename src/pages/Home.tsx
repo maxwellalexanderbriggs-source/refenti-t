@@ -126,6 +126,7 @@ function Home() {
   const [projects, setProjects] = useState<Project[]>([])
   const [featuredEvents, setFeaturedEvents] = useState<EventItem[]>([])
   const [loading, setLoading] = useState(true)
+  const [hoveredProject, setHoveredProject] = useState<Project | null>(null)
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY)
@@ -284,13 +285,89 @@ function Home() {
               </div>
             </div>
 
-            {/* Portfolio Hero Image */}
-            <div className="relative aspect-[21/9] w-full overflow-hidden">
-              <img
-                src="/portfolio-hero.jpg"
-                alt="Portfolio"
-                className="h-full w-full object-cover"
-              />
+            {/* Interactive Project Showcase */}
+            <div className="relative">
+              {projects.length > 0 ? (
+                <div className="grid grid-cols-1 md:grid-cols-2">
+                  {/* Left: Project Titles */}
+                  <div className="border-t border-gray-100 p-6 md:border-r md:p-8">
+                    <div className="space-y-1">
+                      {projects.map((project) => (
+                        <button
+                          key={project.id}
+                          onClick={() => setHoveredProject(project)}
+                          className={`w-full rounded-lg px-4 py-3 text-left transition-all duration-300 ${
+                            hoveredProject?.id === project.id
+                              ? "bg-refenti-gold/10 text-refenti-gold"
+                              : "text-refenti-charcoal hover:bg-gray-50"
+                          }`}
+                        >
+                          <div className="font-display text-xl font-light uppercase">
+                            {project.name}
+                          </div>
+                          <div className="mt-1 text-xs font-light text-gray-500">
+                            {project.location}
+                          </div>
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Right: Project Preview */}
+                  <div className="border-t border-gray-100 md:border-t-0">
+                    {hoveredProject ? (
+                      <div
+                        key={hoveredProject.id}
+                        className="h-full animate-fade-in"
+                        style={{ animationDuration: "500ms" }}
+                      >
+                        <div className="relative aspect-[16/10] overflow-hidden">
+                          <img
+                            src={hoveredProject.image}
+                            alt={hoveredProject.name}
+                            className="h-full w-full object-cover"
+                          />
+                        </div>
+                        <div className="p-6 md:p-8">
+                          <h3 className="mb-6 font-display text-2xl font-light text-refenti-charcoal uppercase">
+                            Key Features
+                          </h3>
+                          <ul className="space-y-3">
+                            {hoveredProject.projectFeatures
+                              ?.slice(0, 4)
+                              .map((feature, idx) => (
+                                <li
+                                  key={idx}
+                                  className="flex items-start gap-3 text-sm text-gray-700"
+                                  style={{
+                                    animation: "fade-in 500ms ease-out",
+                                    animationDelay: `${idx * 50}ms`,
+                                    animationFillMode: "both",
+                                  }}
+                                >
+                                  <div className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-refenti-gold" />
+                                  <span className="font-light">{feature}</span>
+                                </li>
+                              ))}
+                          </ul>
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="flex h-full min-h-[300px] items-center justify-center p-12 text-center">
+                        <p className="text-sm font-light text-gray-400">
+                          Click on a project to view details
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              ) : (
+                <div className="flex items-center justify-center border-t border-gray-100 p-12">
+                  <p className="text-sm font-light text-gray-400">
+                    No projects available
+                  </p>
+                </div>
+              )}
             </div>
           </div>
         </div>
