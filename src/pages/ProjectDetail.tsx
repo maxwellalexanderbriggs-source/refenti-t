@@ -150,7 +150,7 @@ function ProjectDetail() {
 
   if (loading) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-refenti-offwhite">
+      <div className="flex min-h-screen items-center justify-center">
         <p className="text-sm text-gray-400">Loading...</p>
       </div>
     )
@@ -161,7 +161,7 @@ function ProjectDetail() {
   }
 
   return (
-    <div className="min-h-screen bg-refenti-offwhite">
+    <div className="min-h-screen">
       <Helmet>
         <title>{project.name} - Refenti Group Project</title>
         <meta
@@ -170,7 +170,7 @@ function ProjectDetail() {
         />
       </Helmet>
       {/* Hero Banner */}
-      <section className="relative flex min-h-[70vh] w-full items-end justify-center overflow-hidden bg-refenti-offwhite pb-16 md:min-h-[90vh] md:pb-32">
+      <section className="relative flex min-h-[70vh] w-full items-end justify-center overflow-hidden pb-16 md:min-h-[90vh] md:pb-32">
         <div
           className="absolute inset-[-5%]"
           style={{
@@ -198,7 +198,7 @@ function ProjectDetail() {
       </section>
 
       {/* Action Bar */}
-      <section className="relative border-b border-gray-100 bg-refenti-offwhite">
+      <section className="relative border-b border-gray-100">
         <FadeIn>
           <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-8 py-8 md:flex-row">
             <div className="flex flex-col items-center md:items-start">
@@ -261,7 +261,7 @@ function ProjectDetail() {
       </section>
 
       {/* Project Information Section */}
-      <section className="border-y border-gray-100 bg-refenti-offwhite px-8 py-16 md:px-12 md:py-20">
+      <section className="border-y border-gray-100 px-8 py-16 md:px-12 md:py-20">
         <div className="mx-auto max-w-7xl">
           <FadeIn>
             <div className="mb-12 space-y-3 text-center">
@@ -379,7 +379,7 @@ function ProjectDetail() {
 
       {/* Project Features Section */}
       {project.projectFeatures && project.projectFeatures.length > 0 && (
-        <section className="border-t border-gray-100 bg-refenti-offwhite px-8 py-16 md:px-12">
+        <section className="border-t border-gray-100 px-8 py-16 md:px-12">
           <div className="mx-auto max-w-7xl space-y-10">
             <FadeIn>
               <div className="space-y-3 text-center md:text-left">
