@@ -118,7 +118,7 @@ function Investment() {
         <div className="mx-auto max-w-7xl">
           <div className="grid grid-cols-1 gap-12 md:grid-cols-2 md:gap-16">
             <FadeIn direction="up" duration={800}>
-              <div className="group overflow-hidden rounded-[2rem]">
+              <div className="group overflow-hidden">
                 <LazyImage
                   src="/investment/development.webp"
                   alt="Development process"
@@ -164,7 +164,7 @@ function Investment() {
       <section className="px-4 py-20 md:px-12 md:py-28">
         <div className="mx-auto max-w-6xl">
           <FadeIn direction="none" duration={1000}>
-            <div className="space-y-12 rounded-[2rem] border border-gray-100 bg-white px-8 py-12 shadow-lg md:px-16 md:py-20">
+            <div className="space-y-12 border border-gray-100 bg-white px-8 py-12 shadow-lg md:px-16 md:py-20">
               <div className="space-y-4">
                 <p className="text-xs font-bold tracking-wider text-refenti-gold uppercase">
                   RISK MANAGEMENT
@@ -241,7 +241,7 @@ function Investment() {
               </div>
             </FadeIn>
             <FadeIn direction="up" duration={800} delay={100}>
-              <div className="group overflow-hidden rounded-[2rem]">
+              <div className="group overflow-hidden">
                 <LazyImage
                   src="/governance.jpg"
                   alt="Quality and governance"
@@ -278,7 +278,7 @@ function Investment() {
                   delay={idx * 100}
                   className="h-full"
                 >
-                  <div className="group flex h-full flex-col overflow-hidden rounded-[2rem] border border-gray-100 bg-white shadow-sm transition-shadow duration-300 hover:shadow-lg">
+                  <div className="group flex h-full flex-col overflow-hidden border border-gray-100 bg-white shadow-sm transition-shadow duration-300 hover:shadow-lg">
                     <div className="aspect-[16/27] overflow-hidden">
                       <LazyImage
                         src={asset.image}
@@ -306,7 +306,7 @@ function Investment() {
               </h2>
             </FadeIn>
             <FadeIn direction="up" duration={800} delay={100}>
-              <div className="space-y-6 rounded-[2rem] border border-gray-100 bg-white px-8 py-10 shadow-sm md:px-12">
+              <div className="space-y-6 border border-gray-100 bg-white px-8 py-10 shadow-sm md:px-12">
                 <p className="leading-relaxed font-light text-refenti-charcoal md:text-lg">
                   Investment structures are tailored to project context and
                   partner alignment, including:

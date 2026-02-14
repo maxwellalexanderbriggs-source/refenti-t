@@ -169,7 +169,7 @@ function Contact() {
             </div>
 
             <FadeIn delay={200} direction="right" className="md:col-span-7">
-              <div className="relative min-h-[600px] rounded-[2.5rem] border border-gray-50 bg-white p-6 shadow-2xl md:rounded-[3rem] md:p-12">
+              <div className="relative min-h-[600px] border border-gray-50 bg-white p-6 shadow-2xl md:p-12">
                 <form
                 onSubmit={handleSubmit}
                 className={`space-y-6 transition-opacity duration-300 md:space-y-8 ${isSent ? "pointer-events-none opacity-0" : "opacity-100"}`}

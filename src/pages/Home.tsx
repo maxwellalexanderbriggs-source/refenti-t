@@ -11,10 +11,10 @@ function EventCard({ event, index }: { event: EventItem; index: number }) {
 
   return (
     <div
-      className="group flex h-full flex-col rounded-4xl border border-gray-100 bg-white p-6 shadow-[0_15px_50px_-15px_rgba(0,0,0,0.05)] transition-all duration-1000"
+      className="group flex h-full flex-col border border-gray-100 bg-white p-6 shadow-[0_15px_50px_-15px_rgba(0,0,0,0.05)] transition-all duration-1000"
       style={{ transitionDelay: `${index * 150}ms` }}
     >
-      <div className="relative mb-6 aspect-4/5 overflow-hidden rounded-3xl">
+      <div className="relative mb-6 aspect-4/5 overflow-hidden">
         <LazyImage
           src={event.image}
           alt={event.title}
@@ -111,7 +111,7 @@ function PhilosophySection() {
             </FadeIn>
           </div>
           <FadeIn delay={300} direction="right">
-            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-gray-50 shadow-sm md:rounded-2xl">
+            <div className="relative aspect-[4/3] overflow-hidden border border-gray-50 shadow-sm">
               <img
                 src="/art.webp"
                 className="h-full w-full object-cover opacity-90"
@@ -227,7 +227,7 @@ function Home() {
 
       <section className="px-6 pb-20 md:px-12 md:pb-32">
         <div className="mx-auto max-w-7xl">
-          <div className="overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-xl md:rounded-3xl">
+          <div className="overflow-hidden border border-gray-100 bg-white shadow-xl">
             <div className="grid gap-0 md:grid-cols-5">
               {/* Left Column - Heading */}
               <div className="flex flex-col justify-center border-b border-gray-100 bg-gradient-to-br from-refenti-offwhite to-white p-8 md:col-span-2 md:border-r md:border-b-0 md:p-12">

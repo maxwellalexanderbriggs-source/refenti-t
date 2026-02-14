@@ -76,7 +76,7 @@ function Projects() {
         <div className="relative z-10 px-6 pt-16 pb-20 md:px-12 md:py-32">
           <FadeIn delay={200}>
             <div className="mx-auto max-w-5xl">
-              <div className="relative overflow-hidden rounded-3xl border border-gray-200/50 bg-white/80 p-8 shadow-xl backdrop-blur-sm md:p-12">
+              <div className="relative overflow-hidden border border-gray-200/50 bg-white/80 p-8 shadow-xl backdrop-blur-sm md:p-12">
                 <div className="absolute top-0 left-0 h-1 w-full bg-linear-to-r from-refenti-gold via-refenti-gold/50 to-transparent" />
                 <div className="space-y-4">
                   <p className="font-sans text-xs font-bold tracking-wider text-refenti-gold uppercase">
@@ -116,7 +116,7 @@ function Projects() {
                     >
                       <div className="grid grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-12 lg:gap-16">
                         {/* Project Image Container */}
-                        <div className="overflow-hidden rounded-[3.5rem] shadow-lg transition-all duration-1000 group-hover:-translate-y-2 group-hover:shadow-refenti-gold/20">
+                        <div className="overflow-hidden shadow-lg transition-all duration-1000 group-hover:-translate-y-2 group-hover:shadow-refenti-gold/20">
                           <LazyImage
                             src={project.image}
                             alt={project.name}

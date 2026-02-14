@@ -60,7 +60,7 @@ function About() {
           {/* Vision - Left aligned, rounded right */}
           <FadeIn direction="up" duration={800}>
             <div className="flex justify-start">
-              <div className="w-full max-w-xl rounded-l-none rounded-r-full bg-white px-8 py-8 text-center shadow-2xl md:px-12 md:py-10">
+              <div className="w-full max-w-xl bg-white px-8 py-8 text-center shadow-2xl md:px-12 md:py-10">
                 <div className="mx-auto flex flex-col items-center space-y-2">
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-refenti-gold opacity-40 shadow-lg md:h-12 md:w-12">
                     <svg
@@ -99,7 +99,7 @@ function About() {
           {/* Mission - Right aligned, rounded left */}
           <FadeIn direction="up" duration={800} delay={100}>
             <div className="flex justify-end">
-              <div className="w-full max-w-xl rounded-l-full rounded-r-none bg-white px-8 py-8 text-center shadow-2xl md:px-12 md:py-10">
+              <div className="w-full max-w-xl bg-white px-8 py-8 text-center shadow-2xl md:px-12 md:py-10">
                 <div className="mx-auto flex flex-col items-center space-y-2">
                   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-refenti-gold opacity-40 shadow-lg md:h-12 md:w-12">
                     <svg
@@ -157,7 +157,7 @@ function About() {
                 ].map((item, idx) => (
                   <div
                     key={idx}
-                    className="rounded-xl bg-white px-8 py-8 text-center shadow-md transition-shadow hover:shadow-lg"
+                    className="bg-white px-8 py-8 text-center shadow-md transition-shadow hover:shadow-lg"
                   >
                     <p className="mb-3 text-lg font-light text-refenti-charcoal md:text-xl">
                       {item.value}
@@ -178,7 +178,7 @@ function About() {
         <div className="mx-auto max-w-7xl">
           <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2 md:gap-16">
             <FadeIn direction="up" duration={800}>
-              <div className="group overflow-hidden rounded-[2rem]">
+              <div className="group overflow-hidden">
                 <LazyImage
                   src="/drone.jpg"
                   alt="Aerial view of real estate development"
@@ -218,7 +218,7 @@ function About() {
       <section className="px-4 py-20 md:px-12 md:py-32">
         <div className="mx-auto max-w-6xl">
           <FadeIn direction="none" duration={1000}>
-            <div className="space-y-8 rounded-[2rem] border border-gray-100 bg-white px-8 py-12 shadow-lg md:px-16 md:py-20">
+            <div className="space-y-8 border border-gray-100 bg-white px-8 py-12 shadow-lg md:px-16 md:py-20">
               <p className="text-xs font-bold tracking-wider text-refenti-gold uppercase">
                 GOVERNANCE
               </p>

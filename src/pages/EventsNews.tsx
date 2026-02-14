@@ -10,7 +10,7 @@ function NewsCard({ item, index }: { item: NewsItem; index: number }) {
 
   return (
     <div
-      className="group relative h-fit min-h-[500px] overflow-hidden rounded-[2.5rem] bg-white shadow-sm transition-all duration-1000"
+      className="group relative h-fit min-h-[500px] overflow-hidden bg-white shadow-sm transition-all duration-1000"
       style={{ transitionDelay: `${index * 100}ms` }}
     >
       <div className="relative aspect-[16/10] overflow-hidden">
