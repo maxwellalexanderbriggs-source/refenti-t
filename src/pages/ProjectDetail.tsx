@@ -172,13 +172,15 @@ function ProjectDetail() {
       {/* Hero Banner */}
       <section className="relative flex min-h-[70vh] w-full items-end justify-center overflow-hidden pb-16 md:min-h-[90vh] md:pb-32">
         <div
-          className="absolute inset-[-5%]"
+          key={`hero-${project.id}`}
+          className="absolute inset-[-5%] animate-fade-in"
           style={{
             backgroundImage: `url('${project.image}')`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             transform: `translateY(${-scrollY * 0.1}px)`,
             willChange: "transform",
+            animationDuration: "1200ms",
           }}
         />
         <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-refenti-offwhite via-refenti-offwhite/80 to-transparent" />
