@@ -67,7 +67,7 @@ function Investment() {
         <div className="relative z-10 mx-auto max-w-6xl space-y-6 px-4 text-center md:space-y-8">
           <div className="space-y-3 md:space-y-6">
             <FadeIn direction="none" duration={1000} delay={1000}>
-              <h1 className="font-display text-6xl leading-none font-light text-refenti-charcoal uppercase md:text-9xl">
+              <h1 className="font-display text-6xl leading-none font-light text-black uppercase md:text-9xl">
                 Investment
               </h1>
             </FadeIn>
@@ -89,7 +89,7 @@ function Investment() {
             </p>
           </FadeIn>
           <FadeIn direction="up" duration={800} delay={100}>
-            <h2 className="font-display text-4xl leading-tight font-light text-refenti-charcoal uppercase md:text-6xl">
+            <h2 className="font-display text-4xl leading-tight font-light text-black uppercase md:text-6xl">
               Institutional-Grade{" "}
               <span className="text-refenti-gold ">Real Estate</span>
             </h2>
@@ -128,7 +128,7 @@ function Investment() {
             </FadeIn>
             <FadeIn direction="up" duration={800} delay={100}>
               <div className="space-y-8">
-                <h2 className="font-display text-4xl leading-tight font-light text-refenti-charcoal uppercase md:text-6xl">
+                <h2 className="font-display text-4xl leading-tight font-light text-black uppercase md:text-6xl">
                   How We <span className="text-refenti-gold ">Develop</span>
                 </h2>
                 <div className="space-y-6 leading-relaxed font-light text-refenti-charcoal md:text-lg">
@@ -169,14 +169,14 @@ function Investment() {
                 <p className="text-xs font-bold tracking-wider text-refenti-gold uppercase">
                   RISK MANAGEMENT
                 </p>
-                <h2 className="font-display text-3xl leading-tight font-light text-refenti-charcoal uppercase md:text-5xl">
+                <h2 className="font-display text-3xl leading-tight font-light text-black uppercase md:text-5xl">
                   Disciplined{" "}
                   <span className="text-refenti-gold ">Risk Framework</span>
                 </h2>
               </div>
               <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
                 <div className="space-y-3">
-                  <h3 className="font-display text-xl font-bold text-refenti-charcoal uppercase">
+                  <h3 className="font-display text-xl font-bold text-black uppercase">
                     Execution
                   </h3>
                   <p className="leading-relaxed font-light text-refenti-charcoal">
@@ -185,7 +185,7 @@ function Investment() {
                   </p>
                 </div>
                 <div className="space-y-3">
-                  <h3 className="font-display text-xl font-bold text-refenti-charcoal uppercase">
+                  <h3 className="font-display text-xl font-bold text-black uppercase">
                     Financing
                   </h3>
                   <p className="leading-relaxed font-light text-refenti-charcoal">
@@ -194,7 +194,7 @@ function Investment() {
                   </p>
                 </div>
                 <div className="space-y-3">
-                  <h3 className="font-display text-xl font-bold text-refenti-charcoal uppercase">
+                  <h3 className="font-display text-xl font-bold text-black uppercase">
                     Market
                   </h3>
                   <p className="leading-relaxed font-light text-refenti-charcoal">
@@ -214,7 +214,7 @@ function Investment() {
           <div className="grid grid-cols-1 gap-12 md:grid-cols-2 md:gap-16">
             <FadeIn direction="up" duration={800}>
               <div className="space-y-8">
-                <h2 className="font-display text-4xl leading-tight font-light text-refenti-charcoal uppercase md:text-6xl">
+                <h2 className="font-display text-4xl leading-tight font-light text-black uppercase md:text-6xl">
                   Quality &{" "}
                   <span className="text-refenti-gold ">Governance</span>
                 </h2>
@@ -259,7 +259,7 @@ function Investment() {
           {/* Asset Classes */}
           <div className="space-y-12">
             <FadeIn direction="up" duration={800}>
-              <h2 className="font-display text-4xl leading-tight font-light text-refenti-charcoal uppercase md:text-6xl">
+              <h2 className="font-display text-4xl leading-tight font-light text-black uppercase md:text-6xl">
                 Asset <span className="text-refenti-gold ">Classes</span>
               </h2>
             </FadeIn>
@@ -287,7 +287,7 @@ function Investment() {
                       />
                     </div>
                     <div className="p-6">
-                      <h3 className="font-display text-xl font-light text-refenti-charcoal uppercase md:text-2xl">
+                      <h3 className="font-display text-xl font-light text-black uppercase md:text-2xl">
                         {asset.title}
                       </h3>
                     </div>
@@ -300,7 +300,7 @@ function Investment() {
           {/* Investment Structures */}
           <div className="space-y-8">
             <FadeIn direction="up" duration={800}>
-              <h2 className="font-display text-4xl leading-tight font-light text-refenti-charcoal uppercase md:text-6xl">
+              <h2 className="font-display text-4xl leading-tight font-light text-black uppercase md:text-6xl">
                 Investment{" "}
                 <span className="text-refenti-gold ">Structures</span>
               </h2>

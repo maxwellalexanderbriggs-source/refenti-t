@@ -114,7 +114,7 @@ function AdminNews() {
     <div className="mx-auto max-w-5xl p-6">
       <div className="mb-6 flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <h1 className="text-lg font-semibold text-refenti-charcoal">News</h1>
+          <h1 className="text-lg font-semibold text-black">News</h1>
           <span className="rounded-full bg-refenti-gold/10 px-2.5 py-0.5 text-xs font-medium text-refenti-gold">
             {news.length}
           </span>
@@ -134,7 +134,7 @@ function AdminNews() {
       {showForm && (
         <div className="mb-6 rounded-lg border border-gray-200 bg-white p-5">
           <div className="mb-4 flex items-center justify-between">
-            <h2 className="text-sm font-semibold text-refenti-charcoal">
+            <h2 className="text-sm font-semibold text-black">
               {editingId ? "Edit article" : "New article"}
             </h2>
             <button

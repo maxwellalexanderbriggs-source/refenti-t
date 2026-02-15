@@ -95,7 +95,7 @@ function FeatureSection({
             <span className="font-display text-5xl leading-none font-light text-refenti-gold opacity-10 select-none">
               0{index + 1}
             </span>
-            <h3 className="font-display text-4xl leading-[1.1] font-light text-refenti-charcoal md:text-5xl">
+            <h3 className="font-display text-4xl leading-[1.1] font-light text-black md:text-5xl">
               {section.title}
             </h3>
           </div>
@@ -185,7 +185,7 @@ function ProjectDetail() {
 
         <div className="relative z-10 mx-auto max-w-6xl space-y-6 px-4 text-center md:space-y-8">
           <FadeIn direction="none" duration={1000}>
-            <h1 className="font-display text-6xl leading-none font-light text-refenti-charcoal uppercase md:text-9xl">
+            <h1 className="font-display text-6xl leading-none font-light text-black uppercase md:text-9xl">
               {project.name}
             </h1>
           </FadeIn>
@@ -227,7 +227,7 @@ function ProjectDetail() {
                 <p className="font-sans text-xs font-bold text-refenti-gold uppercase">
                   Asset Narrative
                 </p>
-                <h2 className="font-display text-4xl leading-tight font-light text-refenti-charcoal uppercase md:text-6xl">
+                <h2 className="font-display text-4xl leading-tight font-light text-black uppercase md:text-6xl">
                   {project.introTitle?.split(" ")[0]} <br />
                   <span className="text-refenti-gold ">
                     {project.introTitle?.split(" ").slice(1).join(" ")}
@@ -263,7 +263,7 @@ function ProjectDetail() {
               <p className="font-sans text-xs font-bold text-refenti-gold uppercase">
                 Project Intelligence
               </p>
-              <h2 className="font-display text-3xl font-light text-refenti-charcoal uppercase md:text-4xl">
+              <h2 className="font-display text-3xl font-light text-black uppercase md:text-4xl">
                 Key <span className="text-refenti-gold ">Details</span>
               </h2>
             </div>
@@ -379,7 +379,7 @@ function ProjectDetail() {
                 <p className="font-sans text-xs font-bold text-refenti-gold uppercase">
                   Scope of Amenities
                 </p>
-                <h2 className="font-display text-4xl font-light text-refenti-charcoal uppercase md:text-5xl">
+                <h2 className="font-display text-4xl font-light text-black uppercase md:text-5xl">
                   Project{" "}
                   <span className="text-refenti-gold ">Features</span>
                 </h2>

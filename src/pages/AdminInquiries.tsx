@@ -61,7 +61,7 @@ function AdminInquiries() {
     <div className="mx-auto max-w-5xl p-6">
       <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div className="flex items-center gap-3">
-          <h1 className="text-lg font-semibold text-refenti-charcoal">
+          <h1 className="text-lg font-semibold text-black">
             Inquiries
           </h1>
           {!loading && (
