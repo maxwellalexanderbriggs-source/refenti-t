@@ -135,7 +135,7 @@ function Contact() {
             <div className="space-y-6 md:col-span-5 md:space-y-8">
               <FadeIn>
                 <div className="space-y-4 md:space-y-6">
-                  <h2 className="font-display text-4xl leading-none font-light text-refenti-charcoal uppercase md:text-5xl">
+                  <h2 className="font-display text-4xl leading-none font-light text-black uppercase md:text-5xl">
                     Connect <br />
                     <span className="text-refenti-gold ">With Us</span>
                   </h2>
@@ -360,7 +360,7 @@ function Contact() {
                       />
                     </svg>
                   </div>
-                  <h3 className="font-display text-4xl text-refenti-charcoal uppercase">
+                  <h3 className="font-display text-4xl text-black uppercase">
                     Received.
                   </h3>
                   <p className="font-light text-gray-400">

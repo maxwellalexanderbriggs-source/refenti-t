@@ -41,7 +41,7 @@ function About() {
         <div className="relative z-10 mx-auto max-w-6xl space-y-6 px-4 text-center md:space-y-8">
           <div className="space-y-3 md:space-y-6">
             <FadeIn direction="none" duration={1000} delay={1000}>
-              <h1 className="font-display text-6xl leading-none font-light text-refenti-charcoal uppercase md:text-9xl">
+              <h1 className="font-display text-6xl leading-none font-light text-black uppercase md:text-9xl">
                 About
               </h1>
             </FadeIn>
@@ -83,7 +83,7 @@ function About() {
                       />
                     </svg>
                   </div>
-                  <h2 className="font-display text-2xl font-light text-refenti-charcoal uppercase md:text-3xl">
+                  <h2 className="font-display text-2xl font-light text-black uppercase md:text-3xl">
                     Vision
                   </h2>
                   <p className="max-w-md text-sm leading-relaxed font-light text-refenti-charcoal/80 ">
@@ -116,7 +116,7 @@ function About() {
                       />
                     </svg>
                   </div>
-                  <h2 className="font-display text-2xl font-light text-refenti-charcoal uppercase md:text-3xl">
+                  <h2 className="font-display text-2xl font-light text-black uppercase md:text-3xl">
                     Mission
                   </h2>
                   <p className="max-w-md text-sm leading-relaxed font-light text-refenti-charcoal/80 ">
@@ -133,7 +133,7 @@ function About() {
           {/* Values */}
           <FadeIn direction="up" duration={800} delay={200}>
             <div className="space-y-8 pt-16">
-              <h2 className="text-center font-display text-3xl leading-tight font-light tracking-wide text-refenti-gold uppercase md:text-4xl">
+              <h2 className="text-center font-display text-3xl leading-tight font-light tracking-wide text-black uppercase md:text-4xl">
                 Values
               </h2>
               <div className="grid grid-cols-1 gap-4 md:grid-cols-4">
@@ -188,7 +188,7 @@ function About() {
             </FadeIn>
             <FadeIn direction="up" duration={800} delay={100}>
               <div className="space-y-8">
-                <h2 className="font-display text-4xl leading-tight font-light text-refenti-charcoal uppercase md:text-6xl">
+                <h2 className="font-display text-4xl leading-tight font-light text-black uppercase md:text-6xl">
                   Origin &{" "}
                   <span className="text-refenti-gold ">Philosophy</span>
                 </h2>
@@ -222,7 +222,7 @@ function About() {
               <p className="text-xs font-bold tracking-wider text-refenti-gold uppercase">
                 GOVERNANCE
               </p>
-              <h2 className="font-display text-3xl leading-tight font-light text-refenti-charcoal uppercase md:text-5xl">
+              <h2 className="font-display text-3xl leading-tight font-light text-black uppercase md:text-5xl">
                 Governance & Alignment with{" "}
                 <span className="text-refenti-gold ">
                   Solstice Ventures Holding
