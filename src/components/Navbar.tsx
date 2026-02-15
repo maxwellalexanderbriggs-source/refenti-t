@@ -214,7 +214,7 @@ function Navbar() {
             onMouseLeave={handleMouseLeave}
             className={`cubic-bezier(0.19, 1, 0.22, 1) absolute top-[calc(100%-0.5rem)] left-1/2 w-212.5 origin-top -translate-x-1/2 pt-4 transition-all duration-1000 ${isMenuOpen ? "translate-y-0 scale-100 opacity-100" : "pointer-events-none -translate-y-4 scale-98 opacity-0"} `}
           >
-            <div className="flex min-h-120 overflow-hidden rounded-3xl border border-gray-100/50 bg-white shadow-[0_30px_80px_-20px_rgba(0,0,0,0.08)]">
+            <div className="flex min-h-120 overflow-hidden border border-gray-100/50 bg-white shadow-[0_30px_80px_-20px_rgba(0,0,0,0.08)]">
               <div className="w-[38%] space-y-10 border-r border-gray-100 bg-white p-12">
                 <div className="space-y-8">
                   {projects.map((project) => (
@@ -242,7 +242,7 @@ function Navbar() {
               </div>
 
               <div className="relative w-[62%] bg-refenti-offwhite/30 p-10">
-                <div className="relative h-full w-full overflow-hidden rounded-2xl shadow-xl">
+                <div className="relative h-full w-full overflow-hidden shadow-xl">
                   {projects.map((project) => (
                     <div
                       key={`img-${project.id}`}
@@ -250,7 +250,7 @@ function Navbar() {
                     >
                       <img
                         src={project.image}
-                        className="h-full w-full rounded-2xl object-cover"
+                        className="h-full w-full object-cover"
                         alt={project.name}
                       />
                       <div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent" />
