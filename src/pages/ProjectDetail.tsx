@@ -172,6 +172,7 @@ function ProjectDetail() {
       {/* Hero Banner */}
       <section className="relative flex min-h-[70vh] w-full items-end justify-center overflow-hidden pb-16 md:min-h-[90vh] md:pb-32">
         <div
+          key={`hero-${project.id}`}
           className="absolute inset-[-5%] animate-fade-in"
           style={{
             backgroundImage: `url('${project.image}')`,
