@@ -3,14 +3,14 @@ import { useEffect } from "react"
 
 export function useSmoothScroll() {
   useEffect(() => {
-    // Initialize Lenis with enhanced inertial effect
+    // Initialize Lenis with moderate inertial effect
     const lenis = new Lenis({
-      duration: 2.0, // Increased from default 1.0 for more noticeable effect
+      duration: 1.0, // Default duration for balanced effect
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Custom easing
       orientation: "vertical",
       gestureOrientation: "vertical",
       smoothWheel: true,
-      wheelMultiplier: 1.5, // Increased multiplier for more momentum
+      wheelMultiplier: 0.75, // Moderate multiplier for subtle momentum
       smoothTouch: false,
       touchMultiplier: 2,
       infinite: false,
