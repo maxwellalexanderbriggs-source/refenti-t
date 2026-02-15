@@ -179,7 +179,7 @@ function AdminProjectEditor() {
           &larr; Projects
         </button>
         <span className="text-gray-300">/</span>
-        <h1 className="font-semibold text-refenti-charcoal">
+        <h1 className="font-semibold text-black">
           {id ? "Edit project" : "New project"}
         </h1>
       </header>
@@ -190,7 +190,7 @@ function AdminProjectEditor() {
       >
         {/* Basic Info */}
         <div className="space-y-4">
-          <h2 className="text-sm font-semibold text-refenti-charcoal">
+          <h2 className="text-sm font-semibold text-black">
             Basic Info
           </h2>
           <div className="grid gap-4 sm:grid-cols-2">
@@ -244,7 +244,7 @@ function AdminProjectEditor() {
 
         {/* Media */}
         <div className="space-y-4 border-t border-gray-100 pt-6">
-          <h2 className="text-sm font-semibold text-refenti-charcoal">Media</h2>
+          <h2 className="text-sm font-semibold text-black">Media</h2>
           <div className="grid gap-4 sm:grid-cols-2">
             <FileUpload
               label="Hero Image"
@@ -275,7 +275,7 @@ function AdminProjectEditor() {
 
         {/* Introduction */}
         <div className="space-y-4 border-t border-gray-100 pt-6">
-          <h2 className="text-sm font-semibold text-refenti-charcoal">
+          <h2 className="text-sm font-semibold text-black">
             Introduction
           </h2>
           <AdminInput
@@ -314,7 +314,7 @@ function AdminProjectEditor() {
         {/* Features */}
         <div className="space-y-4 border-t border-gray-100 pt-6">
           <div className="flex items-center justify-between">
-            <h2 className="text-sm font-semibold text-refenti-charcoal">
+            <h2 className="text-sm font-semibold text-black">
               Features
             </h2>
             <button
@@ -352,7 +352,7 @@ function AdminProjectEditor() {
         {/* Detail Sections */}
         <div className="space-y-4 border-t border-gray-100 pt-6">
           <div className="flex items-center justify-between">
-            <h2 className="text-sm font-semibold text-refenti-charcoal">
+            <h2 className="text-sm font-semibold text-black">
               Detail Sections
             </h2>
             <button

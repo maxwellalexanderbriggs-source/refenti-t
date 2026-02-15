@@ -59,7 +59,7 @@ function Projects() {
           <div className="relative z-10 mx-auto max-w-6xl space-y-6 px-4 text-center md:space-y-8">
             <div className="space-y-3 md:space-y-6">
               <FadeIn direction="none" duration={1000} delay={1000}>
-                <h1 className="font-display text-6xl leading-none font-light text-refenti-charcoal uppercase md:text-9xl">
+                <h1 className="font-display text-6xl leading-none font-light text-black uppercase md:text-9xl">
                   Portfolio
                 </h1>
               </FadeIn>
@@ -133,7 +133,7 @@ function Projects() {
                               </p>
                               <div className="h-px w-8 bg-gray-200" />
                             </div>
-                            <h2 className="mt-7 font-display text-4xl leading-none font-light text-refenti-charcoal transition-colors duration-500 group-hover:text-refenti-gold md:mt-8 md:text-5xl lg:text-6xl">
+                            <h2 className="mt-7 font-display text-4xl leading-none font-light text-black transition-colors duration-500 group-hover:text-refenti-gold md:mt-8 md:text-5xl lg:text-6xl">
                               {project.name}
                             </h2>
                             <p className="font-sans text-xs font-bold text-gray-400 uppercase">

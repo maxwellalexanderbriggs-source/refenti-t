@@ -27,7 +27,7 @@ function NewsCard({ item, index }: { item: NewsItem; index: number }) {
       </div>
       <div className="space-y-4 p-8">
         <p className="text-xs font-bold text-gray-800 uppercase">{item.date}</p>
-        <h3 className="font-display text-3xl leading-none font-light text-refenti-charcoal">
+        <h3 className="font-display text-3xl leading-none font-light text-black">
           {item.title}
         </h3>
         <p className="text-sm leading-relaxed font-light text-gray-700">
@@ -113,7 +113,7 @@ function EventsNews() {
                 <p className="font-sans text-xs font-bold text-refenti-gold uppercase">
                   Institutional Updates
                 </p>
-                <h1 className="font-display text-6xl leading-none font-light text-refenti-charcoal uppercase md:text-9xl">
+                <h1 className="font-display text-6xl leading-none font-light text-black uppercase md:text-9xl">
                   News & Events
                 </h1>
               </div>
@@ -169,7 +169,7 @@ function EventsNews() {
                         <p className="font-sans text-xs font-bold text-refenti-gold uppercase">
                           Sector Insights
                         </p>
-                        <h2 className="font-display text-4xl font-light text-refenti-charcoal uppercase md:text-6xl">
+                        <h2 className="font-display text-4xl font-light text-black uppercase md:text-6xl">
                           News
                         </h2>
                       </div>
@@ -194,7 +194,7 @@ function EventsNews() {
                       <p className="font-sans text-xs font-bold text-refenti-gold uppercase">
                         Strategic Engagements
                       </p>
-                      <h2 className="font-display text-4xl font-light text-refenti-charcoal uppercase md:text-5xl">
+                      <h2 className="font-display text-4xl font-light text-black uppercase md:text-5xl">
                         Technical Events
                       </h2>
                     </div>
@@ -258,7 +258,7 @@ function EventsNews() {
                                   </div>
 
                                   <div className="mt-12 space-y-4">
-                                    <h3 className="font-display text-2xl leading-[0.95] font-light text-refenti-charcoal md:text-3xl">
+                                    <h3 className="font-display text-2xl leading-[0.95] font-light text-black md:text-3xl">
                                       {event.title}
                                     </h3>
 

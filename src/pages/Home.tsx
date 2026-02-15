@@ -25,7 +25,7 @@ function EventCard({ event, index }: { event: EventItem; index: number }) {
         <p className="mb-2 text-xs font-bold text-refenti-gold uppercase">
           {event.date}
         </p>
-        <h3 className="mb-1 font-display text-xl font-light text-refenti-charcoal">
+        <h3 className="mb-1 font-display text-xl font-light text-black">
           {event.title}
         </h3>
         <p className="mb-4 text-xs font-bold text-gray-500 uppercase">
@@ -83,7 +83,7 @@ function PhilosophySection() {
         <div className="grid items-center gap-8 md:grid-cols-2 md:gap-10">
           <div className="space-y-6 md:space-y-8">
             <FadeIn delay={100}>
-              <h2 className="font-display text-3xl leading-[1.1] font-light text-refenti-charcoal sm:text-4xl md:text-6xl">
+              <h2 className="font-display text-3xl leading-[1.1] font-light text-black sm:text-4xl md:text-6xl">
                 Quality <span className="text-refenti-gold ">Assets</span> <br />
                 in Growth Markets.
               </h2>
@@ -160,7 +160,7 @@ function Home() {
           content="Refenti Group specializes in luxury real estate development across residential, mixed-use, commercial, and hospitality sectors. Precision-driven urban destinations in Ethiopia and Dubai."
         />
       </Helmet>
-      <section className="relative flex min-h-[64vh] w-full items-end justify-center overflow-hidden pb-12 md:min-h-[80vh] md:pb-20">
+      <section className="relative flex min-h-[74vh] w-full items-end justify-center overflow-hidden pb-12 md:min-h-[92vh] md:pb-20">
         <div
           className="absolute inset-[-5%] animate-fade-in"
           style={{
@@ -196,7 +196,7 @@ function Home() {
         <div className="mx-auto max-w-6xl">
           <FadeIn>
             <div className="space-y-6 text-center md:space-y-8">
-              <h2 className="font-display text-3xl leading-[1.2] font-light text-refenti-charcoal md:text-5xl">
+              <h2 className="font-display text-3xl leading-[1.2] font-light text-black md:text-5xl">
                 A Platform Built for{" "}
                 <span className="text-refenti-gold ">
                   Long-Term Value
@@ -229,7 +229,7 @@ function Home() {
                         The Collection
                       </span>
                     </div>
-                    <h2 className="font-display text-4xl leading-tight font-light text-refenti-charcoal uppercase md:text-5xl">
+                    <h2 className="font-display text-4xl leading-tight font-light text-black uppercase md:text-5xl">
                       Portfolio
                     </h2>
                   </div>
@@ -323,7 +323,7 @@ function Home() {
                           />
                         </div>
                         <div className="p-6 md:p-8">
-                          <h3 className="mb-6 font-display text-2xl font-light text-refenti-charcoal uppercase">
+                          <h3 className="mb-6 font-display text-2xl font-light text-black uppercase">
                             Key Features
                           </h3>
                           <ul className="space-y-3">
@@ -372,7 +372,7 @@ function Home() {
           <FadeIn>
             <div className="mb-8 space-y-4 text-center md:mb-10 md:space-y-6">
               <div className="space-y-2 md:space-y-3">
-                <h2 className="font-display text-3xl font-light text-refenti-charcoal md:text-6xl">
+                <h2 className="font-display text-3xl font-light text-black md:text-6xl">
                   Featured Updates
                 </h2>
                 <p className="font-sans text-xs font-bold text-refenti-gold uppercase opacity-80">
