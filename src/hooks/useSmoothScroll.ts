@@ -5,12 +5,12 @@ export function useSmoothScroll() {
   useEffect(() => {
     // Initialize Lenis with moderate inertial effect
     const lenis = new Lenis({
-      duration: 1.0, // Default duration for balanced effect
+      duration: 0.5, // Reduced duration for minimal inertial effect
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Custom easing
       orientation: "vertical",
       gestureOrientation: "vertical",
       smoothWheel: true,
-      wheelMultiplier: 0.75, // Moderate multiplier for subtle momentum
+      wheelMultiplier: 0.375, // Minimal multiplier for very subtle momentum
       smoothTouch: false,
       touchMultiplier: 2,
       infinite: false,
